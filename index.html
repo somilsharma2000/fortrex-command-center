@@ -107,6 +107,50 @@
     </div>
   </section>
 
+  <section id="treasury">
+    <div class="sec-head"><h2 class="sec-title">Treasury — Earnings &amp; Expenses</h2><span class="meta">₹ goal / in / out</span></div>
+    <div class="grid g-4">
+      <div class="glass kpi"><div class="cap">Total Earned</div><div class="big" style="color:var(--emerald)" id="fin-earned">—</div><div class="delta flat" id="fin-earned-note">all time</div></div>
+      <div class="glass kpi"><div class="cap">Total Spent</div><div class="big" style="color:var(--error)" id="fin-spent">—</div><div class="delta flat" id="fin-spent-note">all time</div></div>
+      <div class="glass kpi"><div class="cap">Net Position</div><div class="big" id="fin-net">—</div><div class="delta flat" id="fin-net-note">earned − spent</div></div>
+      <div class="glass kpi"><div class="cap">₹ Fill Goal</div><div class="big gold-text" id="fin-goal-pct">—</div><div class="delta flat" id="fin-goal-note">of goal</div></div>
+    </div>
+    <div class="glass card" style="margin-top:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <span class="meta">The 20 Lakh Fill</span>
+        <span style="display:flex;gap:6px;align-items:center">
+          <span class="mono" style="font-size:11px;color:var(--champagne)">₹<span id="fin-goal-amount">2000000</span></span>
+          <input id="fin-goal-input" type="number" min="1" style="width:90px;background:rgba(255,255,255,.05);border:1px solid var(--glass-border);border-radius:8px;color:var(--ivory);padding:5px 8px;font-size:11px;font-family:'JetBrains Mono'">
+          <button class="ghost-btn" style="padding:6px 12px;font-size:9px" onclick="setFinGoal()">Set</button>
+        </span>
+      </div>
+      <div style="margin-top:10px;height:14px;border-radius:99px;background:rgba(255,255,255,.05);overflow:hidden"><div id="fin-goal-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#80652C,#C9973E,#F2D18A);border-radius:99px;transition:width .4s"></div></div>
+      <div style="display:flex;justify-content:space-between;margin-top:8px">
+        <span class="mono" style="font-size:10px;color:var(--champagne)" id="fin-goal-progress">—</span>
+        <span class="mono" style="font-size:10px;color:var(--muted-slate)" id="fin-goal-pace">—</span>
+      </div>
+    </div>
+    <div class="grid g-2" style="margin-top:16px">
+      <div class="glass card">
+        <h3 class="display" style="font-size:15px;color:var(--ivory)">Log Money In / Out</h3>
+        <div class="form-row" style="margin-top:14px">
+          <select id="fin-type"><option value="earning">Earning (in)</option><option value="expense">Expense (out)</option></select>
+          <input id="fin-amount" type="number" placeholder="Amount ₹">
+          <select id="fin-category"><option>Operations</option><option>Software</option><option>Ads</option><option>Design</option><option>Content</option><option>Other</option></select>
+          <input id="fin-note" placeholder="Note (optional)">
+          <input id="fin-date" type="date">
+        </div>
+        <div class="form-actions"><span class="form-msg" id="fin-msg"></span><button class="gold-btn" onclick="saveFinance()">Log Entry</button></div>
+      </div>
+      <div class="glass table-wrap">
+        <table>
+          <thead><tr><th>Recent Entries</th><th>Category</th><th>Amount</th><th>Date</th></tr></thead>
+          <tbody id="fin-rows"><tr><td colspan="4" class="empty">No entries yet — log the first one.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <section id="content">
     <div class="sec-head"><h2 class="sec-title">Content Pipeline</h2><span class="meta">idea → draft → ready → scheduled → published</span></div>
     <div class="glass card">
@@ -192,6 +236,31 @@ async function refresh() {
   document.getElementById("kpi-published").textContent = d.content.pipeline.Published;
   document.getElementById("kpi-published-note").textContent = "posts out the door";
 
+  // Treasury
+  const inr = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 });
+  const f = d.finance;
+  if (f) {
+    document.getElementById("fin-earned").textContent = "₹" + inr.format(f.total_earned);
+    document.getElementById("fin-spent").textContent = "₹" + inr.format(f.total_spent);
+    const netEl = document.getElementById("fin-net");
+    netEl.textContent = (f.net >= 0 ? "₹" : "−₹") + inr.format(Math.abs(f.net));
+    netEl.style.color = f.net >= 0 ? "var(--emerald)" : "var(--error)";
+    const goal = getFinGoal();
+    const pct = Math.min(100, (f.net / goal) * 100);
+    document.getElementById("fin-goal-pct").textContent = pct.toFixed(1) + "%";
+    document.getElementById("fin-goal-amount").textContent = inr.format(goal);
+    document.getElementById("fin-goal-bar").style.width = Math.max(0, pct) + "%";
+    document.getElementById("fin-goal-progress").textContent = "₹" + inr.format(Math.max(0, f.net)) + " / ₹" + inr.format(goal);
+    const daysLeft = Math.max(1, Math.ceil((new Date("2026-11-07T00:00:00+05:30").getTime() - Date.now()) / 86400000));
+    const needed = Math.max(0, (goal - f.net) / daysLeft);
+    document.getElementById("fin-goal-pace").textContent = needed > 0 ? "pace: ₹" + inr.format(Math.round(needed)) + "/day to fill by 11.07" : "goal filled before launch";
+    document.getElementById("fin-rows").innerHTML = f.recent.length ? f.recent.map(r => `
+      <tr><td>${r.note || r.type}</td><td>${r.category || "—"}</td>
+      <td class="mono" style="font-size:11px;color:${r.type === "earning" ? "var(--emerald)" : "var(--error)"}">${r.type === "earning" ? "+" : "−"}₹${inr.format(r.amount)}</td>
+      <td class="mono" style="font-size:10.5px">${r.entry_date}</td></tr>`).join("")
+      : '<tr><td colspan="4" class="empty">No entries yet — log the first one.</td></tr>';
+  }
+
   // Platform cards
   const grid = document.getElementById("platform-grid");
   grid.innerHTML = Object.entries(d.audience.platforms).map(([name, p]) => {
@@ -273,6 +342,31 @@ async function saveSnapshot() {
   } else { msg.textContent = "Failed: " + (r.error || "unknown"); msg.className = "form-msg err"; }
 }
 
+function getFinGoal() { return Number(localStorage.getItem("fortrex_fin_goal")) || 2000000; }
+function setFinGoal() {
+  const v = Number(document.getElementById("fin-goal-input").value);
+  if (v > 0) localStorage.setItem("fortrex_fin_goal", v);
+  refresh();
+}
+async function saveFinance() {
+  const msg = document.getElementById("fin-msg");
+  const amount = Number(document.getElementById("fin-amount").value);
+  const date = document.getElementById("fin-date").value || new Date().toISOString().slice(0, 10);
+  if (!amount) { msg.textContent = "Amount is required"; msg.className = "form-msg err"; return; }
+  msg.textContent = "Saving…"; msg.className = "form-msg";
+  const r = await callApi("add_finance", {
+    type: document.getElementById("fin-type").value,
+    amount: amount,
+    category: document.getElementById("fin-category").value,
+    note: document.getElementById("fin-note").value.trim(),
+    entry_date: date
+  });
+  if (r.ok) {
+    msg.textContent = "Logged ✓"; msg.className = "form-msg ok";
+    ["fin-amount", "fin-note"].forEach(id => document.getElementById(id).value = "");
+    refresh();
+  } else { msg.textContent = "Failed: " + (r.error || "unknown"); msg.className = "form-msg err"; }
+}
 function getGoal() { return Number(localStorage.getItem("fortrex_goal")) || 100; }
 function setGoal() {
   const v = Number(document.getElementById("goal-input").value);
