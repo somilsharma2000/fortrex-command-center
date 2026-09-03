@@ -29,6 +29,18 @@
     <div class="phase-strip" id="phase-strip"></div>
   </section>
 
+  <section id="playbook">
+    <div class="sec-head"><h2 class="sec-title">Playbook — Benchmarks &amp; Best Practices</h2><span class="meta">2025-26 industry research</span></div>
+    <div class="grid g-3">
+      <div class="glass card"><div class="meta">Growth Rate</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">Track rate, not counts</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px">Formula: <span class="mono" style="color:var(--champagne);font-size:11px">(new − lost) ÷ total × 100</span>. Above <strong style="color:var(--ivory)">2%/month</strong> is healthy pre-launch momentum.</p></div>
+      <div class="glass card"><div class="meta">Churn</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">The silent killer</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px"><strong style="color:var(--ivory)">1–2%/month</strong> follower churn is normal. Above <strong style="color:var(--ivory)">3%</strong> means content is attracting the wrong audience.</p></div>
+      <div class="glass card"><div class="meta">List Quality</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">Genesis List is the real metric</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px">Waitlist-to-launch conversion above <strong style="color:var(--ivory)">20%</strong> signals strong demand. Best launches hit <strong style="color:var(--ivory)">40–50%</strong>. Optimize for list quality, not follower vanity.</p></div>
+      <div class="glass card"><div class="meta">Engagement Climate</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">2025: everything fell</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px">IG <span class="delta down arrow-down" style="font-size:11px">16%</span> · X <span class="delta down arrow-down" style="font-size:11px">48%</span> · TikTok <span class="delta down arrow-down" style="font-size:11px">34%</span> · FB <span class="delta down arrow-down" style="font-size:11px">36%</span>. Consistency in peak windows beats volume.</p></div>
+      <div class="glass card"><div class="meta">Peak Windows</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">When to post</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px">IG: <strong style="color:var(--ivory)">Wed 12–9PM</strong> (Tue 1–7PM second). LinkedIn: <strong style="color:var(--ivory)">Tue–Thu 10AM–12PM</strong>. The weekly calendar is already tuned to these.</p></div>
+      <div class="glass card"><div class="meta">ER Targets</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">Judge against real bars</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px">IG <span class="bench-chip">≥1%</span> <span class="bench-chip">excellent 3–5%</span> · TikTok <span class="bench-chip">≥3%</span> · LinkedIn <span class="bench-chip">≥1%</span> · X <span class="bench-chip">≥0.15%</span> — shown on every audience card.</p></div>
+    </div>
+  </section>
+
   <section id="audience">
     <div class="sec-head">
       <h2 class="sec-title">Audience — All Platforms</h2>
@@ -63,6 +75,20 @@
     <div class="grid g-2">
       <div class="glass card">
         <h3 class="display" style="font-size:15px;color:var(--ivory)">Capture A Lead</h3>
+        <div style="margin-top:14px;padding:14px;border:1px solid var(--glass-border);border-radius:14px;background:rgba(255,255,255,.03)">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+            <span class="meta">Genesis List goal</span>
+            <span style="display:flex;gap:6px;align-items:center">
+              <input id="goal-input" type="number" min="1" style="width:70px;background:rgba(255,255,255,.05);border:1px solid var(--glass-border);border-radius:8px;color:var(--ivory);padding:5px 8px;font-size:11px;font-family:'JetBrains Mono'" >
+              <button class="ghost-btn" style="padding:6px 12px;font-size:9px" onclick="setGoal()">Set</button>
+            </span>
+          </div>
+          <div style="margin-top:10px;height:10px;border-radius:99px;background:rgba(255,255,255,.05);overflow:hidden"><div id="goal-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#80652C,#C9973E,#F2D18A);border-radius:99px;transition:width .4s"></div></div>
+          <div style="display:flex;justify-content:space-between;margin-top:8px">
+            <span class="mono" style="font-size:10px;color:var(--champagne)" id="goal-progress">— / —</span>
+            <span class="mono" style="font-size:10px;color:var(--muted-slate)" id="goal-pace">—</span>
+          </div>
+        </div>
         <p style="font-size:11.5px;color:var(--warm-muted);margin-top:6px;line-height:1.7">DMs, comments, bio-link signups — anything you get on socials, drop it here. It hits the same database the Genesis List writes to.</p>
         <div class="form-row" style="margin-top:14px">
           <input id="lead-name" placeholder="Name">
@@ -144,10 +170,15 @@ async function refresh() {
   document.getElementById("last-sync").textContent = "live · synced " + new Date(d.generated_at).toLocaleTimeString();
 
   document.getElementById("kpi-leads").textContent = d.leads.total;
+  const tr = d.leads.trend || [];
+  const thisWk = tr.slice(7).reduce((a, b) => a + b, 0);
+  const lastWk = tr.slice(0, 7).reduce((a, b) => a + b, 0);
   const lw = document.getElementById("kpi-leads-week");
-  lw.textContent = (d.leads.this_week > 0 ? "+" : "") + d.leads.this_week + " this week";
-  lw.className = "delta " + (d.leads.this_week > 0 ? "up arrow-up" : "flat arrow-flat");
-  document.getElementById("kpi-leads-spark").innerHTML = sparkline(d.leads.trend || []);
+  if (thisWk > lastWk) { lw.textContent = "▲ " + thisWk + " this week · up from " + lastWk; lw.className = "delta up"; }
+  else if (thisWk < lastWk) { lw.textContent = "▼ " + thisWk + " this week · down from " + lastWk; lw.className = "delta down"; }
+  else { lw.textContent = "— " + thisWk + " this week · flat"; lw.className = "delta flat"; }
+  document.getElementById("kpi-leads-spark").innerHTML = sparkline(tr.slice(7));
+  renderGoal(d.leads.total);
 
   document.getElementById("kpi-audience").textContent = d.audience.total_followers.toLocaleString();
   let connected = 0;
@@ -242,6 +273,22 @@ async function saveSnapshot() {
   } else { msg.textContent = "Failed: " + (r.error || "unknown"); msg.className = "form-msg err"; }
 }
 
+function getGoal() { return Number(localStorage.getItem("fortrex_goal")) || 100; }
+function setGoal() {
+  const v = Number(document.getElementById("goal-input").value);
+  if (v > 0) localStorage.setItem("fortrex_goal", v);
+  refresh();
+}
+function renderGoal(total) {
+  const goal = getGoal();
+  document.getElementById("goal-input").value = goal;
+  const pct = Math.min(100, Math.round((total / goal) * 100));
+  document.getElementById("goal-bar").style.width = pct + "%";
+  document.getElementById("goal-progress").textContent = total + " / " + goal + " · " + pct + "%";
+  const daysLeft = Math.max(1, Math.ceil((new Date("2026-11-07T00:00:00+05:30").getTime() - Date.now()) / 86400000));
+  const needed = Math.max(0, (goal - total) / daysLeft);
+  document.getElementById("goal-pace").textContent = needed > 0 ? "pace needed: " + needed.toFixed(1) + "/day to hit goal by 11.07" : "goal reached before launch";
+}
 renderPhases();
 refresh();
 setInterval(refresh, 60000);
