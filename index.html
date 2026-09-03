@@ -103,6 +103,10 @@ td .day{font-family:'Space Grotesk';font-weight:700;color:var(--ivory)}
 .tag{font-family:'JetBrains Mono';font-size:11px;color:var(--champagne);background:rgba(201,151,62,.1);border:1px solid rgba(201,151,62,.22);padding:5px 11px;border-radius:999px}
 .pillar-mark{height:34px;width:34px;border-radius:10px;border:1px solid rgba(242,209,138,.35);background:rgba(201,151,62,.12);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono';font-size:12px;color:var(--champagne);margin-bottom:14px}
 footer{margin-top:48px;padding:24px;border-top:1px solid rgba(201,151,62,.15);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.count{display:flex;gap:12px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+.count .tile{min-width:92px;padding:16px 10px;border-radius:14px;border:1px solid var(--glass-border);background:rgba(255,255,255,.045)}
+.count .num{font-family:'JetBrains Mono';font-size:26px;color:var(--champagne)}
+.count .unit{margin-top:6px;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-slate)}
 @media(max-width:640px){.hero{padding:48px 20px} .card{padding:20px}}
 </style>
 </head>
@@ -129,6 +133,13 @@ footer{margin-top:48px;padding:24px;border-top:1px solid rgba(201,151,62,.15);di
       <div class="label">— Command Center / 001 —</div>
       <h1 class="hero-title display">Where Traders <span class="gold-text">Rise.</span></h1>
       <p class="lead">The central hub for FORTREX FX social operations. Obsidian surfaces, beveled gold, and one voice — institutional confidence, never hype.</p>
+      <div class="label" style="margin-top:36px">— The Doors Open / 11.07 —</div>
+      <div class="count" id="countdown">
+        <div class="tile"><div class="num" id="cd-d">--</div><div class="unit">Days</div></div>
+        <div class="tile"><div class="num" id="cd-h">--</div><div class="unit">Hours</div></div>
+        <div class="tile"><div class="num" id="cd-m">--</div><div class="unit">Minutes</div></div>
+        <div class="tile"><div class="num" id="cd-s">--</div><div class="unit">Seconds</div></div>
+      </div>
     </div>
   </section>
 
@@ -205,5 +216,21 @@ footer{margin-top:48px;padding:24px;border-top:1px solid rgba(201,151,62,.15);di
   </footer>
 
 </div>
+
+<script>
+(function(){
+  var target = new Date("2026-11-07T00:00:00+05:30").getTime();
+  function pad(n){return n<10?"0"+n:n}
+  function tick(){
+    var d = target - Date.now();
+    if(d < 0){ document.getElementById("countdown").innerHTML = '<div class="tile"><div class="num">—</div><div class="unit">The doors are open</div></div>'; return; }
+    document.getElementById("cd-d").textContent = pad(Math.floor(d/86400000));
+    document.getElementById("cd-h").textContent = pad(Math.floor((d%86400000)/3600000));
+    document.getElementById("cd-m").textContent = pad(Math.floor((d%3600000)/60000));
+    document.getElementById("cd-s").textContent = pad(Math.floor((d%60000)/1000));
+  }
+  tick(); setInterval(tick, 1000);
+})();
+</script>
 </body>
 </html>
