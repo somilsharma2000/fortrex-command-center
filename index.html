@@ -3,277 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FORTREX COMMAND CENTER — Where Traders Rise</title>
-<meta name="description" content="FORTREX FX social media command center. Obsidian. Faceted. Rising.">
+<title>FORTREX Command Center — Live Dashboard</title>
+<meta name="description" content="FORTREX FX operations dashboard: leads, audience, content pipeline. WHERE TRADERS RISE.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --obsidian-950:#050509; --obsidian-900:#08080B; --ink-800:#101014; --graphite-700:#17171B;
-  --deep-gold:#80652C; --gold:#C9973E; --champagne:#F2D18A; --ivory:#FFF7E6;
-  --warm-muted:#A99B7A; --muted-slate:#766C57; --steel:#AAB4BD; --cyan:#54D7D0; --emerald:#7DE3B3;
-  --gold-gradient:linear-gradient(135deg,#F2D18A 0%,#C9973E 52%,#80652C 100%);
-  --glass-bg:rgba(18,18,22,.68); --glass-border:rgba(255,255,255,.12);
-  --radius-card:22px; --radius-sm:12px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',sans-serif; color:#f0eadc; background:var(--obsidian-950);
-  background-image:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,151,62,.14), transparent 60%),
-    radial-gradient(circle at 12% 30%, rgba(84,215,208,.05), transparent 40%),
-    radial-gradient(circle at 88% 65%, rgba(125,227,179,.04), transparent 40%),
-    radial-gradient(1px 1px at 20% 15%, rgba(255,247,230,.25) 50%, transparent 51%),
-    radial-gradient(1px 1px at 70% 8%, rgba(255,247,230,.2) 50%, transparent 51%),
-    radial-gradient(1px 1px at 40% 45%, rgba(255,247,230,.15) 50%, transparent 51%),
-    radial-gradient(1px 1px at 85% 40%, rgba(255,247,230,.2) 50%, transparent 51%),
-    radial-gradient(1px 1px at 10% 70%, rgba(255,247,230,.15) 50%, transparent 51%),
-    radial-gradient(1px 1px at 55% 85%, rgba(255,247,230,.18) 50%, transparent 51%),
-    radial-gradient(1px 1px at 92% 88%, rgba(255,247,230,.15) 50%, transparent 51%);
-  background-attachment:fixed;
-  min-height:100vh; padding:24px 20px 64px;
-}
-.shell{max-width:1240px;margin:0 auto}
-.display{font-family:'Space Grotesk',sans-serif}
-.mono{font-family:'JetBrains Mono',monospace}
-.glass{
-  background:var(--glass-bg);
-  -webkit-backdrop-filter:blur(20px) saturate(120%); backdrop-filter:blur(20px) saturate(120%);
-  border:1px solid var(--glass-border); border-radius:var(--radius-card);
-  box-shadow:inset 0 1px 1px rgba(255,255,255,.14), 0 20px 48px rgba(0,0,0,.45);
-  position:relative;
-}
-.glass-hero::before{
-  content:""; position:absolute; inset:0 0 auto 0; height:100%; border-radius:var(--radius-card); pointer-events:none;
-  background:radial-gradient(circle at 50% 0%, rgba(242,209,138,.12), transparent 55%);
-}
-.label{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--champagne)}
-.meta{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-slate)}
-.gold-text{background:var(--gold-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
-.gold-btn{
-  display:inline-flex;align-items:center;gap:8px;background:var(--gold-gradient);color:#0a0a0a;
-  font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
-  padding:12px 22px;border-radius:999px;box-shadow:0 8px 28px rgba(201,151,62,.35);transition:transform .2s, box-shadow .2s;
-}
-.gold-btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(201,151,62,.45)}
-.ghost-btn{
-  display:inline-flex;align-items:center;gap:8px;color:var(--ivory);text-decoration:none;
-  font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-  padding:12px 20px;border-radius:999px;border:1px solid var(--glass-border);
-  background:rgba(255,255,255,.04);transition:border-color .2s;
-}
-.ghost-btn:hover{border-color:rgba(242,209,138,.5)}
-header.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px;flex-wrap:wrap}
-.nav-brand{display:flex;align-items:center;gap:14px}
-.crown{height:44px;width:auto;filter:drop-shadow(0 4px 18px rgba(242,209,138,.35))}
-.nav-wordmark{font-family:'Space Grotesk';font-weight:700;letter-spacing:.18em;font-size:18px;color:var(--ivory)}
-.nav-wordmark span{color:var(--gold)}
-.nav-sub{margin-top:3px;font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:var(--warm-muted)}
-section{margin-top:28px}
-.sec-head{display:flex;align-items:baseline;justify-content:space-between;margin:0 8px 16px}
-h2.sec-title{font-family:'Space Grotesk';font-size:26px;font-weight:700;color:var(--ivory)}
-.hero{padding:72px 32px;text-align:center;overflow:hidden}
-.hero .crown-big{height:110px;margin:0 auto 28px;filter:drop-shadow(0 10px 40px rgba(242,209,138,.4))}
-h1.hero-title{font-family:'Space Grotesk';font-weight:700;font-size:clamp(40px,7vw,84px);line-height:.98;color:var(--ivory);text-transform:uppercase;letter-spacing:.01em}
-.hero p.lead{max-width:640px;margin:26px auto 0;color:var(--warm-muted);font-size:16px;line-height:1.85}
-.hero .label{display:inline-block;margin-bottom:20px}
-.grid{display:grid;gap:18px}
-.g-2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
-.g-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.card{padding:26px}
-.card p{color:var(--warm-muted);font-size:13.5px;line-height:1.8;margin-top:10px}
-.card h3{font-family:'Space Grotesk';font-size:17px;font-weight:700;color:var(--ivory);letter-spacing:.02em}
-.card .num{font-family:'JetBrains Mono';font-size:11px;color:var(--gold);letter-spacing:.16em}
-.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
-.swatch{border-radius:14px;border:1px solid var(--glass-border);overflow:hidden}
-.swatch .chip{height:56px}
-.swatch .info{padding:10px 12px;background:rgba(8,8,11,.8)}
-.swatch .name{font-size:11.5px;font-weight:600;color:#f0eadc}
-.swatch .val{font-family:'JetBrains Mono';font-size:9.5px;text-transform:uppercase;color:var(--muted-slate);margin-top:2px}
-.table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
-th{font-size:9.5px;text-transform:uppercase;letter-spacing:.18em;color:var(--muted-slate);text-align:left;padding:14px 16px;border-bottom:1px solid var(--glass-border);font-weight:700}
-td{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.05);color:#d8d2c2;vertical-align:top}
-tr:last-child td{border-bottom:none}
-td .day{font-family:'Space Grotesk';font-weight:700;color:var(--ivory)}
-.status{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;padding:4px 10px;border-radius:999px;background:rgba(201,151,62,.14);color:var(--champagne);border:1px solid rgba(201,151,62,.3)}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.tag{font-family:'JetBrains Mono';font-size:11px;color:var(--champagne);background:rgba(201,151,62,.1);border:1px solid rgba(201,151,62,.22);padding:5px 11px;border-radius:999px}
-.pillar-mark{height:34px;width:34px;border-radius:10px;border:1px solid rgba(242,209,138,.35);background:rgba(201,151,62,.12);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono';font-size:12px;color:var(--champagne);margin-bottom:14px}
-footer{margin-top:48px;padding:24px;border-top:1px solid rgba(201,151,62,.15);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.count{display:flex;gap:12px;justify-content:center;margin-top:34px;flex-wrap:wrap}
-.count .tile{min-width:92px;padding:16px 10px;border-radius:14px;border:1px solid var(--glass-border);background:rgba(255,255,255,.045)}
-.count .num{font-family:'JetBrains Mono';font-size:26px;color:var(--champagne)}
-.count .unit{margin-top:6px;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-slate)}
-.status-off{background:rgba(255,255,255,.05);color:var(--muted-slate);border:1px solid var(--glass-border)}
-.stat{padding:22px;text-align:center}
-.stat .big{font-family:'Space Grotesk';font-size:30px;font-weight:700;color:var(--ivory)}
-.stat .cap{margin-top:8px;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-slate)}
-.auto-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 22px;border-bottom:1px solid rgba(255,255,255,.05);flex-wrap:wrap}
-.auto-row:last-child{border-bottom:none}
-.auto-name{font-family:'Space Grotesk';font-weight:700;color:var(--ivory);font-size:15px}
-.auto-desc{font-size:12.5px;color:var(--warm-muted);margin-top:4px;line-height:1.7}
-@media(max-width:640px){.hero{padding:48px 20px} .card{padding:20px}}
-</style>
+<link rel="stylesheet" href="assets/dashboard.css">
 </head>
 <body>
 <div class="shell">
+  <div id="app-nav"></div>
 
-  <header class="nav glass">
-    <div class="nav-brand">
-      <img src="brand-kit/fortrex-crown.png" alt="FORTREX crown" class="crown">
-      <div>
-        <div class="nav-wordmark">FORTREX <span>FX</span></div>
-        <div class="nav-sub">Command Center / 001</div>
+  <section id="kpis">
+    <div class="sec-head"><h2 class="sec-title">Business Pulse</h2><span class="meta" id="last-sync">syncing…</span></div>
+    <div class="grid g-4">
+      <div class="glass kpi"><div class="cap">Genesis Leads — Total</div><div class="big" id="kpi-leads">—</div><div class="delta flat" id="kpi-leads-week">—</div></div>
+      <div class="glass kpi"><div class="cap">Total Audience</div><div class="big" id="kpi-audience">—</div><div class="delta flat" id="kpi-audience-note">—</div></div>
+      <div class="glass kpi"><div class="cap">Content In Flight</div><div class="big" id="kpi-flight">—</div><div class="delta flat" id="kpi-flight-note">—</div></div>
+      <div class="glass kpi"><div class="cap">Published To Date</div><div class="big" id="kpi-published">—</div><div class="delta flat" id="kpi-published-note">—</div></div>
+    </div>
+  </section>
+
+  <section id="audience">
+    <div class="sec-head">
+      <h2 class="sec-title">Audience — All Platforms</h2>
+      <span class="meta">followers / weekly delta / trend</span>
+    </div>
+    <div class="grid g-3" id="platform-grid">
+      <div class="glass empty">Loading audience data… <span class="loading-dot"></span></div>
+    </div>
+    <div class="grid g-2" style="margin-top:16px">
+      <div class="glass card">
+        <h3 class="display" style="font-size:15px;color:var(--ivory)">Log Weekly Stats</h3>
+        <p style="font-size:11.5px;color:var(--warm-muted);margin-top:6px;line-height:1.7">Until channels are OAuth-connected, drop your weekly numbers here every Friday. The trend charts build automatically.</p>
+        <div class="form-row" style="margin-top:14px">
+          <select id="snap-platform"><option>Instagram</option><option>X</option><option>LinkedIn</option><option>Facebook</option><option>TikTok</option><option>Discord</option><option>Site Visitors</option></select>
+          <input id="snap-followers" type="number" placeholder="Followers">
+          <input id="snap-reach" type="number" placeholder="Weekly reach">
+          <input id="snap-eng" type="number" step="0.01" placeholder="Engagement % (e.g. 4.2)">
+          <input id="snap-date" type="date">
+        </div>
+        <div class="form-actions"><span class="form-msg" id="snap-msg"></span><button class="gold-btn" onclick="saveSnapshot()">Log Snapshot</button></div>
+      </div>
+      <div class="glass card">
+        <h3 class="display" style="font-size:15px;color:var(--ivory)">Lead Sources</h3>
+        <p style="font-size:11.5px;color:var(--warm-muted);margin-top:6px;line-height:1.7">Where every Genesis lead came from — so we know which platform actually converts.</p>
+        <div id="source-bars" style="margin-top:16px"><div class="empty">No leads yet — first one lands here.</div></div>
       </div>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <a class="ghost-btn" href="https://somilsharma2000.github.io/fortrexfxmanusgold/">Public Site ↗</a>
-      <a class="gold-btn" href="#calendar">View Calendar</a>
-    </div>
-  </header>
-
-  <section>
-    <div class="glass glass-hero hero">
-      <img src="brand-kit/fortrex-crown.png" alt="Faceted translucent FORTREX crown" class="crown-big">
-      <div class="label">— Command Center / 001 —</div>
-      <h1 class="hero-title display">Where Traders <span class="gold-text">Rise.</span></h1>
-      <p class="lead">The central hub for FORTREX FX social operations. Obsidian surfaces, beveled gold, and one voice — institutional confidence, never hype.</p>
-      <div class="label" style="margin-top:36px">— The Doors Open / 11.07 —</div>
-      <div class="count" id="countdown">
-        <div class="tile"><div class="num" id="cd-d">--</div><div class="unit">Days</div></div>
-        <div class="tile"><div class="num" id="cd-h">--</div><div class="unit">Hours</div></div>
-        <div class="tile"><div class="num" id="cd-m">--</div><div class="unit">Minutes</div></div>
-        <div class="tile"><div class="num" id="cd-s">--</div><div class="unit">Seconds</div></div>
-      </div>
-    </div>
   </section>
 
-  <section id="brand">
-    <div class="sec-head"><h2 class="sec-title">Brand Material System</h2><span class="meta">01 / Identity</span></div>
-    <div class="glass card">
-      <div class="swatches">
-        <div class="swatch"><div class="chip" style="background:#050509"></div><div class="info"><div class="name">Obsidian 950</div><div class="val">#050509</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#101014"></div><div class="info"><div class="name">Ink 800</div><div class="val">#101014</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#17171B"></div><div class="info"><div class="name">Graphite 700</div><div class="val">#17171B</div></div></div>
-        <div class="swatch"><div class="chip" style="background:linear-gradient(135deg,#F2D18A,#C9973E 52%,#80652C)"></div><div class="info"><div class="name">Beveled Gold</div><div class="val">#C9973E</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#F2D18A"></div><div class="info"><div class="name">Champagne</div><div class="val">#F2D18A</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#FFF7E6"></div><div class="info"><div class="name">Ivory</div><div class="val">#FFF7E6</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#A99B7A"></div><div class="info"><div class="name">Warm Muted</div><div class="val">#A99B7A</div></div></div>
-        <div class="swatch"><div class="chip" style="background:rgba(255,255,255,.045)"></div><div class="info"><div class="name">Smoke Glass</div><div class="val">4.5% white</div></div></div>
-      </div>
-      <p style="margin-top:18px">60–30–10 rule: obsidian canvas, structural glass and graphite, gold reserved for identity and action. Display type is Space Grotesk, interface is Inter, metadata is JetBrains Mono.</p>
-    </div>
-  </section>
-
-  <section id="pillars">
-    <div class="sec-head"><h2 class="sec-title">Content Pillars</h2><span class="meta">02 / Genesis Phase</span></div>
-    <div class="grid g-3">
-      <div class="glass card"><div class="pillar-mark">01</div><h3>The Tease</h3><p>Cryptic countdown and LAUNCH / 001 marker reveals. Curiosity without revealing mechanics.</p></div>
-      <div class="glass card"><div class="pillar-mark">02</div><h3>Trader Mindset</h3><p>Minimal quote cards on discipline, patience, and timing. One idea per surface.</p></div>
-      <div class="glass card"><div class="pillar-mark">03</div><h3>Exclusivity</h3><p>The first names will know before everyone else. Controlled access, earned status.</p></div>
-      <div class="glass card"><div class="pillar-mark">04</div><h3>Brand Craft</h3><p>Crown material studies, gold-on-obsidian textures, glass edge light close-ups.</p></div>
-      <div class="glass card"><div class="pillar-mark">05</div><h3>List Building</h3><p>Genesis List call-to-action posts with a clear reason to join now.</p></div>
-      <div class="glass card"><div class="pillar-mark">—</div><h3>Never</h3><p>Signals. Deposits. Private. Guaranteed returns. Hype-bro language. Emojis as decoration.</p></div>
-    </div>
-  </section>
-
-  <section id="calendar">
-    <div class="sec-head"><h2 class="sec-title">Week 01 Calendar</h2><span class="meta">03 / Launch</span></div>
-    <div class="glass table-wrap">
-      <table>
-        <thead><tr><th>Day</th><th>Platform</th><th>Pillar</th><th>Concept</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td><span class="day">Mon</span></td><td>IG + X</td><td>The Tease</td><td>LAUNCH / 001 marker reveal</td><td><span class="status">Draft</span></td></tr>
-          <tr><td><span class="day">Tue</span></td><td>IG Story</td><td>Brand Craft</td><td>Crown texture close-up, gold edge light</td><td><span class="status">Draft</span></td></tr>
-          <tr><td><span class="day">Wed</span></td><td>IG + LinkedIn</td><td>Trader Mindset</td><td>Being early is a skill.</td><td><span class="status">Draft</span></td></tr>
-          <tr><td><span class="day">Thu</span></td><td>X</td><td>Exclusivity</td><td>The first names will know.</td><td><span class="status">Draft</span></td></tr>
-          <tr><td><span class="day">Fri</span></td><td>IG + X</td><td>List Building</td><td>Genesis List CTA + launch marker</td><td><span class="status">Draft</span></td></tr>
-          <tr><td><span class="day">Sat</span></td><td>IG Story</td><td>Trader Mindset</td><td>Patience is the edge.</td><td><span class="status">Draft</span></td></tr>
-          <tr><td><span class="day">Sun</span></td><td>IG</td><td>Brand Craft</td><td>Obsidian / gold material study</td><td><span class="status">Draft</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section id="hashtags">
-    <div class="sec-head"><h2 class="sec-title">Hashtag Banks</h2><span class="meta">04 / Reach</span></div>
+  <section id="leads">
+    <div class="sec-head"><h2 class="sec-title">Lead Intake</h2><span class="meta">capture / recent / status</span></div>
     <div class="grid g-2">
-      <div class="glass card"><h3>Core — every post</h3><div class="tags"><span class="tag">#FortrexFX</span><span class="tag">#WhereTradersRise</span><span class="tag">#GenesisEarlyAccess</span></div><p>2–3 core tags on every asset. These build the brand's own surface.</p></div>
-      <div class="glass card"><h3>Trading reach</h3><div class="tags"><span class="tag">#TradingCommunity</span><span class="tag">#ForexTrader</span><span class="tag">#TraderLifestyle</span><span class="tag">#TradingMindset</span><span class="tag">#ForexTrading</span><span class="tag">#DayTrading</span><span class="tag">#PriceAction</span><span class="tag">#PropFirm</span></div><p>Max 10–12 total per post, tiered big to niche.</p></div>
+      <div class="glass card">
+        <h3 class="display" style="font-size:15px;color:var(--ivory)">Capture A Lead</h3>
+        <p style="font-size:11.5px;color:var(--warm-muted);margin-top:6px;line-height:1.7">DMs, comments, bio-link signups — anything you get on socials, drop it here. It hits the same database the Genesis List writes to.</p>
+        <div class="form-row" style="margin-top:14px">
+          <input id="lead-name" placeholder="Name">
+          <input id="lead-email" type="email" placeholder="Email (required)">
+          <select id="lead-source"><option>Instagram</option><option>X</option><option>LinkedIn</option><option>Facebook</option><option>TikTok</option><option>Discord</option><option>Direct Site</option><option>Other</option></select>
+          <input id="lead-notes" placeholder="Notes (optional)">
+        </div>
+        <div class="form-actions"><span class="form-msg" id="lead-msg"></span><button class="gold-btn" onclick="saveLead()">Add Lead</button></div>
+      </div>
+      <div class="glass table-wrap">
+        <table>
+          <thead><tr><th>Recent Leads</th><th>Source</th><th>Status</th><th>When</th></tr></thead>
+          <tbody id="lead-rows"><tr><td colspan="4" class="empty">Loading… <span class="loading-dot"></span></td></tr></tbody>
+        </table>
+      </div>
     </div>
   </section>
 
-  <section id="formats">
-    <div class="sec-head"><h2 class="sec-title">Platform Formats</h2><span class="meta">05 / Craft</span></div>
-    <div class="grid g-3">
-      <div class="glass card"><div class="num">IG / 1:1</div><h3>Feed</h3><p>Headline dominant, max 8 words, uppercase display. Obsidian canvas, controlled glow, gold CTA only on list-building posts.</p></div>
-      <div class="glass card"><div class="num">STORY / 9:16</div><h3>Stories</h3><p>Single idea, gold button at the bottom, seventy percent negative space.</p></div>
-      <div class="glass card"><div class="num">X / 16:9</div><h3>Manifesto</h3><p>Text-only declarations in the same voice. Pinned post carries the Genesis CTA.</p></div>
-      <div class="glass card"><div class="num">IN</div><h3>LinkedIn</h3><p>Same visual language, slightly more explanatory copy, institutional tone.</p></div>
-      <div class="glass card"><div class="num">YT / 16:9</div><h3>Thumbnail</h3><p>Two to four word uppercase hook, charcoal plus one gold accent.</p></div>
-      <div class="glass card"><div class="num">ALT</div><h3>Accessibility</h3><p>Every visual ships with alt text. Premium means everyone gets in.</p></div>
-    </div>
-  </section>
-
-
-  <section id="integrations">
-    <div class="sec-head"><h2 class="sec-title">Integrations — Settings</h2><span class="meta">06 / Channels</span></div>
-    <p style="margin:0 8px 16px;font-size:13px;color:var(--warm-muted);line-height:1.8">All channels are pre-provisioned. After the first posts are published, tap <strong style="color:var(--champagne)">Connect</strong> on a channel and authorize it — publishing, scheduling and analytics arm instantly.</p>
-    <div class="grid g-3">
-      <div class="glass card"><div class="num">IG</div><h3>Instagram Business</h3><p>Direct publishing, story scheduling, Insights: reach, impressions, follower growth, per-post engagement. Requires an Instagram Business or Creator account linked to a Facebook Page.</p><div style="display:flex;gap:10px;margin-top:16px;align-items:center;flex-wrap:wrap"><span class="status status-off">Ready to connect</span><a class="ghost-btn" href="https://app.base44.com/superagent/6a99d19ce29915c277d5beab">Connect ↗</a></div></div>
-      <div class="glass card"><div class="num">X</div><h3>X / Twitter</h3><p>No API connection exists — X runs in manual mode: content batches are generated and committed here, you post them. Pinned Genesis CTA managed alongside.</p><div style="display:flex;gap:10px;margin-top:16px;align-items:center;flex-wrap:wrap"><span class="status status-off">Manual mode</span></div></div>
-      <div class="glass card"><div class="num">IN</div><h3>LinkedIn Page</h3><p>Company page posting and page analytics: impressions, engagement, follower demographics. Requires admin access to the page.</p><div style="display:flex;gap:10px;margin-top:16px;align-items:center;flex-wrap:wrap"><span class="status status-off">Ready to connect</span><a class="ghost-btn" href="https://app.base44.com/superagent/6a99d19ce29915c277d5beab">Connect ↗</a></div></div>
-      <div class="glass card"><div class="num">FB</div><h3>Facebook Page</h3><p>Page publishing and page-level metrics: views, engagement, follower growth. Works together with the Instagram Business connection.</p><div style="display:flex;gap:10px;margin-top:16px;align-items:center;flex-wrap:wrap"><span class="status status-off">Ready to connect</span><a class="ghost-btn" href="https://app.base44.com/superagent/6a99d19ce29915c277d5beab">Connect ↗</a></div></div>
-      <div class="glass card"><div class="num">TT</div><h3>TikTok</h3><p>Video publishing and video metrics: views, likes, shares, watch time. For the short-form verticals in the later countdown phases.</p><div style="display:flex;gap:10px;margin-top:16px;align-items:center;flex-wrap:wrap"><span class="status status-off">Ready to connect</span><a class="ghost-btn" href="https://app.base44.com/superagent/6a99d19ce29915c277d5beab">Connect ↗</a></div></div>
-      <div class="glass card"><div class="num">DC</div><h3>Discord — The Citadel</h3><p>Community channel ops: invites, early-list engagement, and the reveal-day gathering.</p><div style="display:flex;gap:10px;margin-top:16px;align-items:center;flex-wrap:wrap"><span class="status status-off">Ready to connect</span><a class="ghost-btn" href="https://app.base44.com/superagent/6a99d19ce29915c277d5beab">Connect ↗</a></div></div>
-    </div>
-  </section>
-
-  <section id="analytics">
-    <div class="sec-head"><h2 class="sec-title">Analytics</h2><span class="meta">07 / Signal</span></div>
-    <div class="grid g-3">
-      <div class="glass stat"><div class="big">—</div><div class="cap">Followers</div></div>
-      <div class="glass stat"><div class="big">—</div><div class="cap">Weekly Reach</div></div>
-      <div class="glass stat"><div class="big">—</div><div class="cap">Engagement Rate</div></div>
-      <div class="glass stat"><div class="big">—</div><div class="cap">Genesis List</div></div>
-    </div>
-    <p style="margin:14px 8px 0;font-size:12.5px;color:var(--muted-slate);letter-spacing:.04em">Tiles activate when channels connect. Weekly performance reports are committed to this repository every Friday.</p>
-  </section>
-
-  <section id="automations">
-    <div class="sec-head"><h2 class="sec-title">Automations</h2><span class="meta">08 / Operations</span></div>
-    <div class="glass">
-      <div class="auto-row"><div><div class="auto-name">Weekly Content Batch — Mondays</div><div class="auto-desc">A phase-aligned batch of posts, stories, captions and hashtags is generated and committed to this repo for review.</div></div><span class="status">Active</span></div>
-      <div class="auto-row"><div><div class="auto-name">Weekly Analytics Report — Fridays</div><div class="auto-desc">Performance pulled from every connected channel, committed as a report, and this page is updated.</div></div><span class="status status-off">Arms on connect</span></div>
-      <div class="auto-row"><div><div class="auto-name">Countdown Markers — Phase IV</div><div class="auto-desc">Daily 5 · 4 · 3 · 2 · 1 marker content generated for the final week before the doors open on 11.07.</div></div><span class="status status-off">Scheduled</span></div>
-      <div class="auto-row"><div><div class="auto-name">The Doors Sequence — Nov 7</div><div class="auto-desc">Launch-day reveal package prepared in advance: the story, the visuals, the announcement sequence.</div></div><span class="status status-off">Scheduled</span></div>
+  <section id="content">
+    <div class="sec-head"><h2 class="sec-title">Content Pipeline</h2><span class="meta">idea → draft → ready → scheduled → published</span></div>
+    <div class="glass card">
+      <div class="pipeline-row" id="pipeline-chips"></div>
+      <div class="table-wrap" style="margin-top:18px">
+        <table>
+          <thead><tr><th>Up Next</th><th>Platform</th><th>Pillar</th><th>Status</th><th>Date</th></tr></thead>
+          <tbody id="upcoming-rows"><tr><td colspan="5" class="empty">Loading… <span class="loading-dot"></span></td></tr></tbody>
+        </table>
+      </div>
     </div>
   </section>
 
   <footer>
     <span class="meta">FORTREX FX — Where Traders Rise</span>
-    <span class="meta">Black crystal / beveled gold / controlled refraction</span>
+    <span class="meta">Live data · base44 engine · doors open 11.07</span>
   </footer>
-
 </div>
 
+<script src="assets/nav.js"></script>
 <script>
-(function(){
-  var target = new Date("2026-11-07T00:00:00+05:30").getTime();
-  function pad(n){return n<10?"0"+n:n}
-  function tick(){
-    var d = target - Date.now();
-    if(d < 0){ document.getElementById("countdown").innerHTML = '<div class="tile"><div class="num">—</div><div class="unit">The doors are open</div></div>'; return; }
-    document.getElementById("cd-d").textContent = pad(Math.floor(d/86400000));
-    document.getElementById("cd-h").textContent = pad(Math.floor((d%86400000)/3600000));
-    document.getElementById("cd-m").textContent = pad(Math.floor((d%3600000)/60000));
-    document.getElementById("cd-s").textContent = pad(Math.floor((d%60000)/1000));
+renderNav("dashboard");
+const PLATFORM_META = {
+  "Instagram": "IG", "X": "X", "LinkedIn": "IN", "Facebook": "FB", "TikTok": "TT", "Discord": "DC", "Site Visitors": "WEB"
+};
+
+async function refresh() {
+  const d = await callApi("get_dashboard");
+  if (!d.ok) {
+    document.querySelectorAll(".kpi .big").forEach(e => e.textContent = "—");
+    document.getElementById("last-sync").textContent = "API offline";
+    return;
   }
-  tick(); setInterval(tick, 1000);
-})();
+  document.getElementById("last-sync").textContent = "live · synced " + new Date(d.generated_at).toLocaleTimeString();
+
+  document.getElementById("kpi-leads").textContent = d.leads.total;
+  document.getElementById("kpi-leads-week").textContent = "+" + d.leads.this_week + " this week";
+  document.getElementById("kpi-leads-week").className = "delta " + (d.leads.this_week > 0 ? "up" : "flat");
+
+  document.getElementById("kpi-audience").textContent = d.audience.total_followers.toLocaleString();
+  let connected = 0;
+  for (const p in d.audience.platforms) if (d.audience.platforms[p].followers > 0) connected++;
+  document.getElementById("kpi-audience-note").textContent = connected + " platform(s) reporting";
+
+  const flight = d.content.pipeline.Ready + d.content.pipeline.Scheduled;
+  document.getElementById("kpi-flight").textContent = flight;
+  document.getElementById("kpi-flight-note").textContent = d.content.pipeline.Draft + " drafts in review";
+
+  document.getElementById("kpi-published").textContent = d.content.pipeline.Published;
+  document.getElementById("kpi-published-note").textContent = "posts out the door";
+
+  // Platform cards
+  const grid = document.getElementById("platform-grid");
+  grid.innerHTML = Object.entries(d.audience.platforms).map(([name, p]) => {
+    const deltaClass = p.delta > 0 ? "up" : (p.delta < 0 ? "down" : "flat");
+    const deltaSign = p.delta > 0 ? "+" : "";
+    return `<div class="glass platform-card">
+      <div class="p-head"><span class="p-name">${name}</span><span class="meta">${PLATFORM_META[name]}</span></div>
+      <div class="p-num">${(p.followers || 0).toLocaleString()}</div>
+      <div class="p-sub">${p.engagement_rate ? p.engagement_rate + "% eng · " : ""}${p.reach ? p.reach.toLocaleString() + " reach · " : ""}${p.last_updated ? "updated " + p.last_updated : "no data yet"}</div>
+      <div class="delta ${deltaClass}" style="font-size:10.5px">${deltaSign}${p.delta} vs last entry</div>
+      ${sparkline(p.trend)}
+    </div>`;
+  }).join("");
+
+  // Sources
+  const sources = Object.entries(d.leads.by_source).sort((a, b) => b[1] - a[1]);
+  const maxSrc = sources.length ? sources[0][1] : 1;
+  document.getElementById("source-bars").innerHTML = sources.length ? sources.map(([src, n]) => `
+    <div style="margin-bottom:12px">
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:#d8d2c2;margin-bottom:4px"><span>${src}</span><span class="mono" style="color:var(--champagne)">${n}</span></div>
+      <div style="height:8px;border-radius:99px;background:rgba(255,255,255,.05);overflow:hidden"><div style="height:100%;width:${(n / maxSrc) * 100}%;background:linear-gradient(90deg,#80652C,#C9973E,#F2D18A);border-radius:99px"></div></div>
+    </div>`).join("") : '<div class="empty">No leads yet — first one lands here.</div>';
+
+  // Recent leads
+  document.getElementById("lead-rows").innerHTML = d.leads.recent.length ? d.leads.recent.map(l => `
+    <tr><td>${l.name || "—"}<br><span class="meta" style="letter-spacing:.06em">${l.email}</span></td>
+    <td>${l.platform_source || "—"}</td>
+    <td><span class="status">${l.status || "New"}</span></td>
+    <td class="mono" style="font-size:10.5px">${timeAgo(l.created_date)}</td></tr>`).join("")
+    : '<tr><td colspan="4" class="empty">No leads yet — capture the first one, or wire the Genesis List form to this database.</td></tr>';
+
+  // Pipeline
+  document.getElementById("pipeline-chips").innerHTML = ["Idea", "Draft", "Ready", "Scheduled", "Published"].map(s =>
+    `<div class="pipeline-chip"><div class="n">${d.content.pipeline[s] || 0}</div><div class="l">${s}</div></div>`).join("");
+
+  document.getElementById("upcoming-rows").innerHTML = d.content.upcoming.length ? d.content.upcoming.map(p => `
+    <tr><td>${p.title}</td><td>${p.platform}</td><td>${p.pillar || "—"}</td>
+    <td><span class="status ${p.status === "Scheduled" ? "green" : ""}">${p.status}</span></td>
+    <td class="mono" style="font-size:10.5px">${p.scheduled_date || "—"}</td></tr>`).join("")
+    : '<tr><td colspan="5" class="empty">Nothing scheduled yet — the Monday batch automation fills this queue.</td></tr>';
+}
+
+async function saveLead() {
+  const email = document.getElementById("lead-email").value.trim();
+  const msg = document.getElementById("lead-msg");
+  if (!email) { msg.textContent = "Email is required"; msg.className = "form-msg err"; return; }
+  msg.textContent = "Saving…"; msg.className = "form-msg";
+  const r = await callApi("add_lead", {
+    name: document.getElementById("lead-name").value.trim(),
+    email,
+    platform_source: document.getElementById("lead-source").value,
+    notes: document.getElementById("lead-notes").value.trim(),
+    phase: "The Mark"
+  });
+  if (r.ok) {
+    msg.textContent = "Lead captured ✓"; msg.className = "form-msg ok";
+    ["lead-name", "lead-email", "lead-notes"].forEach(id => document.getElementById(id).value = "");
+    refresh();
+  } else { msg.textContent = "Failed: " + (r.error || "unknown"); msg.className = "form-msg err"; }
+}
+
+async function saveSnapshot() {
+  const msg = document.getElementById("snap-msg");
+  const date = document.getElementById("snap-date").value || new Date().toISOString().slice(0, 10);
+  msg.textContent = "Saving…"; msg.className = "form-msg";
+  const r = await callApi("add_snapshot", {
+    platform: document.getElementById("snap-platform").value,
+    followers: Number(document.getElementById("snap-followers").value) || 0,
+    reach: Number(document.getElementById("snap-reach").value) || 0,
+    engagement_rate: Number(document.getElementById("snap-eng").value) || 0,
+    snapshot_date: date
+  });
+  if (r.ok) {
+    msg.textContent = "Logged ✓"; msg.className = "form-msg ok";
+    ["snap-followers", "snap-reach", "snap-eng"].forEach(id => document.getElementById(id).value = "");
+    refresh();
+  } else { msg.textContent = "Failed: " + (r.error || "unknown"); msg.className = "form-msg err"; }
+}
+
+refresh();
+setInterval(refresh, 60000);
 </script>
 </body>
 </html>

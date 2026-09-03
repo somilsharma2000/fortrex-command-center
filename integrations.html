@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORTREX Command Center — Integrations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body>
+<div class="shell">
+  <div id="app-nav"></div>
+
+  <section id="integrations">
+    <div class="sec-head"><h2 class="sec-title">Integrations — Settings</h2><span class="meta">channels / connect after first publish</span></div>
+    <p style="margin:0 6px 14px;font-size:12.5px;color:var(--warm-muted);line-height:1.8">All channels are pre-provisioned. After your first posts are live, tap <strong style="color:var(--champagne)">Connect</strong> and authorize — publishing, scheduling and analytics arm instantly, and the dashboard's live tiles switch on.</p>
+    <div class="grid g-3">
+      <div class="glass card"><div class="meta">IG</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">Instagram Business</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px">Direct publishing, story scheduling, Insights: reach, impressions, follower growth, per-post engagement. Requires an Instagram Business or Creator account linked to a Facebook Page.</p><div style="display:flex;gap:10px;margin-top:14px;align-items:center;flex-wrap:wrap"><span class="status grey">Ready to connect</span><a class="ghost-btn" href="https://app.base44.com/superagent/6a99d19ce29915c277d5beab">Connect ↗</a></div></div>
+      <div class="glass card"><div class="meta">X</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">X / Twitter</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px">No API connection exists — X runs in manual mode: content batches are generated and committed here, you post them. Pinned Genesis CTA managed alongside.</p><div style="display:flex;gap:10px;margin-top:14px;align-items:center;flex-wrap:wrap"><span class="status grey">Manual mode</span></div></div>
+      <div class="glass card"><div class="meta">IN</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">LinkedIn Page</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px">Company page posting and page analytics: impressions, engagement, follower demographics. Requires admin access to the page.</p><div style="display:flex;gap:10px;margin-top:14px;align-items:center;flex-wrap:wrap"><span class="status grey">Ready to connect</span><a class="ghost-btn" href="https://app.base44.com/superagent/6a99d19ce29915c277d5beab">Connect ↗</a></div></div>
+      <div class="glass card"><div class="meta">FB</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">Facebook Page</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px">Page publishing and page-level metrics: views, engagement, follower growth. Works together with the Instagram Business connection.</p><div style="display:flex;gap:10px;margin-top:14px;align-items:center;flex-wrap:wrap"><span class="status grey">Ready to connect</span><a class="ghost-btn" href="https://app.base44.com/superagent/6a99d19ce29915c277d5beab">Connect ↗</a></div></div>
+      <div class="glass card"><div class="meta">TT</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">TikTok</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px">Video publishing and video metrics: views, likes, shares, watch time. For the short-form verticals in the later countdown phases.</p><div style="display:flex;gap:10px;margin-top:14px;align-items:center;flex-wrap:wrap"><span class="status grey">Ready to connect</span><a class="ghost-btn" href="https://app.base44.com/superagent/6a99d19ce29915c277d5beab">Connect ↗</a></div></div>
+      <div class="glass card"><div class="meta">DC</div><h3 class="display" style="font-size:15px;color:var(--ivory);margin-top:6px">Discord — The Citadel</h3><p style="font-size:12px;color:var(--warm-muted);line-height:1.7;margin-top:8px">Community channel ops: invites, early-list engagement, and the reveal-day gathering.</p><div style="display:flex;gap:10px;margin-top:14px;align-items:center;flex-wrap:wrap"><span class="status grey">Ready to connect</span><a class="ghost-btn" href="https://app.base44.com/superagent/6a99d19ce29915c277d5beab">Connect ↗</a></div></div>
+    </div>
+  </section>
+
+  <section id="automations">
+    <div class="sec-head"><h2 class="sec-title">Automations</h2><span class="meta">operations / scheduled</span></div>
+    <div class="glass">
+      <div class="auto-row"><div><div class="auto-name">Weekly Content Batch — Mondays</div><div class="auto-desc">A phase-aligned batch of posts, stories, captions and hashtags generated and committed to the repo for review.</div></div><span class="status">Active</span></div>
+      <div class="auto-row"><div><div class="auto-name">Lead &amp; Audience Tracker — Daily</div><div class="auto-desc">Scans the lead database, flags new Genesis signups and audience moves, and reports the day's numbers to you.</div></div><span class="status">Active</span></div>
+      <div class="auto-row"><div><div class="auto-name">Weekly Analytics Report — Fridays</div><div class="auto-desc">Performance pulled from connected channels, committed as a report to the repo, dashboard updated.</div></div><span class="status grey">Arms on connect</span></div>
+      <div class="auto-row"><div><div class="auto-name">Countdown Markers — Phase IV</div><div class="auto-desc">Daily 5 · 4 · 3 · 2 · 1 marker content for the final week before the doors open on 11.07.</div></div><span class="status grey">Scheduled</span></div>
+      <div class="auto-row"><div><div class="auto-name">The Doors Sequence — Nov 7</div><div class="auto-desc">Launch-day reveal package prepared in advance: the story, the visuals, the announcement sequence.</div></div><span class="status grey">Scheduled</span></div>
+    </div>
+  </section>
+
+  <section id="capture-api">
+    <div class="sec-head"><h2 class="sec-title">Lead Capture Endpoint</h2><span class="meta">wire any form to the database</span></div>
+    <div class="glass card">
+      <p style="font-size:12.5px;color:var(--warm-muted);line-height:1.8">Any form — the Genesis List on your public site, a Typeform, a landing page — can write leads straight into this database with one POST request:</p>
+      <pre class="mono" style="margin-top:14px;font-size:11px;color:var(--champagne);background:rgba(0,0,0,.35);border:1px solid var(--glass-border);border-radius:12px;padding:16px;overflow-x:auto;line-height:1.8">POST https://miro-77d5beab.base44.app/functions/commandCenterApi
+{
+  "action": "add_lead",
+  "name": "Trader",
+  "email": "trader@example.com",
+  "platform_source": "Instagram",
+  "phase": "The Mark"
+}</pre>
+    </div>
+  </section>
+
+  <footer>
+    <span class="meta">FORTREX FX — Where Traders Rise</span>
+    <span class="meta">Live data · base44 engine · doors open 11.07</span>
+  </footer>
+</div>
+<script src="assets/nav.js"></script>
+<script>renderNav("integrations");</script>
+</body>
+</html>
