@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORTREX COMMAND CENTER — Where Traders Rise</title>
+<meta name="description" content="FORTREX FX social media command center. Obsidian. Faceted. Rising.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --obsidian-950:#050509; --obsidian-900:#08080B; --ink-800:#101014; --graphite-700:#17171B;
+  --deep-gold:#80652C; --gold:#C9973E; --champagne:#F2D18A; --ivory:#FFF7E6;
+  --warm-muted:#A99B7A; --muted-slate:#766C57; --steel:#AAB4BD; --cyan:#54D7D0; --emerald:#7DE3B3;
+  --gold-gradient:linear-gradient(135deg,#F2D18A 0%,#C9973E 52%,#80652C 100%);
+  --glass-bg:rgba(18,18,22,.68); --glass-border:rgba(255,255,255,.12);
+  --radius-card:22px; --radius-sm:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif; color:#f0eadc; background:var(--obsidian-950);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,151,62,.14), transparent 60%),
+    radial-gradient(circle at 12% 30%, rgba(84,215,208,.05), transparent 40%),
+    radial-gradient(circle at 88% 65%, rgba(125,227,179,.04), transparent 40%),
+    radial-gradient(1px 1px at 20% 15%, rgba(255,247,230,.25) 50%, transparent 51%),
+    radial-gradient(1px 1px at 70% 8%, rgba(255,247,230,.2) 50%, transparent 51%),
+    radial-gradient(1px 1px at 40% 45%, rgba(255,247,230,.15) 50%, transparent 51%),
+    radial-gradient(1px 1px at 85% 40%, rgba(255,247,230,.2) 50%, transparent 51%),
+    radial-gradient(1px 1px at 10% 70%, rgba(255,247,230,.15) 50%, transparent 51%),
+    radial-gradient(1px 1px at 55% 85%, rgba(255,247,230,.18) 50%, transparent 51%),
+    radial-gradient(1px 1px at 92% 88%, rgba(255,247,230,.15) 50%, transparent 51%);
+  background-attachment:fixed;
+  min-height:100vh; padding:24px 20px 64px;
+}
+.shell{max-width:1240px;margin:0 auto}
+.display{font-family:'Space Grotesk',sans-serif}
+.mono{font-family:'JetBrains Mono',monospace}
+.glass{
+  background:var(--glass-bg);
+  -webkit-backdrop-filter:blur(20px) saturate(120%); backdrop-filter:blur(20px) saturate(120%);
+  border:1px solid var(--glass-border); border-radius:var(--radius-card);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.14), 0 20px 48px rgba(0,0,0,.45);
+  position:relative;
+}
+.glass-hero::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:100%; border-radius:var(--radius-card); pointer-events:none;
+  background:radial-gradient(circle at 50% 0%, rgba(242,209,138,.12), transparent 55%);
+}
+.label{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--champagne)}
+.meta{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-slate)}
+.gold-text{background:var(--gold-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gold-btn{
+  display:inline-flex;align-items:center;gap:8px;background:var(--gold-gradient);color:#0a0a0a;
+  font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  padding:12px 22px;border-radius:999px;box-shadow:0 8px 28px rgba(201,151,62,.35);transition:transform .2s, box-shadow .2s;
+}
+.gold-btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(201,151,62,.45)}
+.ghost-btn{
+  display:inline-flex;align-items:center;gap:8px;color:var(--ivory);text-decoration:none;
+  font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:12px 20px;border-radius:999px;border:1px solid var(--glass-border);
+  background:rgba(255,255,255,.04);transition:border-color .2s;
+}
+.ghost-btn:hover{border-color:rgba(242,209,138,.5)}
+header.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px;flex-wrap:wrap}
+.nav-brand{display:flex;align-items:center;gap:14px}
+.crown{height:44px;width:auto;filter:drop-shadow(0 4px 18px rgba(242,209,138,.35))}
+.nav-wordmark{font-family:'Space Grotesk';font-weight:700;letter-spacing:.18em;font-size:18px;color:var(--ivory)}
+.nav-wordmark span{color:var(--gold)}
+.nav-sub{margin-top:3px;font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:var(--warm-muted)}
+section{margin-top:28px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;margin:0 8px 16px}
+h2.sec-title{font-family:'Space Grotesk';font-size:26px;font-weight:700;color:var(--ivory)}
+.hero{padding:72px 32px;text-align:center;overflow:hidden}
+.hero .crown-big{height:110px;margin:0 auto 28px;filter:drop-shadow(0 10px 40px rgba(242,209,138,.4))}
+h1.hero-title{font-family:'Space Grotesk';font-weight:700;font-size:clamp(40px,7vw,84px);line-height:.98;color:var(--ivory);text-transform:uppercase;letter-spacing:.01em}
+.hero p.lead{max-width:640px;margin:26px auto 0;color:var(--warm-muted);font-size:16px;line-height:1.85}
+.hero .label{display:inline-block;margin-bottom:20px}
+.grid{display:grid;gap:18px}
+.g-2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.g-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{padding:26px}
+.card p{color:var(--warm-muted);font-size:13.5px;line-height:1.8;margin-top:10px}
+.card h3{font-family:'Space Grotesk';font-size:17px;font-weight:700;color:var(--ivory);letter-spacing:.02em}
+.card .num{font-family:'JetBrains Mono';font-size:11px;color:var(--gold);letter-spacing:.16em}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+.swatch{border-radius:14px;border:1px solid var(--glass-border);overflow:hidden}
+.swatch .chip{height:56px}
+.swatch .info{padding:10px 12px;background:rgba(8,8,11,.8)}
+.swatch .name{font-size:11.5px;font-weight:600;color:#f0eadc}
+.swatch .val{font-family:'JetBrains Mono';font-size:9.5px;text-transform:uppercase;color:var(--muted-slate);margin-top:2px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+th{font-size:9.5px;text-transform:uppercase;letter-spacing:.18em;color:var(--muted-slate);text-align:left;padding:14px 16px;border-bottom:1px solid var(--glass-border);font-weight:700}
+td{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.05);color:#d8d2c2;vertical-align:top}
+tr:last-child td{border-bottom:none}
+td .day{font-family:'Space Grotesk';font-weight:700;color:var(--ivory)}
+.status{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;padding:4px 10px;border-radius:999px;background:rgba(201,151,62,.14);color:var(--champagne);border:1px solid rgba(201,151,62,.3)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{font-family:'JetBrains Mono';font-size:11px;color:var(--champagne);background:rgba(201,151,62,.1);border:1px solid rgba(201,151,62,.22);padding:5px 11px;border-radius:999px}
+.pillar-mark{height:34px;width:34px;border-radius:10px;border:1px solid rgba(242,209,138,.35);background:rgba(201,151,62,.12);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono';font-size:12px;color:var(--champagne);margin-bottom:14px}
+footer{margin-top:48px;padding:24px;border-top:1px solid rgba(201,151,62,.15);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:640px){.hero{padding:48px 20px} .card{padding:20px}}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <header class="nav glass">
+    <div class="nav-brand">
+      <img src="brand-kit/fortrex-crown.png" alt="FORTREX crown" class="crown">
+      <div>
+        <div class="nav-wordmark">FORTREX <span>FX</span></div>
+        <div class="nav-sub">Command Center / 001</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="ghost-btn" href="https://somilsharma2000.github.io/fortrexfxmanusgold/">Public Site ↗</a>
+      <a class="gold-btn" href="#calendar">View Calendar</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="glass glass-hero hero">
+      <img src="brand-kit/fortrex-crown.png" alt="Faceted translucent FORTREX crown" class="crown-big">
+      <div class="label">— Command Center / 001 —</div>
+      <h1 class="hero-title display">Where Traders <span class="gold-text">Rise.</span></h1>
+      <p class="lead">The central hub for FORTREX FX social operations. Obsidian surfaces, beveled gold, and one voice — institutional confidence, never hype.</p>
+    </div>
+  </section>
+
+  <section id="brand">
+    <div class="sec-head"><h2 class="sec-title">Brand Material System</h2><span class="meta">01 / Identity</span></div>
+    <div class="glass card">
+      <div class="swatches">
+        <div class="swatch"><div class="chip" style="background:#050509"></div><div class="info"><div class="name">Obsidian 950</div><div class="val">#050509</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#101014"></div><div class="info"><div class="name">Ink 800</div><div class="val">#101014</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#17171B"></div><div class="info"><div class="name">Graphite 700</div><div class="val">#17171B</div></div></div>
+        <div class="swatch"><div class="chip" style="background:linear-gradient(135deg,#F2D18A,#C9973E 52%,#80652C)"></div><div class="info"><div class="name">Beveled Gold</div><div class="val">#C9973E</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#F2D18A"></div><div class="info"><div class="name">Champagne</div><div class="val">#F2D18A</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#FFF7E6"></div><div class="info"><div class="name">Ivory</div><div class="val">#FFF7E6</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#A99B7A"></div><div class="info"><div class="name">Warm Muted</div><div class="val">#A99B7A</div></div></div>
+        <div class="swatch"><div class="chip" style="background:rgba(255,255,255,.045)"></div><div class="info"><div class="name">Smoke Glass</div><div class="val">4.5% white</div></div></div>
+      </div>
+      <p style="margin-top:18px">60–30–10 rule: obsidian canvas, structural glass and graphite, gold reserved for identity and action. Display type is Space Grotesk, interface is Inter, metadata is JetBrains Mono.</p>
+    </div>
+  </section>
+
+  <section id="pillars">
+    <div class="sec-head"><h2 class="sec-title">Content Pillars</h2><span class="meta">02 / Genesis Phase</span></div>
+    <div class="grid g-3">
+      <div class="glass card"><div class="pillar-mark">01</div><h3>The Tease</h3><p>Cryptic countdown and LAUNCH / 001 marker reveals. Curiosity without revealing mechanics.</p></div>
+      <div class="glass card"><div class="pillar-mark">02</div><h3>Trader Mindset</h3><p>Minimal quote cards on discipline, patience, and timing. One idea per surface.</p></div>
+      <div class="glass card"><div class="pillar-mark">03</div><h3>Exclusivity</h3><p>The first names will know before everyone else. Controlled access, earned status.</p></div>
+      <div class="glass card"><div class="pillar-mark">04</div><h3>Brand Craft</h3><p>Crown material studies, gold-on-obsidian textures, glass edge light close-ups.</p></div>
+      <div class="glass card"><div class="pillar-mark">05</div><h3>List Building</h3><p>Genesis List call-to-action posts with a clear reason to join now.</p></div>
+      <div class="glass card"><div class="pillar-mark">—</div><h3>Never</h3><p>Signals. Deposits. Private. Guaranteed returns. Hype-bro language. Emojis as decoration.</p></div>
+    </div>
+  </section>
+
+  <section id="calendar">
+    <div class="sec-head"><h2 class="sec-title">Week 01 Calendar</h2><span class="meta">03 / Launch</span></div>
+    <div class="glass table-wrap">
+      <table>
+        <thead><tr><th>Day</th><th>Platform</th><th>Pillar</th><th>Concept</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><span class="day">Mon</span></td><td>IG + X</td><td>The Tease</td><td>LAUNCH / 001 marker reveal</td><td><span class="status">Draft</span></td></tr>
+          <tr><td><span class="day">Tue</span></td><td>IG Story</td><td>Brand Craft</td><td>Crown texture close-up, gold edge light</td><td><span class="status">Draft</span></td></tr>
+          <tr><td><span class="day">Wed</span></td><td>IG + LinkedIn</td><td>Trader Mindset</td><td>Being early is a skill.</td><td><span class="status">Draft</span></td></tr>
+          <tr><td><span class="day">Thu</span></td><td>X</td><td>Exclusivity</td><td>The first names will know.</td><td><span class="status">Draft</span></td></tr>
+          <tr><td><span class="day">Fri</span></td><td>IG + X</td><td>List Building</td><td>Genesis List CTA + launch marker</td><td><span class="status">Draft</span></td></tr>
+          <tr><td><span class="day">Sat</span></td><td>IG Story</td><td>Trader Mindset</td><td>Patience is the edge.</td><td><span class="status">Draft</span></td></tr>
+          <tr><td><span class="day">Sun</span></td><td>IG</td><td>Brand Craft</td><td>Obsidian / gold material study</td><td><span class="status">Draft</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="hashtags">
+    <div class="sec-head"><h2 class="sec-title">Hashtag Banks</h2><span class="meta">04 / Reach</span></div>
+    <div class="grid g-2">
+      <div class="glass card"><h3>Core — every post</h3><div class="tags"><span class="tag">#FortrexFX</span><span class="tag">#WhereTradersRise</span><span class="tag">#GenesisEarlyAccess</span></div><p>2–3 core tags on every asset. These build the brand's own surface.</p></div>
+      <div class="glass card"><h3>Trading reach</h3><div class="tags"><span class="tag">#TradingCommunity</span><span class="tag">#ForexTrader</span><span class="tag">#TraderLifestyle</span><span class="tag">#TradingMindset</span><span class="tag">#ForexTrading</span><span class="tag">#DayTrading</span><span class="tag">#PriceAction</span><span class="tag">#PropFirm</span></div><p>Max 10–12 total per post, tiered big to niche.</p></div>
+    </div>
+  </section>
+
+  <section id="formats">
+    <div class="sec-head"><h2 class="sec-title">Platform Formats</h2><span class="meta">05 / Craft</span></div>
+    <div class="grid g-3">
+      <div class="glass card"><div class="num">IG / 1:1</div><h3>Feed</h3><p>Headline dominant, max 8 words, uppercase display. Obsidian canvas, controlled glow, gold CTA only on list-building posts.</p></div>
+      <div class="glass card"><div class="num">STORY / 9:16</div><h3>Stories</h3><p>Single idea, gold button at the bottom, seventy percent negative space.</p></div>
+      <div class="glass card"><div class="num">X / 16:9</div><h3>Manifesto</h3><p>Text-only declarations in the same voice. Pinned post carries the Genesis CTA.</p></div>
+      <div class="glass card"><div class="num">IN</div><h3>LinkedIn</h3><p>Same visual language, slightly more explanatory copy, institutional tone.</p></div>
+      <div class="glass card"><div class="num">YT / 16:9</div><h3>Thumbnail</h3><p>Two to four word uppercase hook, charcoal plus one gold accent.</p></div>
+      <div class="glass card"><div class="num">ALT</div><h3>Accessibility</h3><p>Every visual ships with alt text. Premium means everyone gets in.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="meta">FORTREX FX — Where Traders Rise</span>
+    <span class="meta">Black crystal / beveled gold / controlled refraction</span>
+  </footer>
+
+</div>
+</body>
+</html>
