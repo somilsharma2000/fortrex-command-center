@@ -17,11 +17,16 @@
   <section id="kpis">
     <div class="sec-head"><h2 class="sec-title">Business Pulse</h2><span class="meta" id="last-sync">syncing…</span></div>
     <div class="grid g-4">
-      <div class="glass kpi"><div class="cap">Genesis Leads — Total</div><div class="big" id="kpi-leads">—</div><div class="delta flat" id="kpi-leads-week">—</div></div>
+      <div class="glass kpi hero-kpi"><div class="cap">Genesis Leads — Total</div><div class="big" id="kpi-leads">—</div><div class="delta flat" id="kpi-leads-week">—</div><div class="spark-slot" id="kpi-leads-spark"></div></div>
       <div class="glass kpi"><div class="cap">Total Audience</div><div class="big" id="kpi-audience">—</div><div class="delta flat" id="kpi-audience-note">—</div></div>
       <div class="glass kpi"><div class="cap">Content In Flight</div><div class="big" id="kpi-flight">—</div><div class="delta flat" id="kpi-flight-note">—</div></div>
       <div class="glass kpi"><div class="cap">Published To Date</div><div class="big" id="kpi-published">—</div><div class="delta flat" id="kpi-published-note">—</div></div>
     </div>
+  </section>
+
+  <section id="phases">
+    <div class="sec-head"><h2 class="sec-title">Countdown Phases</h2><span class="meta" id="phase-caption">—</span></div>
+    <div class="phase-strip" id="phase-strip"></div>
   </section>
 
   <section id="audience">
@@ -98,6 +103,33 @@
 <script src="assets/nav.js"></script>
 <script>
 renderNav("dashboard");
+const PLATFORM_TARGETS = { "Instagram": "≥1% ER", "TikTok": "≥3% ER", "LinkedIn": "≥1% ER", "X": "≥0.15% ER", "Facebook": "≥0.2% ER" };
+const PHASES = [
+  { label: "I · The Mark", start: "2026-09-07", end: "2026-09-27" },
+  { label: "II · The Feeling", start: "2026-09-28", end: "2026-10-18" },
+  { label: "III · The Count", start: "2026-10-19", end: "2026-11-01" },
+  { label: "IV · The Doors", start: "2026-11-02", end: "2026-11-07" }
+];
+function renderPhases() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const t = today.getTime();
+  let activeIdx = -1, launched = false;
+  PHASES.forEach((p, i) => {
+    const s = new Date(p.start + "T00:00:00+05:30").getTime();
+    const e = new Date(p.end + "T00:00:00+05:30").getTime();
+    if (t >= s && t <= e) activeIdx = i;
+    if (t > e) launched = true;
+  });
+  document.getElementById("phase-strip").innerHTML = PHASES.map((p, i) => `
+    <div class="phase-seg${i === activeIdx ? " active" : (t < new Date(p.start + "T00:00:00+05:30").getTime() ? " upcoming" : "")}">
+      <div class="ph-l">${p.label}</div>
+      <div class="ph-d">${p.start.slice(5).replace("-", ".")} → ${p.end.slice(5).replace("-", ".")}</div>
+    </div>`).join("");
+  const daysLeft = Math.ceil((new Date("2026-11-07T00:00:00+05:30").getTime() - Date.now()) / 86400000);
+  document.getElementById("phase-caption").textContent = activeIdx === -1
+    ? (launched ? "the doors are open" : "pre-flight · " + daysLeft + " days to launch · The Mark begins Sep 7")
+    : "active: " + PHASES[activeIdx].label + " · " + daysLeft + " days to launch";
+}
 const PLATFORM_META = {
   "Instagram": "IG", "X": "X", "LinkedIn": "IN", "Facebook": "FB", "TikTok": "TT", "Discord": "DC", "Site Visitors": "WEB"
 };
@@ -112,8 +144,10 @@ async function refresh() {
   document.getElementById("last-sync").textContent = "live · synced " + new Date(d.generated_at).toLocaleTimeString();
 
   document.getElementById("kpi-leads").textContent = d.leads.total;
-  document.getElementById("kpi-leads-week").textContent = "+" + d.leads.this_week + " this week";
-  document.getElementById("kpi-leads-week").className = "delta " + (d.leads.this_week > 0 ? "up" : "flat");
+  const lw = document.getElementById("kpi-leads-week");
+  lw.textContent = (d.leads.this_week > 0 ? "+" : "") + d.leads.this_week + " this week";
+  lw.className = "delta " + (d.leads.this_week > 0 ? "up arrow-up" : "flat arrow-flat");
+  document.getElementById("kpi-leads-spark").innerHTML = sparkline(d.leads.trend || []);
 
   document.getElementById("kpi-audience").textContent = d.audience.total_followers.toLocaleString();
   let connected = 0;
@@ -130,12 +164,14 @@ async function refresh() {
   // Platform cards
   const grid = document.getElementById("platform-grid");
   grid.innerHTML = Object.entries(d.audience.platforms).map(([name, p]) => {
-    const deltaClass = p.delta > 0 ? "up" : (p.delta < 0 ? "down" : "flat");
+    const deltaClass = p.delta > 0 ? "up arrow-up" : (p.delta < 0 ? "down arrow-down" : "flat arrow-flat");
     const deltaSign = p.delta > 0 ? "+" : "";
+    const target = PLATFORM_TARGETS[name];
+    const engNote = p.engagement_rate ? p.engagement_rate + "% eng" : "";
     return `<div class="glass platform-card">
-      <div class="p-head"><span class="p-name">${name}</span><span class="meta">${PLATFORM_META[name]}</span></div>
+      <div class="p-head"><span class="p-name">${name}</span><span style="display:flex;gap:6px;align-items:center">${target ? '<span class="bench-chip">target ' + target + '</span>' : ""}<span class="meta">${PLATFORM_META[name]}</span></span></div>
       <div class="p-num">${(p.followers || 0).toLocaleString()}</div>
-      <div class="p-sub">${p.engagement_rate ? p.engagement_rate + "% eng · " : ""}${p.reach ? p.reach.toLocaleString() + " reach · " : ""}${p.last_updated ? "updated " + p.last_updated : "no data yet"}</div>
+      <div class="p-sub">${engNote ? engNote + " · " : ""}${p.reach ? p.reach.toLocaleString() + " reach · " : ""}${p.last_updated ? "updated " + p.last_updated : "no data yet"}</div>
       <div class="delta ${deltaClass}" style="font-size:10.5px">${deltaSign}${p.delta} vs last entry</div>
       ${sparkline(p.trend)}
     </div>`;
@@ -206,6 +242,7 @@ async function saveSnapshot() {
   } else { msg.textContent = "Failed: " + (r.error || "unknown"); msg.className = "form-msg err"; }
 }
 
+renderPhases();
 refresh();
 setInterval(refresh, 60000);
 </script>

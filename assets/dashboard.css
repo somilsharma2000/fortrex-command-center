@@ -105,4 +105,19 @@ tr:last-child td{border-bottom:none}
 footer{margin-top:40px;padding:22px;border-top:1px solid rgba(201,151,62,.15);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .loading-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--champagne);animation:pulse 1.2s infinite ease-in-out}
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+/* --- readability upgrades --- */
+.kpi .big,.p-num,.count-strip .tile{font-variant-numeric:tabular-nums}
+.kpi.hero-kpi .big{font-size:46px;background:var(--gold-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpi .spark-slot{margin-top:10px}
+.kpi .spark-slot svg{height:30px}
+.arrow-up::before{content:"▲ ";font-size:8px} .arrow-down::before{content:"▼ ";font-size:8px} .arrow-flat::before{content:"— "}
+.phase-strip{display:flex;gap:8px;flex-wrap:wrap}
+.phase-seg{flex:1;min-width:150px;text-align:center;padding:12px 8px;border-radius:12px;border:1px solid var(--glass-border);background:rgba(255,255,255,.03)}
+.phase-seg.active{border-color:rgba(242,209,138,.5);background:rgba(201,151,62,.12)}
+.phase-seg.upcoming{border-style:dashed}
+.phase-seg .ph-l{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--muted-slate)}
+.phase-seg.active .ph-l{color:var(--champagne)}
+.phase-seg .ph-d{font-family:'JetBrains Mono';font-size:9px;color:var(--muted-slate);margin-top:5px}
+.phase-seg.active .ph-d{color:var(--emerald)}
+.bench-chip{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:999px;background:rgba(125,227,179,.08);color:var(--emerald);border:1px solid rgba(125,227,179,.25)}
 @media(max-width:640px){.card{padding:18px}}
