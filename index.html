@@ -107,6 +107,14 @@ footer{margin-top:48px;padding:24px;border-top:1px solid rgba(201,151,62,.15);di
 .count .tile{min-width:92px;padding:16px 10px;border-radius:14px;border:1px solid var(--glass-border);background:rgba(255,255,255,.045)}
 .count .num{font-family:'JetBrains Mono';font-size:26px;color:var(--champagne)}
 .count .unit{margin-top:6px;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-slate)}
+.status-off{background:rgba(255,255,255,.05);color:var(--muted-slate);border:1px solid var(--glass-border)}
+.stat{padding:22px;text-align:center}
+.stat .big{font-family:'Space Grotesk';font-size:30px;font-weight:700;color:var(--ivory)}
+.stat .cap{margin-top:8px;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-slate)}
+.auto-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 22px;border-bottom:1px solid rgba(255,255,255,.05);flex-wrap:wrap}
+.auto-row:last-child{border-bottom:none}
+.auto-name{font-family:'Space Grotesk';font-weight:700;color:var(--ivory);font-size:15px}
+.auto-desc{font-size:12.5px;color:var(--warm-muted);margin-top:4px;line-height:1.7}
 @media(max-width:640px){.hero{padding:48px 20px} .card{padding:20px}}
 </style>
 </head>
@@ -207,6 +215,40 @@ footer{margin-top:48px;padding:24px;border-top:1px solid rgba(201,151,62,.15);di
       <div class="glass card"><div class="num">IN</div><h3>LinkedIn</h3><p>Same visual language, slightly more explanatory copy, institutional tone.</p></div>
       <div class="glass card"><div class="num">YT / 16:9</div><h3>Thumbnail</h3><p>Two to four word uppercase hook, charcoal plus one gold accent.</p></div>
       <div class="glass card"><div class="num">ALT</div><h3>Accessibility</h3><p>Every visual ships with alt text. Premium means everyone gets in.</p></div>
+    </div>
+  </section>
+
+
+  <section id="socials">
+    <div class="sec-head"><h2 class="sec-title">Social Connections</h2><span class="meta">06 / Channels</span></div>
+    <div class="grid g-3">
+      <div class="glass card"><div class="num">IG</div><h3>Instagram Business</h3><p>Direct publishing, story scheduling, Insights: reach, impressions, follower growth, per-post engagement. Requires an Instagram Business or Creator account linked to a Facebook Page.</p><div style="margin-top:14px"><span class="status status-off">Not connected</span></div></div>
+      <div class="glass card"><div class="num">X</div><h3>X / Twitter</h3><p>No API connection available — X runs in manual mode: content batch is generated and committed here, you post it. Pinned Genesis CTA managed alongside.</p><div style="margin-top:14px"><span class="status status-off">Manual mode</span></div></div>
+      <div class="glass card"><div class="num">IN</div><h3>LinkedIn</h3><p>Company page posting and page analytics: impressions, engagement, follower demographics. Requires admin access to the page.</p><div style="margin-top:14px"><span class="status status-off">Not connected</span></div></div>
+      <div class="glass card"><div class="num">FB</div><h3>Facebook Pages</h3><p>Page publishing and page-level metrics: views, engagement, follower growth. Works together with the Instagram Business connection.</p><div style="margin-top:14px"><span class="status status-off">Not connected</span></div></div>
+      <div class="glass card"><div class="num">TT</div><h3>TikTok</h3><p>Video publishing and video metrics: views, likes, shares, watch time. For the short-form verticals in the later countdown phases.</p><div style="margin-top:14px"><span class="status status-off">Not connected</span></div></div>
+      <div class="glass card"><div class="num">DC</div><h3>Discord</h3><p>The Citadel community channel. Invites, community building, and early-list member engagement ahead of the reveal.</p><div style="margin-top:14px"><span class="status status-off">Not connected</span></div></div>
+    </div>
+  </section>
+
+  <section id="analytics">
+    <div class="sec-head"><h2 class="sec-title">Analytics</h2><span class="meta">07 / Signal</span></div>
+    <div class="grid g-3">
+      <div class="glass stat"><div class="big">—</div><div class="cap">Followers</div></div>
+      <div class="glass stat"><div class="big">—</div><div class="cap">Weekly Reach</div></div>
+      <div class="glass stat"><div class="big">—</div><div class="cap">Engagement Rate</div></div>
+      <div class="glass stat"><div class="big">—</div><div class="cap">Genesis List</div></div>
+    </div>
+    <p style="margin:14px 8px 0;font-size:12.5px;color:var(--muted-slate);letter-spacing:.04em">Tiles activate when channels connect. Weekly performance reports are committed to this repository every Friday.</p>
+  </section>
+
+  <section id="automations">
+    <div class="sec-head"><h2 class="sec-title">Automations</h2><span class="meta">08 / Operations</span></div>
+    <div class="glass">
+      <div class="auto-row"><div><div class="auto-name">Weekly Content Batch — Mondays</div><div class="auto-desc">A phase-aligned batch of posts, stories, captions and hashtags is generated and committed to this repo for review.</div></div><span class="status">Active</span></div>
+      <div class="auto-row"><div><div class="auto-name">Weekly Analytics Report — Fridays</div><div class="auto-desc">Performance pulled from every connected channel, committed as a report, and this page is updated.</div></div><span class="status status-off">Arms on connect</span></div>
+      <div class="auto-row"><div><div class="auto-name">Countdown Markers — Phase IV</div><div class="auto-desc">Daily 5 · 4 · 3 · 2 · 1 marker content generated for the final week before the doors open on 11.07.</div></div><span class="status status-off">Scheduled</span></div>
+      <div class="auto-row"><div><div class="auto-name">The Doors Sequence — Nov 7</div><div class="auto-desc">Launch-day reveal package prepared in advance: the story, the visuals, the announcement sequence.</div></div><span class="status status-off">Scheduled</span></div>
     </div>
   </section>
 
