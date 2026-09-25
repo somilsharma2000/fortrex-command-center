@@ -1,5 +1,15 @@
 # Launch Countdown Plan — Doors Open 11.07.2026
 
+> **⛔ SUPERSEDED BY STEALTH MODE (Sep 26, 2026).** The founder's stealth directive
+> (`../STEALTH-MODE.md`) is total: "no public posts, no public curiosity, no leaks"
+> until Nov 7, 2026 — with zero gradual phases. The phased public-posting plan below
+> predates that directive and was never executed (dates below are stale/in the past).
+> Kept for its creative ideas only. Before any of this fires, the founder must decide:
+> stay fully dark until one loud reveal on Nov 7 (current law), or reopen a gradual
+> pre-launch content phase (would require lifting parts of stealth mode first). Do not
+> schedule or post anything from this file without that explicit decision.
+
+
 Total stealth until launch. We reveal nothing about what FORTREX is. No mechanics, no operations, no explanations. Only curiosity.
 
 ## Phase I — "The Mark" (Weeks 1–3 · Sep 7 – Sep 27)

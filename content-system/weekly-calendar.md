@@ -1,5 +1,15 @@
 # Week 01 Calendar — Phase I "The Mark" (Sep 7 – Sep 13)
 
+> **⛔ SUPERSEDED BY STEALTH MODE (Sep 26, 2026).** The founder's stealth directive
+> (`../STEALTH-MODE.md`) is total: "no public posts, no public curiosity, no leaks"
+> until Nov 7, 2026 — with zero gradual phases. The phased public-posting plan below
+> predates that directive and was never executed (dates below are stale/in the past).
+> Kept for its creative ideas only. Before any of this fires, the founder must decide:
+> stay fully dark until one loud reveal on Nov 7 (current law), or reopen a gradual
+> pre-launch content phase (would require lifting parts of stealth mode first). Do not
+> schedule or post anything from this file without that explicit decision.
+
+
 Posting times tuned to 2025-26 engagement studies (local time, IST):
 
 | Day | Time (IST) | Platform | Pillar | Concept | Status |
