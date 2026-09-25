@@ -188,3 +188,18 @@ One canonical site when the platform launches (until then, the waitlist IS the s
 3. **Content engine live:** Phase II "The Feeling" posts start Sep 28 per launch plan.
 4. **Domain:** buy `fortrex.io` / `fortrex.in` — every shared referral link must carry the brand, not github.io.
 5. **Platform deploy:** VortexFX on the revived backend, admin plane secured, then doors open.
+
+---
+
+## 10. Research Library (Sep 25-26, 2026 — six-track deep research)
+
+All files in `research/`. Read the ones relevant to your task. Non-negotiable items are marked below.
+
+| File | What it contains | Non-negotiable outcome |
+|---|---|---|
+| `research/01-competitor-teardown.md` | FTMO/TFT/Topstep/TradingView/TradingLeagues/TradeX/StockGro teardown: hooks, pricing, trust failures, visual identities; 10 exploitable gaps | We position as the "Sovereign Arena for Proven Skill" — non-custodial, the one thing no prop firm can honestly claim |
+| `research/02-psychology-and-presentation.md` | Ranked hooks, landing wireframe (show/hide per stealth phase), post-signup 60 seconds, trust checklist, anti-patterns | Copy = institutional precision, zero hype; the vault/member-number/referral mechanics stay |
+| `research/03-visual-direction.md` | 7 signature visual moments ranked by wow/effort (Vault Iris, Liquid Gold Volatility Ribbon, etc.), motion spec, social templates, performance rules | Gold-on-obsidian materialism, 1px gold hairlines, no neon, no glassmorphism clichés |
+| `research/04-legal-and-business-setup.md` | Risk map (SAFE/GRAY/AVOID), disclaimer wording patterns, entity + payment rails, GST, IB compliance | **CRITICAL: never promote offshore forex brokers (XM etc.) to Indian residents — FEMA/RBI AVOID. India-facing product = NSE/BSE demo/virtual data only. Geo-block banned states. Global (non-IN) traffic may use offshore-broker model behind geo-fencing. REX must be non-refundable utility points, no fiat cashout.** |
+| `research/05-repo-audit-and-features.md` | Page-by-page audit of all 7 repos, broken bits, feature merge matrix, ranked new features, admin console spec | Merge matrix is the build order for the master site |
+| `research/06-automation-and-ops.md` | Growth automation map (6 modules), founder dashboard spec, skills/tools inventory, phased smart-work sequence to Nov 7 | Welcome/nurture, referral nudges, streak reminders, launch-day sequences run as Base44 workflows |

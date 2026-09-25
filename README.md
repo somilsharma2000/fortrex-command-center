@@ -30,3 +30,6 @@ The central hub for FORTREX FX social media operations. This repo holds everythi
 
 - Public site: https://somilsharma2000.github.io/fortrexfxmanusgold/
 - Source repo: https://github.com/somilsharma2000/fortrexfxmanusgold
+
+## Research Library
+Six-track deep research (competitors, psychology, visual, legal, repo audit, automation) lives in [`research/`](research/) — indexed in FORTREX-MASTER-SPEC.md §10.
