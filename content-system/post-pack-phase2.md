@@ -1,4 +1,5 @@
 # FORTREX — Phase II Post Pack ("The Feeling")
+> **⛔ ON HOLD — STEALTH MODE (Sep 26, 2026): NO public posting until Nov 7. See ../STEALTH-MODE.md. This pack fires at launch, not before.**
 > Ready-to-post batch for Sep 28 – Oct 11, 2026. Voice: quiet institutional confidence. Zero hype, zero profit promises. Every post links to: https://somilsharma2000.github.io/fortrex-website/
 > Design canon for all graphics: obsidian `#050506` ground, gold `#D8A64D`/`#F2D18A` accents, bone white `#FFF7E6` type, crown small and centered, Space Grotesk headlines, JetBrains Mono labels. No neon, no stock photos, no emoji.
 
