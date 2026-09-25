@@ -1,5 +1,7 @@
 # FORTREX COMMAND CENTER
 
+> **Start here:** read [FORTREX-MASTER-SPEC.md](FORTREX-MASTER-SPEC.md) — the single source of truth for brand, funnel, and design language.
+
 **WHERE TRADERS RISE.**
 
 The central hub for FORTREX FX social media operations. This repo holds everything: brand assets, voice rules, content templates, calendars, and the master plan.
