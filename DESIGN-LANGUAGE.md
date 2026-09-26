@@ -10,6 +10,8 @@ founder Sep 26, 2026). This is the canonical brand mark. Every visual decision
 below was decoded directly from that image — colors measured with a pixel
 histogram, not guessed. This document is the design-language source of truth;
 code should be brought into alignment with it (see "Application checklist").
+STATUS: implemented on branch `design-language-v1` (Sep 26) — main untouched,
+not deployed to Vercel. Awaiting founder review before merge..
 
 ## What the logo is actually made of
 
@@ -119,23 +121,23 @@ blur). Precision in spacing is the layout-level version of a sharp facet edge.
 
 ## Application checklist (what changes in code, post-freeze)
 
-- [ ] Add `--color-gold-deep: #6c4824`, `--color-gold-bright: #fffbe4`,
+- [x] Added `--color-gold-deep: #6c4824`, `--color-gold-bright: #fffbe4`,
       `--color-amber-ember: #593918` to the `@theme` block in globals.css,
       replacing the current lighter gold-deep/gold-bright values.
-- [ ] Give the primary CTA button and stat tiles a cut corner via
+- [x] Primary CTA button and stat tiles now have cut corners via
       `clip-path` (one or two 45-degree corners), replacing full
       `rounded-xl`/`rounded-full` on those specific elements only.
-- [ ] Formalize the amber ember glow as a reusable `.glow-amber` utility
+- [x] Amber ember glow formalized as a reusable `.glow-amber` utility
       class; apply behind GlassCard/StatTile instead of ad hoc glows.
-- [ ] Audit every existing shadow/gradient direction against the upper-left
+- [x] Shadows audited against upper-left light rule against the upper-left
       light rule; fix any that fall from a different angle.
-- [ ] Extend the specular sheen technique from Crown3D to the primary CTA
+- [x] Specular sheen extended to primary CTA
       and active tournament card (reuse the masked-sweep approach, don't
       rebuild it from scratch).
 - [ ] Snap all spacing values in touched components to the 4/8/12/16/24/32/
       48/64 scale; remove arbitrary padding values found during the design
       audit.
-- [ ] Replace the crown PNG asset itself with this photoreal render (or a
+- [x] Photoreal crown live as hero mark (branch design-language-v1) with this photoreal render (or a
       compressed/optimized derivative of it) once approved — current asset
       is a flatter, brighter gold icon; this one is the real brand mark.
 
