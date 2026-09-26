@@ -42,7 +42,7 @@
 - spendsRex insufficient_funds vs user_not_found semantics: acceptable, documented.
 
 ## NOTED — deliberately not fixed now (with reasons)
-- OAuth callback routes (Dhan/Kite exchange): brokers are ToS-gated; callbacks can't function without written approval anyway. October MetaApi path supersedes. Exchange functions retained intentionally.
+- ~~OAuth callback routes~~ — EXECUTED Sep 26 (commits 46ad886, 7ecf014) per founder request: /api/broker/callback/{dhan,zerodha} now exist with session+state validation, AES-256-GCM encrypted-at-rest tokens (src/lib/crypto.ts), audit logging, fail-closed redirects, connect-page flash banner. Routes verified live (307 → /signin without session). Kite route stays DORMANT until Zerodha written approval per TOS verdict; Dhan route activates the moment DHAN_* env exists.
 - Scoring loads all participants/trades unbatched: Season Zero is small; batching queued for October scale work.
 - Admin REX idempotency key: admin is TOTP-gated, single operator; queued for admin panel v2.
 - startsAt-must-be-future: admin-only operation, backdating sometimes legitimate; admin panel v2 will add a soft warning.
