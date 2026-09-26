@@ -5,6 +5,7 @@
 
 | Date | Decision | Status | Recorded in |
 |------|----------|--------|-------------|
+| 2026-09-27 | Founder delegated open decisions; working defaults adopted: platform-fee revenue structure (counsel-gated), Season Zero confirmed for Nov 7, trademark filing scheduled Oct (by Oct 24), Dhan-first adapter order | Active | `REVENUE-MODEL.md`, `LAUNCH-PLAN.md` |
 | 2026-09-26 | Full research program launched: 12 domains covering all 180 framework points, saved to `research/universe/01-12` | In flight | `AI-RESEARCH-LOG.md` |
 | 2026-09-26 | REX law: Path A (no cash value, no redemption engine) until counsel's written classification; no REX→₹ rate in code/copy/docs ever, pre-clearance | Active | `REX-ECONOMY.md` |
 | 2026-09-26 | PROG Act 2025 + Rules 2026 verified from primary sources (assent Aug 22 2025; Rules effective May 1 2026); counsel brief upgraded with citations | Active | `REX-ECONOMY.md` §3.5 |
