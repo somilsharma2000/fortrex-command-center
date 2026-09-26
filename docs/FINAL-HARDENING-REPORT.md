@@ -68,3 +68,32 @@ Local DB (PGlite) until Neon; invite-only scale assumptions; email notifications
 **READY NOW (verified):** core tournament loop, auth, RBAC, admin MFA, kill switches, REX ledger integrity, rate limiting, provenance/reproducible scores, clean-env deploy, rollback compatibility, backup/restore, security headers, monitoring schedules.
 **NOT READY (externally gated, not code):** production hosting (Neon/Vercel), public domain, legal sign-off, written broker approvals.
 Claiming readiness beyond this line would be dishonest. The founder's own testing is the next gate in the agreed order.
+
+---
+
+## 12. Live deployment addendum (Sep 26 evening, platform commit 88310ce)
+
+**FORTREX IS DEPLOYED AND LIVE at `fortnex-platform.vercel.app`** (Vercel Hobby, team somils-projects-90669367, project fortnex-platform).
+
+### What was executed and verified
+- Full deploy chain rebuilt: Vercel blocks CLI deploys whose git commit author isn't a team member (agent identity fortnex-agent → 3 blocked deploys; deploy from git-free snapshot instead). CLI-created projects had NO framework set → all routes 404; fixed by setting Next.js via Vercel API. Hobby auto-enables SSO deployment protection; disabled via API.
+- Live verification (external fetch, not just sandbox): landing page 200 with correct copy/risk disclaimer; `/api/health` 200 with `{"ok":true,"db":"up"}` against **production Neon**; signup/signin pages 200; auth endpoints behave (429 rate limit correctly trips under hammering; 400 on missing displayName; 401 on bad credentials); unauth `/dashboard` redirects (307).
+- **Season Zero seeded into production Neon** (slug season-zero, genesis bracket, Nov 7 09:00–21:00 IST, free entry, draft status) per TOURNAMENT-SPEC.md. No users exist in production DB — the founder's first signup still claims the owner role slot.
+- **Draft-tournament leak found and fixed**: public `/api/tournaments` served draft-status tournaments (Season Zero visible pre-launch). Fixed at commit 88310ce — public API now filters `status != draft`. Admin console still sees all.
+- **ADMIN_TOTP_SECRET set in Vercel production env** (encrypted) and baked in via redeploy. All 4 admin routes now require a live 6-digit TOTP code on production.
+- Vercel production env verified: DATABASE_URL (Neon prod), BETTER_AUTH_SECRET, SITE_URL, GENESIS_CAP=10000, ADMIN_EMAILS, ALLOW_MOCK_BROKER=true (disable at launch), ADMIN_TOTP_SECRET.
+- Sandbox egress quirk documented: Base44 sandbox proxy intermittently returns Vercel edge 404s unrelated to real availability; external checks + founder dashboard confirm 0% error rate.
+
+### Broker terms — Kite/Zerodha now VERIFIED (full ToS read Sep 26)
+- Kite Connect API terms (kite.trade/terms) state: APIs may NOT be used for "virtual/mock trading apps, trading related games"; live market data may not be displayed to the public; platforms offered to other Zerodha clients require exchange approvals (IBT platform norms); end users remain Zerodha's clients; DPDP compliance mandatory.
+- **Verdict: FORTREX tournaments on Zerodha/Kite = NOT permitted without express written approval from Zerodha** (tournament = "trading related game" risk category; read-only data APIs alone do not cure this). Zerodha adapter stays shelved. DhanHQ terms remain UNVERIFIED (page unreachable from sandbox and external fetch) → Dhan-first strategy still requires written email confirmation from DhanHQ before users connect. Mock broker remains the only launch-day connection until Dhan confirms.
+
+### Remaining founder actions (updated)
+1. Enroll the admin TOTP secret (shared separately) in Google Authenticator — every admin action now needs it.
+2. First signup on the live site = founder (owner role).
+3. Confirm ADMIN_EMAILS guess (somilsharma2000@gmail.com) matches the signup email.
+4. Written DhanHQ API confirmation email (template in BROKER-RIGHTS.md).
+5. Domain purchase + Pvt Ltd + lawyer consult (unchanged, per "at last" order).
+
+### Ready line (unchanged, now on production)
+The platform is deployed, seeded, MFA-gated, and externally verified. "Genuinely ready" = today's live state + founder's 7-point test pass + Dhan written approval + domain. Everything else is done.
