@@ -22,3 +22,19 @@
 
 ## Standing rule
 If either broker says no: that broker is removed from the adapter list and the fallback ladder is (mock → MetaApi.cloud for MT4/MT5 → broker-partner deal). FORTREX never builds on an API whose terms forbid us.
+
+## Update — Sep 26, 2026 (re-check)
+
+### Kite Connect — NEW OPERATIONAL FINDING [A — primary, kite.trade/docs/connect/v3]
+- **Access tokens expire at 6 AM next day (regulatory requirement).** Without long-lived tokens, a FORTREX-style platform must have every user re-authenticate daily — unusable for tournament verification.
+- The docs state a `refresh_token` "for getting long standing read permissions... **is only available to certain approved platforms**." → FORTREX needs Zerodha's **approved-platform status** for a workable Zerodha adapter, not just an API key per user.
+- **Verified:** login flow, token exchange, profile/margins endpoints. **Uncertain:** approved-platform criteria, commercial terms, data display rules. **Required:** email Zerodha (business contact on kite.trade) describing FORTREX, requesting approved-platform status + written terms.
+
+### Dhan HQ — STILL UNREAD
+developers.dhan.co remains unreachable from the build sandbox (DNS). The terms page has not been read. **Founder action (2 minutes):** open developers.dhan.co in a browser, save the API terms/limits pages as PDF into this folder, or forward them to the agent. Fallback: email Dhan's partner program directly.
+
+### Honest adapter conclusion
+- Mock adapter: fully verified (live).
+- Zerodha adapter: blocked on **approved-platform status**, not just credentials.
+- Dhan adapter: blocked on unread terms + credentials.
+- Until written approval: the platform shows brokers honestly (only enabled when integrated) and makes no public commercial claim. **Do not build user-facing re-auth daily friction — rank Dhan first if its terms allow persistent sessions.**
