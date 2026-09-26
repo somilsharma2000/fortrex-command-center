@@ -146,3 +146,19 @@ language and the work order. See IMPROVEMENT-ROADMAP.md for how this
 integrates with the other audit findings (canon violations, accessibility,
 motion). The FREEZE BUILD standing instruction is still in effect; this is
 research + documentation only until the founder confirms execution timing.
+
+## Lab deployment (founder review)
+- LIVE PREVIEW: https://fortrex-lab.vercel.app (separate Vercel project `fortrex-lab`,
+  NOT the main app). Branch `design-language-v1`. DB = Neon branch
+  `design-lab-preview` (isolated copy of production; writes go nowhere real).
+  Stealth intact: robots-blocked + noindex (STEALTH_MODE unset).
+- Main app fortrex-platform.vercel.app untouched — verified serving approved
+  design (old crown PNG + original shell) after the 06:40 incident was reverted
+  (see incident note below).
+- INCIDENT LOG (Sep 26, ~06:38-06:45 UTC): the lab deploy snapshot carried the
+  main repo's .vercel link, so two experiment deploys landed on the main
+  project and briefly changed the production alias. Caught within minutes,
+  rolled back by re-deploying the approved main-branch code to the canonical
+  project, and verified the restored design via CSS tells (blue shell present,
+  antique tokens absent, old crown asset served). Lesson recorded: ALWAYS
+  `rm -rf .vercel` + `vercel link --project <target>` before any snapshot deploy.
