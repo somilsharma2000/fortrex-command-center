@@ -86,3 +86,24 @@ outreach.
 Google Search Console immediately (fastest channel to detect and dispute a
 Safe Browsing flag) and keep the page clean of bait vocabulary before stealth
 drops, because that is when Google first crawls and classifies it.
+
+---
+
+## Brand mark 3D treatment (Sep 26, commit 89bd110 + 8dc286a)
+
+The hero crown is now an interactive 3D object (src/components/Crown3D.tsx,
+zero dependencies):
+- Pointer-reactive tilt with inertia (±9° yaw/pitch, eased at 0.08/frame)
+- Cut-gem facets: four gold facets with dark seams, bone hairline outline
+- Specular sheen sweep every 6.5s, idle float bob, soft gold ground glow
+- Same silhouette as the original mark (three ball-tipped peaks, slab base)
+- prefers-reduced-motion respected
+
+Canon violation found and fixed in the same pass: `.gold-text` gradient in
+globals.css bled into violet (#d8caff) and sky blue (#80d9ff) at its tail —
+visible in the "TRADERS RISE." headline. Replaced with a pure
+bone→gold→deep-gold→bone sweep. Verified in production.
+
+Queued for after credit reset (~Oct 1): AI-generated photoreal 3D crown
+render (obsidian ground, brushed gold) for the 1200x630 OG card and launch
+marketing. Reference silhouette: live crown PNG.
