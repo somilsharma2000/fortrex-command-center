@@ -73,7 +73,7 @@ Claiming readiness beyond this line would be dishonest. The founder's own testin
 
 ## 12. Live deployment addendum (Sep 26 evening, platform commit 88310ce)
 
-**FORTREX IS DEPLOYED AND LIVE at `fortnex-platform.vercel.app`** (Vercel Hobby, team somils-projects-90669367, project fortnex-platform).
+**FORTREX IS DEPLOYED AND LIVE at `fortrex-platform.vercel.app`** (Vercel Hobby, team somils-projects-90669367, project fortrex-platform (renamed Sep 26: was misnamed fortnex-platform at deploy time)).
 
 ### What was executed and verified
 - Full deploy chain rebuilt: Vercel blocks CLI deploys whose git commit author isn't a team member (agent identity fortnex-agent → 3 blocked deploys; deploy from git-free snapshot instead). CLI-created projects had NO framework set → all routes 404; fixed by setting Next.js via Vercel API. Hobby auto-enables SSO deployment protection; disabled via API.

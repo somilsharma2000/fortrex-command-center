@@ -5,7 +5,7 @@ Next.js app (local PGlite for user flows, production Neon for the live seat
 probe), followed by a production deploy + live verification.
 
 **Builds:** platform `0d1608c` (seat fix `7532341`, branded 404), deployed to
-`fortnex-platform.vercel.app` (deployment `DEHHqJBtiY61gcUamMg7cWSwwEJM`),
+`fortrex-platform.vercel.app` (project renamed from fortnex-platform — see below) (deployment `DEHHqJBtiY61gcUamMg7cWSwwEJM`),
 drizzle migration `0002` applied to production Neon.
 
 ## Critical fix found and shipped
@@ -79,3 +79,20 @@ only next change. Founder's admin console steps:
 sign in with somilsharma2000@gmail.com → enroll ADMIN_TOTP_SECRET (already
 set on Vercel) in the authenticator app → the console prompts for the code on
 every mutation.
+
+## Addendum (Sep 26, ~10:45 IST): project renamed
+
+- The Vercel project was accidentally named `fortnex-platform` (typo) at deploy
+  time, so the brand-matching URL `fortrex-platform.vercel.app` did not exist
+  and returned Vercel's raw DEPLOYMENT_NOT_FOUND. Founder caught it live.
+- Fixed: project renamed to `fortrex-platform`, domain
+  `fortrex-platform.vercel.app` added and verified (200, health green,
+  branded 404 live). Old `fortnex-platform.vercel.app` URL still works; do not
+  use it — treat `fortrex-platform.vercel.app` as canonical.
+- Env: `NEXT_PUBLIC_SITE_URL` already correct;
+  `ALLOW_MOCK_BROKER=true` set (mock broker is the launch-day connection per
+  BROKER-RIGHTS.md until Dhan gives written approval). Takes effect on the
+  next deployment. `GENESIS_CAP` empty → code default 10000 applies.
+  `ADMIN_EMAILS` empty → first-user owner rule already assigned founder.
+- Leftover diagnostic project `fortnex-routing-test` in the Vercel account
+  can be deleted (it was only used to isolate the account-level 404 flag).
