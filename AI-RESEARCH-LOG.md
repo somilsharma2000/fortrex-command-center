@@ -18,18 +18,18 @@
 
 | Mission | File | Framework points covered | Status |
 |---------|------|--------------------------|--------|
-| 1 | `01-legal-india-deep.md` | 6, 7, 68, 70, 71, 118 (India legal: PROG Act, TDS, GST, SEBI, RBI, DPDP, consumer) | In flight |
-| 2 | `02-competitor-economics.md` | 5, 46, 94, 105-107, 170 (prop firms, competitions, revenue verification) | In flight |
-| 3 | `03-verification-tech.md` | 12, 13, 14, 66, 87 (broker adapters, read-only access, normalization, build-vs-integrate) | In flight |
-| 4 | `04-scoring-science.md` | 16, 17, 18, 19, 86 (risk-adjusted scoring, brackets, exploits, versioning) | In flight |
-| 5 | `05-reward-economies-ethics.md` | 8, 9, 23, 35, 145, 146 (REX law boundaries, gamification ethics, referral design) | In flight |
-| 6 | `06-growth-community.md` | 24, 39-42, 44, 45, 90, 94-97 (creator partnerships, launch benchmarks, community platforms, metrics) | In flight |
-| 7 | `07-tournament-design.md` | 10, 11, 147-151 (formats, prize economics, integrity rules, season design) | In flight |
-| 8 | `08-ux-lifecycle.md` | 3, 4, 31-34, 95, 96 (personas, onboarding, activation, lifecycle, user research) | In flight |
-| 9 | `09-business-model.md` | 46-52, 113, 118, 119, 144 (take rates, taxes, payments, unit economics, funded seats) | In flight |
-| 10 | `10-security-ops.md` | 63, 64, 65, 77, 78, 83, 120, 121, 135, 136, 139-142, 164-167 (hardening, free-tier governance, kill switches, DR, vendor exit) | In flight |
-| 11 | `11-design-patterns.md` | 26-29, 159-162 (leaderboard/table patterns, data-viz, motion, accessibility within canon) | In flight |
-| 12 | `12-corporate-international.md` | 73, 74, 110-116, 163, 171, 172 (incorporation, trademark, geo-blocking, international skeleton, key-man kit, fundraising) | In flight |
+| 1 | `01-legal-india-deep.md` | 6, 7, 68, 70, 71, 118 (India legal: PROG Act, TDS, GST, SEBI, RBI, DPDP, consumer) | Landed + reviewed |
+| 2 | `02-competitor-economics.md` | 5, 46, 94, 105-107, 170 (prop firms, competitions, revenue verification) | Landed + reviewed |
+| 3 | `03-verification-tech.md` | 12, 13, 14, 66, 87 (broker adapters, read-only access, normalization, build-vs-integrate) | Landed + reviewed |
+| 4 | `04-scoring-science.md` | 16, 17, 18, 19, 86 (risk-adjusted scoring, brackets, exploits, versioning) | Landed + reviewed |
+| 5 | `05-reward-economies-ethics.md` | 8, 9, 23, 35, 145, 146 (REX law boundaries, gamification ethics, referral design) | Landed + reviewed |
+| 6 | `06-growth-community.md` | 24, 39-42, 44, 45, 90, 94-97 (creator partnerships, launch benchmarks, community platforms, metrics) | Landed + reviewed |
+| 7 | `07-tournament-design.md` | 10, 11, 147-151 (formats, prize economics, integrity rules, season design) | Landed + reviewed |
+| 8 | `08-ux-lifecycle.md` | 3, 4, 31-34, 95, 96 (personas, onboarding, activation, lifecycle, user research) | Landed + reviewed |
+| 9 | `09-business-model.md` | 46-52, 113, 118, 119, 144 (take rates, taxes, payments, unit economics, funded seats) | Landed + reviewed |
+| 10 | `10-security-ops.md` | 63, 64, 65, 77, 78, 83, 120, 121, 135, 136, 139-142, 164-167 (hardening, free-tier governance, kill switches, DR, vendor exit) | Landed + reviewed |
+| 11 | `11-design-patterns.md` | 26-29, 159-162 (leaderboard/table patterns, data-viz, motion, accessibility within canon) | Landed + reviewed |
+| 12 | `12-corporate-international.md` | 73, 74, 110-116, 163, 171, 172 (incorporation, trademark, geo-blocking, international skeleton, key-man kit, fundraising) | Landed + reviewed |
 
 Points covered by existing docs (not re-researched): 0, 1, 2, 25, 27 (canon),
 30 (IA), 37, 38 (content system), 43 (SEO posture), 53-56 (admin/audit — schema),
@@ -50,6 +50,17 @@ identify weaknesses → propose improvements → test → document → implement
 Every major decision asks: should we build it, what is the simplest version that proves
 it, how could users abuse it, how does it behave at 1M users, can the founder operate
 it without code, and what is the rollback plan.
+
+## Review note (Sep 26, coordinator)
+
+All 12 missions landed. Coordinator spot-checks passed: legal citations match
+primary sources (Section 194BA + Rule 133, Gameskraft GST ruling, PROG Act gazette);
+FTMO revenue verified against filings (2023 turnover CZK 4.97B ≈ $213M — the
+"$100M+/yr" claim is real and understated); Zerodha free-read-endpoint claim
+consistent with vendor policy. Caveats: benchmark numbers inside growth/UX files are
+directional (some Grade B/D) — treat as planning ranges, not promises. The GST
+"28% on gross entry fees vs 18% SaaS structuring" finding is the single most
+ consequential economic insight — counsel must confirm the structuring.
 
 ## Update protocol for future agents
 
