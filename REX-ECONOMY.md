@@ -58,6 +58,28 @@ No REX→₹ conversion rate is ever published or implied before Path B is clear
 No "10,000 REX ≈ ₹X" language anywhere — implied convertibility is legally the same
 as convertibility.
 
+## 3.5 Verified legal status (primary sources, Sep 26, 2026)
+
+- **PROG Act, 2025 (No. 32 of 2025)** — Presidential assent Aug 22, 2025 (MeitY gazette).
+  Prohibits offering/operating/facilitating/advertising **online money games**, including
+  from outside India. "Other stakes" expressly includes credits/coins/tokens recognized
+  as convertible to money. (Source: gazette PDF via meity.gov.in — Grade A.)
+- **PROG Rules, 2026** — notified, effective **May 1, 2026**. Establish the Online Gaming
+  Authority of India, a registration framework, and grievance-redressal duties (~30-day
+  resolution). (Source: MeitY notification, reported effective 1 May 2026 — Grade A/B.)
+- **The e-sports path (in the Act text itself):** recognised e-sports — organised
+  competitive events under predefined rules, outcome determined solely by skill — **may
+  include participation fees for entering the competition and performance-based prize
+  money**, but require recognition (National Sports Governance Act, 2025) and registration
+  with the Authority. This is the narrow, lawful door for paid-entry skill competition.
+- **DPDP Rules, 2025** — notified Nov 13, 2025 with staged commencement; most operational
+  duties bind from ~Nov 2026 / May 2027. At our Nov 7, 2026 launch the transition window
+  is live — consent/notice designed in now is cheap and right.
+- **Implication:** whether a paid-entry trading tournament is an (a) online money game
+  (prohibited), (b) registered e-sport (permitted path), or (c) not a "game" at all, is
+  THE classification question. It determines paid tickets, prizes, and REX. That is
+  counsel's written opinion to give — no AI guesswork, no building before it.
+
 ## 4. The counsel brief (add to the legal consult already on the founder's list)
 
 1. Under the Promotion and Regulation of Online Gaming Act, 2025 (and current case
