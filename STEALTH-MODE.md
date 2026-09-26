@@ -51,3 +51,38 @@ Everything changes at once (the "single loud moment"):
 - [x] Private invite script written
 - [ ] NDA template for any contractor who touches the repo (legal research doc has the pattern)
 - [ ] Founder: personally invite the first 25 names this week (track them in FortrexWaitlist — source: "private-invite")
+
+---
+
+## Safe Browsing incident (Sep 26, 2026)
+
+Google Safe Browsing flagged the entire `somilsharma2000.github.io` domain,
+triggered by prize/claim-style marketing pages ("win a MacBook", "Trade Real.
+Win Real.", "10,000 spots · multiplier locked forever"). Founder took down 9
+GitHub Pages (repos preserved), parked the FORTREX page behind a neutral
+placeholder, and filed review requests for the clean URLs. Danger screen
+clears on Google's schedule (hours to days).
+
+**Launch-domain audit (fortrex-platform.vercel.app):** the live platform
+landing carries the SAME classifier-bait family, milder but present in
+`src/app/page.tsx`:
+
+- "CLEARANCE" used 5x (worst offender — coupon/sale vocabulary)
+- "Claim your seat." headline + "CLAIM 1.25x MULTIPLIER CLEARANCE →" button
+- "SEATS REMAINING" scarcity ticker + "DOORS OPEN 11.07" countdown
+- Phone-number capture with country flags next to a "claim" CTA (classic
+  lead-gen scam shape)
+
+Mitigations already in place: noindex + robots-blocked (not crawled while
+stealth), hand-shared link only, real legal disclaimer on the money surface.
+
+**Copy guardrail (binding from now):** never use claim / win / prize /
+clearance / giveaway vocabulary on any FORTREX surface. Scarcity is stated as
+institutional fact per the canon ("10,000 seats" as a number, never "claim
+your seat now"). This applies to launch marketing, emails, and partner
+outreach.
+
+**Launch-day protection:** when the custom domain goes live, register it in
+Google Search Console immediately (fastest channel to detect and dispute a
+Safe Browsing flag) and keep the page clean of bait vocabulary before stealth
+drops, because that is when Google first crawls and classifies it.
