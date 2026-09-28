@@ -93,6 +93,6 @@ every mutation.
   `ALLOW_MOCK_BROKER=true` set (mock broker is the launch-day connection per
   BROKER-RIGHTS.md until Dhan gives written approval). Takes effect on the
   next deployment. `GENESIS_CAP` empty → code default 10000 applies.
-  `ADMIN_EMAILS` empty → first-user owner rule already assigned founder.
+  `ADMIN_EMAILS` is set in production (encrypted). Owner role comes ONLY from that list (corrected Sep 29; the earlier "first-user owner" claim was wrong).
 - Leftover diagnostic project `fortnex-routing-test` in the Vercel account
   can be deleted (it was only used to isolate the account-level 404 flag).
