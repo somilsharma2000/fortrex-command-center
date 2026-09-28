@@ -38,3 +38,6 @@ developers.dhan.co remains unreachable from the build sandbox (DNS). The terms p
 - Zerodha adapter: blocked on **approved-platform status**, not just credentials.
 - Dhan adapter: blocked on unread terms + credentials.
 - Until written approval: the platform shows brokers honestly (only enabled when integrated) and makes no public commercial claim. **Do not build user-facing re-auth daily friction — rank Dhan first if its terms allow persistent sessions.**
+
+## Update (Sep 29): Zerodha removed
+The Zerodha adapter and callback route were deleted in growth-lab-v1. Kite terms prohibit trading-related games. Global providers (MetaApi, Bybit) replace it. See GROWTH-LAB-GLOBAL-MARKETS.md.
