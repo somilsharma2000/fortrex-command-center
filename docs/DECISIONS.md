@@ -6,3 +6,9 @@
 - Account confirmation: member submits MT5 login, admin approves in a queue (MFA, audited). Partner link is admin-editable, shown only in allowed regions.
 - Research on gray areas, existing operators, and revenue is in research/growth/. Revenue examples there are best cases with assumptions, not forecasts. Legal map says live contests in India and the US are red; the demo route is the safe global default. All legal items are for counsel review.
 - Code: growth-lab-v1 f2648c0 (lab only). Production frozen.
+
+## Sep 29: live boards update themselves (lab only)
+- Built scheduled live scoring: syncs live-contest members, re-ranks, sends rank alerts, logs to the audit trail. Secret-guarded route, instant kill switch (`live_scoring`), never changes contest status.
+- Vercel HOBBY allows daily cron only (a faster schedule fails the deploy). Daily cron is the safety net. For live contests: Vercel Pro (`*/5 * * * *`) or a free external pinger every 5 to 10 minutes with the secret header.
+- `CRON_SECRET` is set on the lab project only. It is not in any repo. Production gets its own secret at merge time. Details: platform docs/MT5-XM-PARTNER-GATE.md.
+- Code: growth-lab-v1 111789c. Production frozen and unchanged.
