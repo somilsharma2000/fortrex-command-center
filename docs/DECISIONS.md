@@ -12,3 +12,8 @@
 - Vercel HOBBY allows daily cron only (a faster schedule fails the deploy). Daily cron is the safety net. For live contests: Vercel Pro (`*/5 * * * *`) or a free external pinger every 5 to 10 minutes with the secret header.
 - `CRON_SECRET` is set on the lab project only. It is not in any repo. Production gets its own secret at merge time. Details: platform docs/MT5-XM-PARTNER-GATE.md.
 - Code: growth-lab-v1 111789c. Production frozen and unchanged.
+
+## Sep 29: merge checklist written (not executed)
+- Platform docs/MERGE-CHECKLIST.md (growth-lab-v1). Production still frozen. Merge only on founder GO.
+- Tested: old production code runs fine on a database migrated through 0008, so code-only rollback is safe.
+- Open before merge: CRON_SECRET missing on production; XM partner link not set (DB setting partner_link_xm); production DATABASE_URL host unverified (Vercel returns it encrypted); counsel view on offshore-broker commissions; the launch page gains a trust strip on merge.
