@@ -44,3 +44,6 @@
 2. `vercel env pull` = decryptable env values; sandbox blocks port 5432, so all prod-branch SQL goes through the Neon HTTP driver (statement-by-statement; strip comment lines BEFORE splitting on semicolons — the statement-breakpoint filter bug swallowed two statements once).
 3. `vercel deploy` without --project creates a stray "deploy-src" project (recurred). ALWAYS pass --project. Stray project deleted same-session.
 4. Neon API has no reset-password route for protected roles via console.neon.tech (404 on all variants); branch-scoped roles are the workaround (fortrex_ops works on the production branch endpoint).
+
+### D-2026-09-30-05 — Leaderboard arrows design
+prev_rank is stashed inside the same UPDATE that writes the new rank (`set prev_rank = rank, rank = N`) — Postgres reads the old column value on the right side, so the pair is atomic and no second statement or race window exists. First-ever ranking keeps prev_rank NULL (renders "—"). Arrows show only when the standing actually moved between scoring runs.
