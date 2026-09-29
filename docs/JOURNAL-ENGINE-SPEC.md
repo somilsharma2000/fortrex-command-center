@@ -63,3 +63,23 @@ Phase 1: connection flow + verified import + dashboard with core metrics + admin
 ## 10. Open items (founder-authority)
 
 MetaApi account + token (founder provides, like XM portal). Post-launch Pro plan for 5-min syncs (money decision).
+
+## 11. Direct competitor found (Sep 30, founder surfaced): TradeFXBook
+
+https://www.tradefxbook.com — closest one-to-one competitor to the FORTREX expanded vision. Teardown from their live site:
+
+**What they have:** MT4/MT5 investor-password sync (same model as our spec), AI reports (letter grade, revenge-trading detection, blind spots), strategy backtesting with candle replay, rich journaling (notes/tags/screenshots/emotional tracking/pre-trade checklists), equity curves, calendar heatmap, session breakdowns, community with leaderboards + share cards, "Traders Lounge" mentorship, economic calendar, multiple accounts. Claims 2,000+ traders, WhatsApp support (Dubai +971), testimonials from Indian trader communities (Top G Traders ecosystem; Atul Patil association unverified).
+
+**Pricing:** Free = 15 trades/month, MANUAL entry only, basic analytics. Real-time MT sync + AI + full analytics = paid "Pro". Backtesting + Lounge = paid "Elite". Exact figures JS-rendered (pull exact prices at next pass).
+
+**Where FORTREX wins:**
+1. Full-featured journal FREE for members (their sync is paywalled) — our journal is the hook, revenue stays partner/arena side.
+2. Verified competitions with real prize money + REX economy — they have leaderboards but no tournaments, no prize track, no own currency.
+3. Entry law (account via our link) — they connect any account; no partner moat.
+4. Verified-honest-data brand: broker whitelist + anti-spoof (their FAQ makes security claims; no evidence of server spoofing defenses).
+5. Education hub (structured guides/courses) — they have blog + mentor lounge instead.
+6. Institutional design canon + 5M-scale plan.
+
+**Adopt from them (features worth matching):** share cards (brag-to-social cards for stats — fits psychology + presentation goals), calendar heatmap (already in spec), economic calendar (post-launch phase), backtesting replay (phase 3+), pre-trade checklist templates (add to psychology layer).
+
+**Deliberately NOT adopting:** Traders Lounge mentorship + trade ideas/signals sharing — legal gray (signal-seller exposure, profit-promise risk) and against our legal shield. Community = Discord + education hub instead.
