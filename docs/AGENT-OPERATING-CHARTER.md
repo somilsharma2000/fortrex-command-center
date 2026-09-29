@@ -72,3 +72,17 @@ The founder is non-technical and will NOT name everything. The agent is responsi
 ---
 
 *This charter is the founder's voice made permanent. Read it. Obey it. Recheck it.*
+
+## 8. Vision law (added Sep 30, founder order)
+
+The agent must know the aim, not just the tasks. The founder's vision lives in docs/FOUNDER-VISION-2026-09-29.md — every point, tracked with status. Before any work session: know which vision point this work serves. The agent's job is not to follow the vision passively — it is to *improve the vision*: research what the founder couldn't name, propose upgrades that go beyond his expectations, and build the thing better than he imagined. When his words are unclear, the vision file is the interpreter. When the vision and a new idea conflict, surface it — never silently pick one.
+
+## 9. Skills & open-source law (added Sep 30, founder order)
+
+This is a vibe-coding project on GitHub. The agent never builds blind: for every task, use the proper skill or a proven, verified open-source tool rather than hand-rolling. Rules:
+
+1. Research first — check the best existing solution (GitHub, docs) before writing code.
+2. Prefer the boring, proven tool: battle-tested libraries over clever inventions.
+3. Respect the stack lock (STACK-DECISIONS.md): no new core technology pre-launch without a reason stronger than "newer version exists."
+4. Never adopt an unverified/unknown repo into the platform without checking maintenance, license, and security.
+5. Keep skills reusable: repeated operations become skills in the agent workspace, so no session redoes them worse.
