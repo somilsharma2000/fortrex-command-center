@@ -46,3 +46,7 @@ Oct 15: prelaunch campaign reminder fires (founder decision day). Oct 31: T-7 au
 ## Known inert leftovers (deliberate, documented)
 
 Broker provider pg_enum contains "dhan"/"bybit" values (Postgres cannot drop enum values); no code path can create them; documented in MT5-XM-PARTNER-GATE.md.
+
+## Session log — Sep 30 (lab branch growth-lab-v1, all verified live on fortrex-lab)
+
+Built and deployed: /journal (verified-imports-only journal, 15 honest metrics, equity curve, filters), secret injection in Admin → Integrations (MetaApi/Discord/Resend/AI/XM paste-ready, AES-256-GCM at rest, zero-redeploy activation), /learn knowledge hub (Score v1.0 real weights, risk fundamentals, journal glossary, recaps placeholder). Logic audit: 4 real bugs found and fixed (connect page env-only availability, cron path bypassing mt5_sync kill switch, analytics demo-entry double count, XM partner link encryption that would corrupt the partner gate). 87 regression assertions pass. EXPENSE-MODEL.md delivered (launch ₹45-80k one-time; ₹5-9k/mo at launch). Founder MetaApi token is now a paste-when-ready item, not a blocker.
