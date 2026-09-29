@@ -38,3 +38,9 @@
 - Legal correction recorded (charter law: no theft): features and functionality are not copyrightable — we BUILD the same feature set (clean-room, our own code, our own copy in our voice, our locked design canon). We do NOT copy their code, text, images, or visual design. The "Traders Lounge" mentorship + signals model stays excluded (legal shield).
 - Feature-parity targets added to journal roadmap phases: share cards, economic calendar, backtesting replay (phase 3), pre-trade checklists, multiple accounts, AI reports.
 - Positioning locked: free full journal (their sync is paywalled) + competitions with real prizes + REX + education + entry-law moat = the flywheel.
+
+### D-2026-09-30-04 — DB access + deploy lessons (Discord phase 1)
+1. Lab (fortrex-lab) connects to the PREVIEW-branch Neon endpoint (ep-young-flower), not production branch; its DATABASE_URL is decryptable via `vercel env pull`, and 0010 was applied there as owner. Production branch (main site) needs 0010 before Discord ships to prod — its owner URL is marked sensitive in Vercel; plan: pull with founder's session or add a one-time admin migration step at prod rollout.
+2. `vercel env pull` = decryptable env values; sandbox blocks port 5432, so all prod-branch SQL goes through the Neon HTTP driver (statement-by-statement; strip comment lines BEFORE splitting on semicolons — the statement-breakpoint filter bug swallowed two statements once).
+3. `vercel deploy` without --project creates a stray "deploy-src" project (recurred). ALWAYS pass --project. Stray project deleted same-session.
+4. Neon API has no reset-password route for protected roles via console.neon.tech (404 on all variants); branch-scoped roles are the workaround (fortrex_ops works on the production branch endpoint).
