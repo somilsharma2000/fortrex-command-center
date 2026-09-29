@@ -29,7 +29,7 @@ If counsel signs the platform-fee structure: paid tournaments launch with Season
 - REX stays Path A (no cash value) until a SECOND green-light for Path B. No REX→₹ appears anywhere before that.
 
 ## PHASE 3 — SCALE (Dec-Feb 2027)
-Goal: the 10,000-seat Genesis cap starts to feel real.
+Goal: the founding window (open until launch) is understood and valued.
 - Weight bracket ladder: $500 / $2k / $10k / $50k account classes.
 - Broker coverage: MetaApi MT4/MT5 done; Dhan joins when written approval lands; more Indian brokers only with broker approval.
 - Leaderboard prestige: season champions, permanent records, verified history export.
@@ -37,7 +37,7 @@ Goal: the 10,000-seat Genesis cap starts to feel real.
 - First hire only when support tickets exceed what founder + I can answer.
 
 ## DECISION GATE 2 — CAP EVENT
-When Genesis seats fill (10,000 hard cap, non-negotiable):
+When the founding window closes at launch:
 - New signups go to waitlist with position numbers.
 - Genesis members keep permanent 1.25x multiplier — scarcity becomes proof, not marketing.
 - Season Two structure decision (paid tournaments, if counsel cleared).
@@ -49,11 +49,11 @@ The verified long game: FTMO did ~$213M (2023) → ~$400M (2024/25) selling veri
 - Path B (redeemable REX) only if it ever clears counsel: full audit + RBI PPI analysis first.
 
 ## NEVER-CHANGES (law, not roadmap)
-10,000-seat cap. REX Path A until counsel. No offshore forex broker promotion to Indian residents. Risk disclaimer on every money surface. Non-custodial forever — we never touch client funds.
+No seat cap. REX Path A until counsel. No offshore forex broker promotion to Indian residents. Risk disclaimer on every money surface. Non-custodial forever — we never touch client funds.
 
 ## METRICS DASHBOARD (tracked weekly, Mon 09:00 IST report)
 1. Signups + activation rate (72h rule)
-2. Seats remaining (out of 10,000)
+2. Founding members (joined pre-launch)
 3. Check-in streaks (retention)
 4. Referral K-factor
 5. Tournament fill rate

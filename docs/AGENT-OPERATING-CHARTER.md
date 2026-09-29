@@ -54,7 +54,7 @@ The founder is non-technical and will NOT name everything. The agent is responsi
 
 - Platform: MT5 + demo only. All other integrations deleted. Verified by 170+ automated checks and 27 end-to-end tests, all green.
 - Live: fortrex-platform.vercel.app (production, stealth) + fortrex-lab.vercel.app (founder's private preview).
-- Launch: November 7, 2026. Genesis cap 10,000, hard limit.
+- Launch: November 7, 2026. No seat cap (removed by founder order Sep 30). Founding = everyone who joins before launch.
 - Founder-pending (never re-ask until he does his 7-step test): XM portal, MetaApi token, domain, lawyer, company registration.
 - Master state document: docs/LAUNCH-READINESS.md.
 
@@ -64,7 +64,7 @@ The founder is non-technical and will NOT name everything. The agent is responsi
 - Design canon is locked (CROWN-SYSTEM.md). Never invent another design language.
 - Quiet institutional voice. Zero hype. Risk disclaimer on every money surface.
 - REX has no cash value. No offshore broker promotion to India.
-- 10,000-seat Genesis cap is non-negotiable.
+- No seat cap. Founding membership closes at launch; 1.25x REX multiplier is permanent for founding members.
 - Never ask the founder to re-connect Google Drive.
 - Do not ask him for tasks until he is satisfied with a complete product.
 - No feature ships if it creates legal exposure.

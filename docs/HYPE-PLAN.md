@@ -16,7 +16,7 @@ STEALTH-MODE.md currently forbids all public posts until Nov 7. Public teasers r
 5. Visual canon = CROWN-SYSTEM.md: obsidian #050506, gold #D8A64D (accent only, ~10%), bone #FFF7E6. Space Grotesk / Inter / JetBrains Mono. Quiet, institutional. The rejected "all-in" bold style is banned.
 6. Every money-adjacent line carries the risk line: "Trading involves risk. REX has no cash value."
 7. Never promote offshore forex brokers to Indian residents.
-8. Stay non-hype in tone: no "huge", "insane", "revolution". Scarcity stated as fact: "10,000 founding seats."
+8. Stay non-hype in tone: no "huge", "insane", "revolution". Scarcity stated as fact: "Founding membership closes at launch."
 9. Code freeze: nothing on the website changes until the founder's test pass. Teaser page work is queued for after freeze.
 
 ## THE 22-DAY ARC (Oct 17 to Nov 7)

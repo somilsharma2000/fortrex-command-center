@@ -23,4 +23,4 @@
 ## LAW THAT BINDS THIS ROADMAP
 - Broker links only from approved brokers (Dhan pending written approval; no offshore forex brokers to Indian residents — FEMA). Affiliate revenue is clean: it comes from brokers, never client funds.
 - REX stays Path A (no cash value). Featured traders are verified records only — no profit-promise framing anywhere.
-- 10,000-seat cap untouched. Risk disclaimer on every money surface.
+- No seat cap (removed Sep 30; founding = pre-launch joiners). Risk disclaimer on every money surface.

@@ -80,7 +80,7 @@ UGC ENGINE (huge): auto-generated branded share cards for achievements — MY FI
 Profile asset system: PFP, banner, highlights, thumbnails, headers, Discord/Telegram, creator kit — same black+gold+crown geometry.
 
 ## 15. CONTENT LANGUAGE (verbal = visual: calm, precise, powerful)
-Short, confident, declarative, institutional. THE ARENA OPENS. 10,000 TRADERS. ONE BOARD. PROVE YOUR EDGE. NEVER: 🚀🔥 HUGE TOURNAMENT!!!
+Short, confident, declarative, institutional. THE ARENA OPENS. ONE BOARD. PROVE YOUR EDGE. NEVER: 🚀🔥 HUGE TOURNAMENT!!!
 Official format: FORTREX // ANNOUNCEMENT · SEASON ZERO · NOVEMBER 7 · REGISTRATION OPENS 09:00 IST.
 
 ## 16. AUDIO IDENTITY (the forgotten dimension)

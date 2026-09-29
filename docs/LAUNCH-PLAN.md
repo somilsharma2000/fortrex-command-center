@@ -28,4 +28,4 @@
 - ONGOING: daily heartbeat alerts me to failures/new members; T-7 audit Oct 31 gives go/no-go readiness report.
 
 ## HARD RULES (never negotiable)
-- 10,000 Genesis seat cap. REX has no cash value (Path A until counsel approves otherwise). No offshore forex broker promotion to India. Risk disclaimer on every money surface. Stealth until Nov 7: no public posts, noindex, hand-shared links only.
+- No seat cap (removed Sep 30; founding = pre-launch joiners). REX has no cash value (Path A until counsel approves otherwise). No offshore forex broker promotion to India. Risk disclaimer on every money surface. Stealth until Nov 7: no public posts, noindex, hand-shared links only.

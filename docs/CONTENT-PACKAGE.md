@@ -24,7 +24,7 @@ IS NOT: a broker; a fund; a signal service; a get-rich scheme; custody of any ki
 4. What is a weight bracket? Tournaments grouped by account size so small accounts aren't outgunned by large ones.
 5. How do you verify trades? Broker API sync, read-only, timestamped. Trade history is snapshotted per scoring run.
 6. Is this legal in India? Skill-based competition with no cash redemption of REX. We never promote offshore forex brokers to Indian residents. Tournaments with entry fees launch only after legal counsel sign-off.
-7. What do founding members get? First 10,000 seats. Permanent 1.25x REX multiplier. The seat count is a hard cap.
+7. What do founding members get? Everyone who joins before launch. Permanent 1.25x REX multiplier. The founding window closes at launch.
 8. Can I lose money? Trading at your own broker carries your own risk. You can lose your trading capital there. FORTREX charges no custody and offers no returns. Risk disclosure is on every money surface.
 9. Which brokers are supported? MT4/MT5 via MetaApi first. Indian retail brokers only with written API approval from the broker.
 10. What happens if I disconnect mid-tournament? Scoring uses your synced snapshot at that point. Reconnect and sync resumes.
@@ -56,7 +56,7 @@ IS NOT: a broker; a fund; a signal service; a get-rich scheme; custody of any ki
 Subject lines: plain text, no emoji, no ALL CAPS. e.g. "Seat 214 confirmed", "Season Zero opens November 7, 09:00 IST".
 
 ## 8. FOUNDING INVITE SCRIPT (stealth — hand-shared only, canon)
-"The link is private for now. FORTREX is a non-custodial tournament arena for traders — your money stays at your broker, verified scoring, founding members get the permanent multiplier. First 10,000 seats, then it closes. If it's not for you, no harm — just don't post it anywhere yet."
+"The link is private for now. FORTREX is a non-custodial tournament arena for traders — your money stays at your broker, verified scoring, founding members get the permanent multiplier. Founding membership closes at launch. If it's not for you, no harm — just don't post it anywhere yet."
 
 ## 9. BAIT-VOCABULARY BLOCKLIST (binding guardrail — from STEALTH-MODE.md)
 Never on any FORTREX surface: claim, win, prize (except factual "prize pool" of a tournament), clearance, guaranteed, spots remaining, doors open, last chance, don't miss out. Fear/scarcity is not our voice. Facts are.

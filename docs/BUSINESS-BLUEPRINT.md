@@ -8,7 +8,7 @@ Written Sep 29, 2026 by the agent (owner-proxy). Built from: the live product, t
 4. Positioning: quiet, institutional, no hype. "The proof-of-skill layer for traders."
 5. What it is not: a broker, an adviser, a signal service, a fund. It never holds client money.
 6. Launch: November 7, 2026 (Season Zero). Stealth until then.
-7. Cap: 10,000 Genesis seats (hard limit). Founding members get a permanent 1.25x REX multiplier.
+7. Cap: none (removed Sep 30). Founding members (joined before launch) get a permanent 1.25x REX multiplier.
 8. REX: reputation points. No cash value, no redemption (legal shield, Path A). Redeemable REX only after counsel signs off.
 
 ## PART 2. CUSTOMERS
