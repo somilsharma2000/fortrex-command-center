@@ -5,7 +5,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Sep 30, 2026, 01:45 IST
+**Last updated:** Sep 30, 2026, 02:00 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
 
 ## Done and verified (with proof)
@@ -29,9 +29,9 @@ XM partner portal + written approval for public mentions; MetaApi token; custom 
 
 ## New roadmap (founder vision Sep 30, priority order)
 
-1. Trading journal engine: MT5 auto-import via MetaApi, trade-by-trade analysis, metrics like the top journal tools (research first: TradeZella, TraderSync, Tradervue, Edgewonk teardowns exist in research/universe)
+1. Trading journal engine — SPECS DONE (JOURNAL-ENGINE-SPEC.md): verified MetaApi import, full analytics catalog, behavioral detectors, admin full control, REX tie-in. Build phase 1 next (needs MetaApi token from founder). Wedge: competitors' #1 complaint is import bugs; ours is verified-honest-data
 2. Education hub: trading guides, notes, topics, definitions — structured course library
-3. Discord community integration: activity → REX rewards
+3. Discord — SPEC DONE (DISCORD-INTEGRATION-SPEC.md): one-line admin connect (bot token paste), member linking, activity → REX with anti-farm. Build phase 1 after journal
 4. Automated partner verification: XM partner portal report → instant account verification (needs XM portal access to evaluate)
 5. REX on competition prizes (alongside real prize money) — legal check: REX rewards for activity are fine, no cash-out
 
