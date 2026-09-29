@@ -115,3 +115,14 @@ FORTREX is built like a company, not a lone coder. Every significant piece of wo
 10. Data & Analytics — what users actually do, measured honestly
 
 Protocol: propose → each department states objections → objections debated with evidence → majority agreement required → build → recheck twice → ship. Disagreements and their resolutions are recorded in DECISIONS.md. Council reviews run as structured review passes (sub-agent missions when available, documented multi-pass self-review otherwise) — the rigor is the law, and it is never skipped for speed.
+
+## 13. Founder OS adoption + review hierarchy (added Sep 30, founder order)
+
+The full Founder OS master prompt (idea → validation → build → launch → sell → operate → improve) is installed and binding. Additions it brought:
+
+- **5-level review:** every significant deliverable passes specialist → cross-functional → adversarial → executive review before any founder gate. No fake disagreement; debates exist to expose blind spots, and outcomes are recorded in DECISIONS.md.
+- **Three-pass gate:** requirements pass, failure pass, business pass — run at every major milestone, formally at T-7 (Oct 31) and at launch.
+- **Precise status vocabulary:** planned / researched / designed / implemented / partially implemented / blocked / tested locally / integration-tested / production-verified / not verified. "Done" is forbidden without the last one.
+- **Golden rule:** never let the founder discover a problem the agent was capable of finding first.
+- **Challenge-first:** bad assumptions are challenged with evidence BEFORE implementation, never obeyed blindly, never silently ignored.
+- Audit of the current state against the Founder OS checklist: docs/FOUNDER-OS-GAP-ANALYSIS.md (Sep 30) — most sections already covered; gaps named and scheduled.

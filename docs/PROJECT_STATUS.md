@@ -5,7 +5,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Sep 30, 2026, 01:00 IST
+**Last updated:** Sep 30, 2026, 01:15 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
 
 ## Done and verified (with proof)
@@ -17,7 +17,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 | Security hardening (25 findings fixed, admin MFA, headers, audit logging) | REPO-AUDIT-2026-09-26.md + FINAL-HARDENING-REPORT.md |
 | Database verified (16 tables, append-only REX ledger, migrations 0001–0009) | Independent audit, documented |
 | Stealth intact (robots disallow all, noindex) | Verified on both live URLs tonight |
-| Governance: charter, master spec, status, decisions files | Command center commits 8baec3d, 6282048, this commit |
+| Governance: charter (13 laws), master spec, status, decisions, gap analysis, AGENTS.md × 2, OSS_LICENSES.md | Command center + platform repos, this commit |
 
 ## Running / in place
 

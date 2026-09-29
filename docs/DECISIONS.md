@@ -21,3 +21,9 @@
 ## Sep 30: governance system installed
 - Charter extended: living-files law (PROJECT_MASTER_SPEC / PROJECT_STATUS / DECISIONS), autonomy & escalation law (challenge bad assumptions before implementation; act autonomously on reversible low-risk; escalate only founder-authority), department council law (10 departments, majority agreement, objections debated and recorded).
 - PROJECT_MASTER_SPEC.md and PROJECT_STATUS.md created as living files; DECISIONS.md continues as the reasoning log. All three updated same-session with any decision.
+
+## Sep 30: Founder OS master prompt installed
+- Adopted as binding operating system (charter §13): 5-level review hierarchy, three-pass gate, precise status vocabulary, golden rule, challenge-first law.
+- Gap analysis run per its first-boot protocol: FOUNDER-OS-GAP-ANALYSIS.md. Most checklist sections already covered by existing systems; gaps (AGENTS.md, OSS_LICENSES.md) closed same session.
+- Challenged assumptions recorded: (1) zero-paid-SaaS target deferred to post-launch migration, stack stays locked until Nov 7; (2) market research not re-run from zero (180-point universe already graded); (3) advisory repo links recorded as research candidates only, not adopted without evaluation.
+- AGENTS.md created in both repos; OSS_LICENSES.md created in platform repo.
