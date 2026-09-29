@@ -28,7 +28,8 @@ summary: Every topic the founder has asked for and its current state. UPDATED AF
 
 1. MetaApi token → starts journal phase 1 build (the flagship).
 2. XM partner portal credentials → automated partner verification (instant account-open verification).
-3. Discord bot application (founder's choice; in-console guide will exist).
+3. Discord bot application (founder's choice; token can be INJECTED from Admin → Integrations now — no redeploy, encrypted at rest).
+2. MetaApi token — NO LONGER A BLOCKER FORMAT: inject from Admin → Integrations whenever ready (encrypted, zero redeploy, journal flips on instantly). Founder injects when he has money/approval.
 4. Later: domain, lawyer, Pvt Ltd, trademark — founder does after product satisfies him.
 
 ## 4. NEXT (planned, not started)
