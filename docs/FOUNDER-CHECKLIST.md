@@ -22,7 +22,7 @@ summary: Every topic the founder has asked for and its current state. UPDATED AF
 ## 2. IN PROGRESS (this session)
 
 1. DONE Sep 30 (verified live, commit 8f5eb76): Admin console expanded — Integrations & Connections hub (MetaApi, Discord, email, AI, XM partner, PostHog: status, test-connection, secrets masked) + Analytics/Audit section (live audited funnel: waitlist→members→connected→partner-linked→verified; REX issuance audit from append-only ledger; join trends; connection stats — all computed live, no manual edits possible). New APIs: /api/admin/integrations, /api/admin/analytics, 401-guarded, MFA on test actions.
-2. Competitor admin/operations research: 3 agents deployed (prop firm back-office, journal SaaS ops, admin console + audit best practices). Reports → research/admin/.
+2. DONE Sep 30: Competitor admin/operations research — 3 reports in research/admin/ (prop-firm back-office, journal SaaS operations, admin console + audit best practices). Key adoptions queued: sync circuit breakers (mt5_sync flag SHIPPED live, commit fe758eb), payout-time verification spec, onboarding rescue flow, dual broker-verification spec. 4-eyes + WORM flagged (needs 2nd operator / post-launch stack).
 
 ## 3. WAITING ON FOUNDER
 
@@ -32,6 +32,8 @@ summary: Every topic the founder has asked for and its current state. UPDATED AF
 4. Later: domain, lawyer, Pvt Ltd, trademark — founder does after product satisfies him.
 
 ## 4. NEXT (planned, not started)
+
+0. Payout-time verification spec (KYC at payout, read-only freeze, two-tier queue — from prop-firm back-office research).
 
 1. Journal engine phase 1 build (connection flow + verified import + dashboard with core metrics + admin section).
 2. Education hub: guides, notes, topics, definitions, structured course library.
