@@ -1,0 +1,301 @@
+<style>
+:root{--ob:#050506;--gr:#111114;--go:#D8A64D;--bone:#FFF7E6;--mut:#9b9482;--line:rgba(216,166,77,.22)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ob);color:var(--bone);font:16px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.01em;margin:0}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+nav{position:sticky;top:0;z-index:5;background:rgba(5,5,6,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:10px 14px;white-space:nowrap}
+nav a{color:var(--mut);text-decoration:none;font-size:13px;padding:6px 10px;border:1px solid transparent;border-radius:6px}
+nav a:hover{color:var(--go);border-color:var(--line)}
+main{max-width:980px;margin:0 auto;padding:0 18px 90px}
+.hero{padding:54px 0 26px;border-bottom:1px solid var(--line)}
+.tag{color:var(--go);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.hero h1{font-size:clamp(30px,6vw,52px);margin:10px 0}
+.lede{color:var(--mut);max-width:680px}
+section{padding:46px 0 6px}
+section>h2{font-size:clamp(22px,4vw,32px);margin-bottom:6px}
+.sub{color:var(--mut);margin:0 0 20px}
+.card{background:var(--gr);border:1px solid var(--line);border-radius:12px;padding:18px;margin:12px 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card h3{font-size:17px;color:var(--go);margin-bottom:6px}
+.card p,.card li{color:#e8e0cd;font-size:15px}
+ul,ol{padding-left:20px;margin:6px 0}li{margin:3px 0}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}
+th{color:var(--go);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.tw{overflow-x:auto}
+.g{color:#7fd39a}.y{color:#e6c35c}.r{color:#ef7c7c}
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--go);margin-right:6px}
+.warn{border-left:3px solid #ef7c7c;background:#160c0c}
+.ok{border-left:3px solid #7fd39a;background:#0b140e}
+.note{border-left:3px solid var(--go)}
+.risk{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:24px;padding-top:12px}
+/* mockups */
+.mock{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--ob);margin:14px 0}
+.mock .bar{display:flex;gap:6px;align-items:center;padding:8px 12px;background:#0b0b0d;border-bottom:1px solid var(--line);font-size:11px;color:var(--mut)}
+.mock .bar i{width:9px;height:9px;border-radius:50%;background:#2a2a2e;display:inline-block}
+.mock .body{padding:26px 20px;text-align:center}
+.crown{width:54px;height:54px;margin:0 auto 10px}
+.mk h4{font-family:"Space Grotesk",sans-serif;font-size:clamp(24px,5vw,38px);margin:6px 0;letter-spacing:.02em}
+.gold{background:linear-gradient(90deg,var(--bone),var(--go),#a87a2c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.red{display:inline-block;background:#1a1a1d;color:transparent;border-radius:3px;user-select:none;margin:0 2px}
+.btn{display:inline-block;margin-top:14px;padding:11px 20px;border:1px solid var(--go);color:var(--ob);background:var(--go);border-radius:8px;font-weight:600;font-size:14px}
+.btn.o{background:transparent;color:var(--go)}
+.cd{display:flex;gap:10px;justify-content:center;margin:14px 0}
+.cd div{border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-width:62px}
+.cd b{display:block;font-family:"JetBrains Mono",monospace;font-size:22px;color:var(--go)}
+.cd span{font-size:10px;color:var(--mut);letter-spacing:.14em}
+.stripe{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;font-size:12px;color:var(--mut);margin-top:16px}
+.stripe span{border:1px solid var(--line);border-radius:99px;padding:4px 10px}
+.banner{border:1px solid var(--go);background:linear-gradient(135deg,#0d0b06,#1a1408);border-radius:10px;padding:14px 16px;margin:10px 0;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.banner b{color:var(--go)}
+.share{width:100%;max-width:520px;aspect-ratio:1200/630;margin:10px auto;border:1px solid var(--line);border-radius:10px;background:radial-gradient(circle at 78% 30%,rgba(216,166,77,.18),transparent 55%),var(--ob);padding:22px;text-align:left;display:flex;flex-direction:column;justify-content:space-between}
+.lb{width:100%;font-family:"JetBrains Mono",monospace;font-size:13px}
+.lb td,.lb th{padding:7px 8px}
+.org{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.dept{background:var(--gr);border:1px solid var(--line);border-radius:10px;padding:14px}
+.dept h3{font-size:15px;color:var(--go);margin:0 0 4px}
+.dept small{color:var(--mut);display:block;margin-bottom:6px}
+.disc{font-family:"JetBrains Mono",monospace;font-size:12.5px;white-space:pre;overflow-x:auto;background:#0b0b0d;border:1px solid var(--line);border-radius:10px;padding:14px;color:#e8e0cd}
+.q{counter-increment:q}
+.qs .card{position:relative;padding-left:52px}
+.qs .card:before{content:counter(q);position:absolute;left:16px;top:16px;width:26px;height:26px;border-radius:50%;border:1px solid var(--go);color:var(--go);display:flex;align-items:center;justify-content:center;font-size:13px}
+.qs{counter-reset:q}
+.opt{color:var(--mut);font-size:13.5px}
+</style>
+
+<nav>
+<a href="#s0">Read first</a><a href="#s1">Vision checklist</a><a href="#s2">Reality check</a><a href="#s3">How it works</a><a href="#s4">Landing preview</a><a href="#s5">Banners</a><a href="#s6">Product</a><a href="#s7">Tournaments</a><a href="#s8">Discord</a><a href="#s9">REX currency</a><a href="#s10">Journal</a><a href="#s11">Admin</a><a href="#s12">Scale</a><a href="#s13">Company</a><a href="#s14">Roadmap</a><a href="#s15">Legal</a><a href="#s16">Questions</a>
+</nav>
+
+<main>
+<div class="hero" id="s0">
+<div class="tag mono">FORTREX // PRIVATE FOUNDER REVIEW // Sep 29, 2026</div>
+<h1 class="gold">Your vision, researched and laid out.</h1>
+<p class="lede">This page is private (password, no-index, not linked anywhere). It shows what we are building, what the research found, what changed because of it, and the questions only you can answer. Open it on your phone. Nothing here is public.</p>
+<div class="card note"><b>Status:</b> research done (8 missions, about 20,000 words), plan written, mockups below are designs (not live pages). Live product still frozen on the private lab.</div>
+</div>
+
+<section id="s1"><h2>1. Your vision, point by point</h2><p class="sub">Everything you asked for, and where it stands.</p>
+<div class="tw"><table>
+<tr><th>Your idea</th><th>Our answer</th><th>Status</th></tr>
+<tr><td>Live account at partner broker (XM) via our link, verified</td><td>Locked-entry gate + admin claim approval</td><td class="g">Built</td></tr>
+<tr><td>Competition only among link-opened accounts, prizes only to them</td><td>live_partner contests; prizes paid by the BROKER (see section 15)</td><td class="y">Built / counsel</td></tr>
+<tr><td>Income from accounts opened through our link</td><td>Broker partnership (IB / CPA)</td><td class="y">Needs XM partner account + counsel</td></tr>
+<tr><td>Many tournaments, timelines, conditions</td><td>8 tournament types designed (section 7)</td><td class="y">Designed</td></tr>
+<tr><td>30 to 35 day pre-launch, page that does not reveal what we are</td><td>35-day plan + 5 landing states (section 4)</td><td class="y">Designed, needs your stealth GO</td></tr>
+<tr><td>Curiosity, sharing, psychology</td><td>Playbook with an ethical line for each principle</td><td class="g">Researched</td></tr>
+<tr><td>Our own currency (REX)</td><td>Full earn/spend/tier/decay design, no cash-out</td><td class="g">Designed; ledger built</td></tr>
+<tr><td>Discord as the main community, synced</td><td>Channel map, roles by tier, OAuth link, bot, admin panel</td><td class="y">Designed</td></tr>
+<tr><td>Trader profiles</td><td>Exist; expand with verified stats and titles</td><td class="y">Partly built</td></tr>
+<tr><td>Free AI trading journal</td><td>Spec that beats 10 competitors using automatic MT5 import</td><td class="y">Designed</td></tr>
+<tr><td>Admin controls everything, reports, audits</td><td>Admin console spec (section 11)</td><td class="y">Partly built</td></tr>
+<tr><td>Live MT5 without you touching the API</td><td>MetaApi; you only need one token (section 3)</td><td class="y">Code built, token needed</td></tr>
+<tr><td>Handle 5 million people</td><td>Staged scale plan (section 12), honest limits</td><td class="y">Planned</td></tr>
+<tr><td>Full company with expert departments</td><td>Org chart (section 13)</td><td class="g">Done</td></tr>
+<tr><td>Traders with no funds feel they can earn</td><td>Free demo contests + learning. NO earnings promises</td><td class="r">Changed, see section 2</td></tr>
+<tr><td>London / USA / UK presence</td><td>Cannot show offices we do not have. Global market sessions instead</td><td class="r">Changed, see section 2</td></tr>
+</table></div></section>
+
+<section id="s2"><h2>2. Reality check: what the research changed</h2><p class="sub">Read this section carefully. It changes the plan.</p>
+<div class="card warn"><h3>1. UK and EU cannot join the LIVE cash contests</h3><p>UK (FCA) and EU (ESMA) rules ban cash prizes and incentives tied to live retail CFD trading. UK and EU traders can join DEMO contests only. So "London / UK" cannot be a live-prize market.</p></div>
+<div class="card warn"><h3>2. US and India are blocked from the live track</h3><p>US: CFTC and state contest laws. India: the 2025 online gaming law plus FEMA/RBI (XM is on the RBI alert list). You live in India, so the company that signs broker deals should sit offshore (UAE or Singapore), not in India.</p></div>
+<div class="card warn"><h3>3. We cannot show offices, people or locations that do not exist</h3><p>A "London office" or fake team photos is a false statement. It risks another Google flag and legal trouble. We can honestly show: worldwide service, real market sessions (Sydney, Tokyo, London, New York), and a real UAE entity once it exists.</p></div>
+<div class="card warn"><h3>4. We cannot promise earnings</h3><p>"Traders can earn here" is the fastest way to get flagged or sued. We promise learning, community, verified proof of skill, and free contests. Prizes exist, but nobody is told they will earn.</p></div>
+<div class="card warn"><h3>5. The research suggested word-swaps to dodge flags. I rejected that.</h3><p>One report proposed calling tournaments "Benchmark Evaluations" and prizes "Honoraria". That disguises the product and looks more suspicious to regulators. We keep mystery in what we reveal and when, but never rename real things to hide them.</p></div>
+<div class="card ok"><h3>What works well</h3><ul><li>The broker pays prizes directly. FORTREX never touches prize money (removes most tax and gaming-law exposure for us).</li><li>Best first markets: Gulf states, Latin America, Southeast Asia.</li><li>Demo contests can run almost everywhere, including UK and EU.</li></ul></div>
+</section>
+
+<section id="s3"><h2>3. How live MT5 works (nothing for you to code)</h2><p class="sub">Plain steps. Two are yours, the rest is built.</p>
+<ol>
+<li><b>MetaApi (metaapi.cloud):</b> a service that reads MT5 accounts. You make one account and give me its API token. <span class="pill">you, 10 min</span></li>
+<li><b>Trader connects:</b> types MT5 login, server, and the <i>investor password</i>. That password is read-only: we can see trades and balance, never place or withdraw. <span class="pill">built</span></li>
+<li><b>XM partner account:</b> you apply as an XM partner and get a partner link and code. I paste the link in the admin settings. <span class="pill">you</span></li>
+<li><b>Verification:</b> the trader submits their MT5 login as opened under our code; admin approves it against the XM partner portal (which shows client IDs and account numbers). <span class="pill">built</span></li>
+<li><b>Scoring:</b> automatic, every few minutes, USD-normalized, reproducible. <span class="pill">built</span></li>
+</ol>
+<p class="opt">Honest note: I have never connected to a real MetaApi account, only the mock. First real connection is a test I will do the day you give the token.</p></section>
+
+<section id="s4"><h2>4. Pre-launch landing page (35 days)</h2><p class="sub">Five states. It stays mysterious but truthful, always with the risk notice. Design only, not live.</p>
+
+<h3 style="margin-top:22px">State 0: Day 1 to 7 (silence)</h3>
+<div class="mock"><div class="bar"><i></i><i></i><i></i> fortrex (private mockup)</div><div class="body mk">
+<svg class="crown" viewBox="0 0 64 64"><path d="M6 46 L12 18 L24 32 L32 12 L40 32 L52 18 L58 46 Z" fill="none" stroke="#D8A64D" stroke-width="2.4" stroke-linejoin="round"/><path d="M6 52 H58" stroke="#D8A64D" stroke-width="2.4"/></svg>
+<div class="tag mono">FORTREX // INITIALIZING</div>
+<h4 class="gold">Something is being assembled.</h4>
+<p class="lede" style="margin:8px auto">A verified arena for traders. Access is limited and opens on a fixed date.</p>
+<div class="cd"><div><b>35</b><span>DAYS</span></div><div><b>00</b><span>HRS</span></div><div><b>00</b><span>MIN</span></div></div>
+<span class="btn">Request access</span>
+<div class="stripe"><span>Opens Nov 7</span><span>Limited seats</span><span>Traders only</span></div>
+<p class="risk">Trading involves substantial risk of loss. FORTREX is not a broker and does not provide investment advice.</p>
+</div></div>
+
+<h3>State 1: Day 8 to 21 (what it is, in part)</h3>
+<div class="mock"><div class="bar"><i></i><i></i><i></i> fortrex (private mockup)</div><div class="body mk">
+<div class="tag mono">DAY 14 // PARTIAL DISCLOSURE</div>
+<h4 class="gold">Skill, verified. Not screenshots.</h4>
+<p class="lede" style="margin:8px auto">FORTREX runs trading competitions where every result is read directly from the trader's own account. <span class="red">████████████</span> announced soon.</p>
+<div class="banner"><span><b>1,204</b> traders on the access list</span><span class="mono" style="color:var(--mut)">seat 1,205 is next</span></div>
+<span class="btn">Hold my seat</span> <span class="btn o">Invite a trader</span>
+<p class="risk">Live competitions are not open to residents of the US, India, UK or EU. Demo competitions may be. Trading involves substantial risk of loss.</p>
+</div></div>
+
+<h3>State 2: Day 22 to 28 (leaderboard preview)</h3>
+<div class="mock"><div class="bar"><i></i><i></i><i></i> fortrex (private mockup)</div><div class="body mk" style="text-align:left">
+<div class="tag mono">PRE-SEASON LEADERBOARD // DEMO // ANONYMIZED</div>
+<div class="tw"><table class="lb"><tr><th>#</th><th>Trader</th><th>Score</th><th>Max DD</th></tr>
+<tr><td>1</td><td>A. K. (AE)</td><td>92.4</td><td>3.1%</td></tr><tr><td>2</td><td>M. R. (BR)</td><td>88.9</td><td>4.0%</td></tr><tr><td>3</td><td>T. N. (VN)</td><td>85.2</td><td>2.8%</td></tr><tr><td>4</td><td>S. L. (MY)</td><td>81.7</td><td>5.2%</td></tr></table></div>
+<p class="risk">Sample layout only, placeholder data. On the live page these are real demo results, never invented.</p>
+</div></div>
+
+<h3>State 3: Day 29 to 35 (full reveal) and State 4: Nov 7 launch</h3>
+<div class="mock"><div class="bar"><i></i><i></i><i></i> fortrex (private mockup)</div><div class="body mk">
+<div class="tag mono">SEASON ZERO // NOV 7</div>
+<h4 class="gold">The arena opens.</h4>
+<p class="lede" style="margin:8px auto">Free demo competitions for everyone eligible. Live partner competitions for verified accounts. One honest leaderboard.</p>
+<span class="btn">Create account</span> <span class="btn o">See the rules</span>
+<div class="stripe"><span>Read-only account link</span><span>Non-custodial</span><span>Verified scoring</span><span>REX: no cash value</span></div>
+<p class="risk">FORTREX may receive a commission from partner brokers when you open an account through its link. CFDs are complex instruments and carry a high risk of losing money rapidly due to leverage.</p>
+</div></div>
+<p class="opt">Every state carries the risk notice. The commission disclosure appears wherever a broker link appears (required in the UK, EU and US even if we block live entry there).</p></section>
+
+<section id="s5"><h2>5. Banners and share cards</h2><p class="sub">Designs for the site, Discord and social. Quiet, institutional, gold on obsidian.</p>
+<div class="banner"><span><b>SEASON ZERO</b> opens in 35 days. 10,000 founding seats. Seat numbers are assigned in order.</span><span class="btn o" style="margin:0">Request access</span></div>
+<div class="banner"><span><b>Region notice.</b> Live partner competitions are not available in your region. Demo competitions are open.</span><span class="btn o" style="margin:0">See demo contests</span></div>
+<div class="banner"><span><b>Partner disclosure.</b> FORTREX may earn a commission if you open a broker account through this link.</span></div>
+<div class="banner"><span><b>Risk.</b> Trading involves substantial risk of loss. Past results do not indicate future results.</span></div>
+<div class="share"><div class="tag mono">FORTREX // VERIFIED RECORD</div><div><div style="font-family:'Space Grotesk';font-size:26px" class="gold">Top 4% . Score 91.2</div><div style="color:var(--mut);font-size:13px" class="mono">Sharpe 1.8 . Max drawdown 3.4% . 41 trades</div></div><div style="color:var(--mut);font-size:11px">Verified from the trader's own account. Trading involves risk.</div></div>
+<p class="opt">The share card shows skill metrics only. No dollar amounts, no cash icons, no "claimed" wording (this was the Sep 26 Google trigger).</p></section>
+
+<section id="s6"><h2>6. The product: what traders get</h2>
+<div class="grid">
+<div class="card"><h3>Compete</h3><p>Demo and live-partner contests, brackets, one honest board.</p></div>
+<div class="card"><h3>Prove</h3><p>Permanent verified track record and share cards.</p></div>
+<div class="card"><h3>Learn</h3><p>Free AI journal, risk lessons, weekly reports, academy modules.</p></div>
+<div class="card"><h3>Belong</h3><p>Profile, titles, REX tier, Discord roles synced.</p></div>
+<div class="card"><h3>Grow</h3><p>Daily streaks, paths, referrals with non-cash rewards.</p></div>
+<div class="card"><h3>Be safe</h3><p>Read-only links, no funds held, honest scoring, anti-cheat.</p></div>
+</div></section>
+
+<section id="s7"><h2>7. Eight tournament types</h2><p class="sub">Different lengths and conditions. Ranking uses risk-adjusted score by default so reckless all-in play does not win.</p>
+<div class="tw"><table>
+<tr><th>Type</th><th>Length</th><th>Account</th><th>Ranked by</th></tr>
+<tr><td>Sprint</td><td>7 days</td><td>Demo</td><td>Score</td></tr>
+<tr><td>League</td><td>30 days</td><td>Live partner</td><td>Score, then gain</td></tr>
+<tr><td>Gold Only</td><td>Weekly</td><td>Demo or live</td><td>Score (XAUUSD only)</td></tr>
+<tr><td>Steady Hand</td><td>30 days</td><td>Demo</td><td>Lowest drawdown for a gain</td></tr>
+<tr><td>Rookie Bracket</td><td>14 days</td><td>Demo</td><td>Score, small accounts only</td></tr>
+<tr><td>Educator Cup</td><td>30 days</td><td>Demo or live</td><td>Score, private league per educator</td></tr>
+<tr><td>Session Duel</td><td>1 session</td><td>Demo</td><td>London vs New York, team score</td></tr>
+<tr><td>Season Finals</td><td>Quarterly</td><td>Live partner</td><td>Cumulative REX and score</td></tr>
+</table></div>
+<p class="opt">Each has its own anti-cheat rule (no opposite-account hedging, minimum trades, news-window limits). Prize funding: broker or sponsor, never FORTREX cash pools, never entry fees.</p></section>
+
+<section id="s8"><h2>8. Discord: the main community</h2><p class="sub">Linked to the website by login, so roles follow the trader automatically.</p>
+<div class="disc">FORTREX SERVER
+  INFORMATION (read-only)
+    #welcome-and-rules   #announcements   #competition-feed
+    #leaderboard         #verify-here
+  TRADER HUB (verified)
+    #general-chat  #market-analysis  #feedback-and-ideas
+  COMPETITIONS
+    #active-tournaments  #verified-results  #tournament-chat
+  TIER LOUNGES (role-gated by REX tier)
+  SUPPORT   #create-ticket
+  STAFF (private)   #mod-logs  #ticket-queue  #system-alerts</div>
+<div class="grid" style="margin-top:12px">
+<div class="card"><h3>What the bot does</h3><ul><li>Links Discord to the FORTREX account (OAuth)</li><li>Gives roles by tier and verified status</li><li>Posts leaderboards and rank changes</li><li>Tournament reminders and countdowns</li><li>Admin commands from Discord</li></ul></div>
+<div class="card"><h3>Safety (scams are the big Discord problem)</h3><ul><li>Unverified members cannot chat</li><li>Blocks invite links, referral codes, signal spam</li><li>Staff never DM first (pinned everywhere)</li><li>No signal selling, no copy-trading</li><li>Automatic logging for admin audit</li></ul></div></div>
+<p class="opt">Adjusted from the research: role names use our real tiers, no dollar-volume thresholds (volume tiers push people to over-trade).</p></section>
+
+<section id="s9"><h2>9. REX: our own currency</h2><p class="sub">Status and access. Never cash. Legal shield stays.</p>
+<div class="grid">
+<div class="card"><h3>Earn</h3><ul><li>Verified referral: +150 (after they log 3 verified trades)</li><li>Daily streak: 10 up to 100</li><li>Contest placement: 1st 500, 2nd 300, 3rd 150, top 10% 50</li><li>Journal entry: 15 (max 3 a day)</li><li>Academy module: 50</li></ul></div>
+<div class="card"><h3>Spend</h3><ul><li>Profile border and chart themes</li><li>Journal Pro time (7 or 30 days)</li><li>VIP free-contest entry pass</li><li>Discord seasonal role</li></ul></div>
+<div class="card"><h3>Rules</h3><ul><li>No cash-out, no transfer, no sale</li><li>Daily earn cap 300 (contest wins exempt)</li><li>Inactivity decay after 60 days</li><li>Referral rewards held 7 days for fraud checks</li><li>Terms clause reserves the right to change values</li></ul></div></div>
+<div class="card warn"><h3>Two changes I made to the research</h3><p>1. Our live system already pays +50 (inviter) and +25 (invitee). The research says 150. This is your call (question 9).<br>2. The research had a 25,000 REX wallet cap and a "top 5% diamond" tier. I would start simpler: 4 tiers, no cap until we see real usage.</p></div></section>
+
+<section id="s10"><h2>10. The free AI trading journal</h2><p class="sub">We studied 10 tools: TraderSync, Edgewonk, TradeZella, TradesViz, Kinfo, Tradervue, FXReplay, Myfxbook, Trademetria, Chartlog.</p>
+<div class="grid">
+<div class="card"><h3>What traders hate about them</h3><ul><li>Sync breaks or needs a desktop program running</li><li>Generic AI ("manage your risk")</li><li>Price hikes, hard cancellations</li><li>Cluttered or outdated screens</li><li>Real AI locked behind the top price tier</li><li>Public boards that leak strategies</li></ul></div>
+<div class="card"><h3>What we do instead</h3><ul><li>Automatic read-only import, nothing to install</li><li>AI that names specific patterns in YOUR trades (revenge trading, overtrading after losses, size creep, bad sessions)</li><li>Free core, extras earned with REX</li><li>Clean phone-first screens</li><li>Private by default, share on purpose</li></ul></div>
+<div class="card"><h3>Reports</h3><ul><li>Per-trade review</li><li>Session and pair breakdown</li><li>Risk of ruin</li><li>Weekly report to Discord or email</li><li>Behavior score over time</li></ul></div></div>
+<p class="opt">The AI writes feedback about YOUR trades and risk habits. It never says buy or sell, and every report carries "educational, not advice".</p></section>
+
+<section id="s11"><h2>11. Admin: the control room</h2><p class="sub">You asked for every power. These are the modules.</p>
+<div class="grid">
+<div class="card"><h3>Website</h3><p>Edit banners, copy, launch state, countdown, region notices. Kill switches per feature. Flip stealth on and off.</p></div>
+<div class="card"><h3>Competitions</h3><p>Create any type, set entry mode, scoring basis, prize text, sponsor, dates. Approve partner claims. Disqualify with reason.</p></div>
+<div class="card"><h3>People</h3><p>Members, tiers, flags, referral graph, fraud queue, multi-account alerts.</p></div>
+<div class="card"><h3>REX</h3><p>Ledger view, manual adjustments with reason, rate and cap settings.</p></div>
+<div class="card"><h3>Discord</h3><p>Roles, channels, announcements, mute and ban from the admin screen, audit log both ways.</p></div>
+<div class="card"><h3>Money view</h3><p>Broker-attributed accounts, commissions reported, sponsor deals, tax notes.</p></div>
+<div class="card"><h3>Reports and audits</h3><p>Daily, weekly and monthly reports, growth funnel, retention, abuse, full audit log of every admin action.</p></div>
+<div class="card"><h3>Safety</h3><p>Every change needs your authenticator code and is logged with who, what, when.</p></div></div></section>
+
+<section id="s12"><h2>12. Scale: honest plan for 5 million</h2>
+<div class="tw"><table><tr><th>Stage</th><th>People</th><th>What changes</th></tr>
+<tr><td>1</td><td>up to 10,000</td><td>Today's stack is enough.</td></tr>
+<tr><td>2</td><td>10k to 500k</td><td>Paid Vercel and Neon plans, caching, job queue for scoring, read replica, CDN in front.</td></tr>
+<tr><td>3</td><td>500k to 5M</td><td>Scoring in separate workers, Redis, region databases, dedicated bot host, rate limits per user.</td></tr></table></div>
+<p class="opt">Honest limits: we cannot test 5 million today, and the MetaApi bill grows with connected accounts (real cost, see question 6). The plan and a load-test script will be written before launch.</p></section>
+
+<section id="s13"><h2>13. The company (roles and owners)</h2><p class="sub">I act as the owner and lead. These are the departments and what each one owns. Today they are all run by me and my research helpers; real hires come as money comes in.</p>
+<div class="org">
+<div class="dept"><h3>Chief Executive (agent)</h3><small>Owner-proxy</small>Strategy, priorities, daily decisions, this report.</div>
+<div class="dept"><h3>Product and Engineering</h3><small>Platform, MT5, scoring, security</small>Ships features, tests, deploys, rollback plans.</div>
+<div class="dept"><h3>Design and Brand</h3><small>Crown system, canon</small>Landing states, banners, share cards, motion. Guards the design rules.</div>
+<div class="dept"><h3>Growth and Content</h3><small>Pre-launch, social, SEO</small>35-day calendar, threads, redacted-file posts, newsletter, referral ladder.</div>
+<div class="dept"><h3>Community and Discord</h3><small>Server, bot, moderation</small>Onboarding, events, tickets, anti-scam.</div>
+<div class="dept"><h3>Partnerships</h3><small>Brokers, sponsors, educators</small>XM and backup broker, prize sponsors, educator leagues.</div>
+<div class="dept"><h3>Legal and Compliance</h3><small>Counsel liaison</small>Rules, terms, region blocks, disclosures, contest law, tax.</div>
+<div class="dept"><h3>Data and Research</h3><small>Analytics, journal AI</small>Metrics, retention, AI report quality, competitor watch.</div>
+<div class="dept"><h3>Operations and Support</h3><small>Runbooks, refunds, uptime</small>Heartbeat, incident response, support templates.</div>
+<div class="dept"><h3>Finance</h3><small>Costs, revenue, tax</small>Burn, GST, commission tracking, entity costs.</div>
+</div>
+<p class="opt">These are functions, not people. I will not present them publicly as a team of named staff, because that would be false.</p></section>
+
+<section id="s14"><h2>14. Roadmap</h2>
+<div class="tw"><table><tr><th>When</th><th>What</th><th>Who</th></tr>
+<tr><td>Now to Oct 4</td><td>Answer questions; I build Discord link, journal v1, admin modules, landing states</td><td>You answer, I build</td></tr>
+<tr><td>Oct 5</td><td>Counsel consult (question list in section 16)</td><td>You</td></tr>
+<tr><td>Oct 1 onward</td><td>Credits reset: share-card images, OG cards</td><td>Me</td></tr>
+<tr><td>Oct 4 or Oct 17</td><td>Pre-launch starts (needs your stealth GO)</td><td>You decide</td></tr>
+<tr><td>By Oct 24</td><td>Domain, trademark, UAE company started</td><td>You</td></tr>
+<tr><td>Oct 31</td><td>T-7 readiness audit</td><td>Me</td></tr>
+<tr><td>Nov 7</td><td>Season Zero opens</td><td>Both</td></tr></table></div></section>
+
+<section id="s15"><h2>15. Legal structure (a lawyer must confirm everything)</h2>
+<div class="card note"><h3>Recommended shape</h3><ol><li>Offshore company (UAE free zone or Singapore) signs broker and sponsor deals. Cost about 6 to 12 thousand USD to set up.</li><li>The partner broker holds the accounts, does identity checks, and pays cash prizes directly to winners.</li><li>FORTREX provides leaderboard technology and marketing, and never handles prize money.</li><li>Your India work is billed to the offshore company as a services contract.</li><li>Live contests exclude the US, India, UK, EU and sanctioned countries. Demo contests can be wider.</li></ol></div>
+<div class="tw"><table><tr><th>Region</th><th>Live cash contest</th><th>Demo contest</th></tr>
+<tr><td>Gulf (UAE, Saudi, Qatar, Bahrain)</td><td class="g">First target</td><td class="g">Yes</td></tr>
+<tr><td>Latin America</td><td class="g">Second</td><td class="g">Yes</td></tr>
+<tr><td>Southeast Asia</td><td class="g">Third</td><td class="g">Yes</td></tr>
+<tr><td>UK and EU</td><td class="r">Blocked</td><td class="y">Yes, counsel confirms</td></tr>
+<tr><td>US</td><td class="r">Blocked</td><td class="r">Blocked at launch</td></tr>
+<tr><td>India</td><td class="r">Blocked</td><td class="y">Counsel decides</td></tr></table></div>
+<p class="opt">All of this is agent research from web sources, not legal advice. Item: the 2025 gaming law and RBI alert list details must be confirmed by Indian counsel.</p></section>
+
+<section id="s16"><h2>16. Questions for you</h2><p class="sub">Answer any, in any order, any time. "You decide" is a valid answer. I start on each one as soon as you answer it.</p>
+<div class="qs">
+<div class="card"><b>Stealth.</b> Lift stealth so the 35-day pre-launch can start on about Oct 4, or keep it invite-only until Nov 7?<div class="opt">Options: A) start Oct 4 (35 days, public). B) start Oct 17 (21 days). C) stay private. My pick: B, because A leaves too little time for the legal and product work behind it.</div></div>
+<div class="card"><b>Money model.</b> A) demo only. B) live XM only. C) both (demo everywhere, live where allowed).<div class="opt">My pick: C, launching demo first.</div></div>
+<div class="card"><b>Who owns the company?</b> Do you want a UAE or Singapore company, and are you willing to spend about 8 to 12 thousand USD over the next weeks?<div class="opt">Options: UAE, Singapore, decide after counsel. My pick: decide after counsel on Oct 5, but start the paperwork search now.</div></div>
+<div class="card"><b>Where do you live and work from?</b> India only, or are you open to moving to the UAE?<div class="opt">This decides tax and legal risk.</div></div>
+<div class="card"><b>Prizes.</b> Who pays them: the broker, a sponsor, or you? What size (for example 500, 2,000, 10,000 USD a month)?<div class="opt">My pick: broker or sponsor only; FORTREX never holds prize cash.</div></div>
+<div class="card"><b>Budget.</b> Monthly amount you are ready to spend on MetaApi, hosting, Discord bot, email and tools?<div class="opt">Rough guide: 0 to 10k people about 100 to 400 USD a month. Grows with users.</div></div>
+<div class="card"><b>First market.</b> Which region do you want first? Gulf, Latin America, Southeast Asia, or another?<div class="opt">My pick: Gulf, then Latin America.</div></div>
+<div class="card"><b>Languages.</b> English only at launch, or English plus Arabic, Spanish, Portuguese, Vietnamese?<div class="opt">My pick: English first, Arabic and Spanish in month two.</div></div>
+<div class="card"><b>Referral rewards.</b> Keep +50 / +25 REX (live now), or move to the research's 150 REX after 3 verified trades?<div class="opt">My pick: 150 after 3 trades (harder to farm).</div></div>
+<div class="card"><b>Journal price.</b> Free forever with extras earned in REX, or free now and paid Pro later?<div class="opt">My pick: free core forever; Pro extras by REX or a small monthly price later.</div></div>
+<div class="card"><b>Brand voice.</b> The plan keeps the quiet institutional voice. Do you want it kept, or a bit warmer and louder for the pre-launch?<div class="opt">Your saved rule says quiet. My pick: keep it, use mystery and precision, not volume.</div></div>
+<div class="card"><b>Social accounts.</b> Do FORTREX X, Instagram, YouTube, Telegram and Discord accounts exist? Who owns the logins?<div class="opt">I cannot create or post on them without you.</div></div>
+<div class="card"><b>Faces.</b> Do you want your own face and name on the brand (founder-led content) or an anonymous brand?<div class="opt">Founder-led content usually performs better. Anonymous fits the mystery. My pick: anonymous until launch, founder from launch.</div></div>
+<div class="card"><b>Team.</b> Do you want to hire real people (designer, moderator, editor) later, and roughly when?</div>
+<div class="card"><b>Partner broker.</b> Have you applied to the XM partner programme yet? Any second broker you like (Exness, Vantage, FBS)?<div class="opt">Note: broker terms and RBI alert list mean nothing is signed from India.</div></div>
+<div class="card"><b>Sponsors.</b> Any brands you can approach (TradingView, VPS hosts, prop firms)?</div>
+<div class="card"><b>Review access.</b> Should this review page stay private with a password only you know, or do you also want to share it with an advisor?<div class="opt">I will set a password you choose.</div></div>
+</div>
+<div class="risk">Private working document. Not legal advice. Trading involves substantial risk of loss. REX has no cash value.</div>
+</section>
+</main>
