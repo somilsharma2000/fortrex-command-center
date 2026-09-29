@@ -86,3 +86,32 @@ This is a vibe-coding project on GitHub. The agent never builds blind: for every
 3. Respect the stack lock (STACK-DECISIONS.md): no new core technology pre-launch without a reason stronger than "newer version exists."
 4. Never adopt an unverified/unknown repo into the platform without checking maintenance, license, and security.
 5. Keep skills reusable: repeated operations become skills in the agent workspace, so no session redoes them worse.
+
+## 10. Living-files law (added Sep 30, founder order)
+
+Three files live in the command center and are the project's memory — without them, long-running agents lose the reasoning and contradict earlier work. Read them at session start; update them at session end, same session as any decision:
+
+1. **PROJECT_MASTER_SPEC.md** — WHAT FORTREX is: product, rules, business, architecture. If a plan contradicts this file, the file wins until the founder says otherwise.
+2. **PROJECT_STATUS.md** — the living NOW: done with proof, running, pending, who owns it, next milestones.
+3. **DECISIONS.md** — the reasoning log: what was decided, when, why, and what was rejected.
+
+## 11. Autonomy & escalation law (added Sep 30, founder order)
+
+Follow the founder's decisions, but challenge bad assumptions BEFORE implementation — surfacing a flawed assumption is loyalty, not disobedience. Handle everything reversible and low-risk autonomously, without asking. Escalate ONLY founder-authority decisions (money, legal exposure, public revealing, partner agreements, scope of the business). The current authority split lives in PROJECT_STATUS.md.
+
+## 12. Department council law (added Sep 30, founder order)
+
+FORTREX is built like a company, not a lone coder. Every significant piece of work passes through the council — departments modeled on the top 2% minds in their fields, who debate each other, and work ships only when the majority agrees on logic and evidence:
+
+1. Product & Engineering — the build itself
+2. Business & Finance — revenue, unit economics, pricing, tax
+3. Legal & Compliance — nothing ships if it creates exposure
+4. Growth & Marketing — positioning, hooks, selling, presentations
+5. User Psychology & Ethics — what drives traders, and the honest line
+6. Research & Intelligence — competitors, demand, reviews, before building
+7. Operations & Reliability — uptime, monitoring, incident response
+8. Content & Communications — every word the public sees
+9. Security — attack surface, secrets, audits
+10. Data & Analytics — what users actually do, measured honestly
+
+Protocol: propose → each department states objections → objections debated with evidence → majority agreement required → build → recheck twice → ship. Disagreements and their resolutions are recorded in DECISIONS.md. Council reviews run as structured review passes (sub-agent missions when available, documented multi-pass self-review otherwise) — the rigor is the law, and it is never skipped for speed.

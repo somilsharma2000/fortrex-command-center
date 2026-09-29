@@ -17,3 +17,7 @@
 - Platform docs/MERGE-CHECKLIST.md (growth-lab-v1). Production still frozen. Merge only on founder GO.
 - Tested: old production code runs fine on a database migrated through 0008, so code-only rollback is safe.
 - Open before merge: CRON_SECRET missing on production; XM partner link not set (DB setting partner_link_xm); production DATABASE_URL host unverified (Vercel returns it encrypted); counsel view on offshore-broker commissions; the launch page gains a trust strip on merge.
+
+## Sep 30: governance system installed
+- Charter extended: living-files law (PROJECT_MASTER_SPEC / PROJECT_STATUS / DECISIONS), autonomy & escalation law (challenge bad assumptions before implementation; act autonomously on reversible low-risk; escalate only founder-authority), department council law (10 departments, majority agreement, objections debated and recorded).
+- PROJECT_MASTER_SPEC.md and PROJECT_STATUS.md created as living files; DECISIONS.md continues as the reasoning log. All three updated same-session with any decision.
