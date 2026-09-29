@@ -8,9 +8,13 @@ summary: The living single-source-of-truth for WHAT FORTREX is — product, busi
 **Last updated:** Sep 30, 2026
 **Why this file exists:** Long-running agents lose the project's reasoning and start contradicting earlier work. This file, PROJECT_STATUS.md, and DECISIONS.md together prevent that. When a new decision lands, update all three in the same session.
 
-## 1. What FORTREX is (one paragraph)
+## 1. Expanded vision (founder, Sep 30 — the single platform for traders)
 
-A non-custodial, skill-based trading tournament platform. Traders keep their capital at their own broker; FORTREX organizes verified competitions with honest leaderboards and risk-adjusted scoring, and earns from broker partnership on accounts opened through its link plus arena fees. Launch: November 7, 2026. Genesis cap: 10,000 founding seats (hard, non-negotiable), each carrying a permanent 1.25x REX multiplier.
+FORTREX = ONE platform fulfilling every trader need: 1) trading journal software — connect a real MT5 account, auto-import and analyze every trade like the top journal tools; 2) verified competitions with live reports and leaderboards; 3) an education hub — guides, notes, topics, definitions, a proper trading course library; 4) community — Discord as the hub, activity rewarded; 5) the REX economy rewarding invites, streaks, Discord activity, competition wins AND real prize money. Entry law unchanged: live competitions require the broker account opened through our link/code. Human psychology drives design. Scale target: 5 million traders, multi-country. Same design canon.
+
+## 1a. What FORTREX is (one paragraph)
+
+A non-custodial, skill-based trading tournament platform. Traders keep their capital at their own broker; FORTREX organizes verified competitions with honest leaderboards and risk-adjusted scoring, and earns from broker partnership on accounts opened through its link plus arena fees. Launch: November 7, 2026. NO seat cap (removed by founder order Sep 30). Founding members = everyone who joins before launch, each carrying a permanent 1.25x REX multiplier.
 
 ## 2. Product surface
 
@@ -20,7 +24,7 @@ Landing, signup/signin, onboarding, dashboard, connect (MT5 + demo ONLY), tourna
 
 1. Entry to live competitions ONLY via broker account opened through FORTREX's link + verification. No open "connect any account" path.
 2. REX has NO cash value, NO cash-out. No REX→₹ rate anywhere until counsel approves Path B.
-3. MT5 + demo only pre-launch. All other integrations deleted (provider enum values remain inert in DB by Postgres limitation, documented).
+3. MT5 + demo only pre-launch. LIVE accounts only for competitions post-launch (demo stays for education/practice tracks). All other integrations deleted (provider enum values remain inert in DB by Postgres limitation, documented).
 4. No offshore broker promotion to Indian residents. No fraud traffic (never pay members to open accounts). No public mention of XM or any partner without written approval.
 5. Stealth until Nov 7: noindex, robots blocked, hand-shared links only.
 6. Design canon locked: obsidian #050506, gold #D8A64D, bone #FFF7E6; Space Grotesk / Inter / JetBrains Mono; crown grammar per CROWN-SYSTEM.md. Quiet institutional voice, zero hype, risk disclaimer on every money surface.

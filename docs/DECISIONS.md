@@ -27,3 +27,9 @@
 - Gap analysis run per its first-boot protocol: FOUNDER-OS-GAP-ANALYSIS.md. Most checklist sections already covered by existing systems; gaps (AGENTS.md, OSS_LICENSES.md) closed same session.
 - Challenged assumptions recorded: (1) zero-paid-SaaS target deferred to post-launch migration, stack stays locked until Nov 7; (2) market research not re-run from zero (180-point universe already graded); (3) advisory repo links recorded as research candidates only, not adopted without evaluation.
 - AGENTS.md created in both repos; OSS_LICENSES.md created in platform repo.
+
+## Sep 30: 10,000 Genesis cap REMOVED (founder order)
+- Decision: no seat limit, anywhere. Signup seat gates, waitlist "gates_closed", "remaining" counter — all deleted. Verified live (0 hits for "10,000", founding copy live, health green, 80 regression assertions pass).
+- Challenge recorded (per charter §11): if everyone forever = founding, founding means nothing; if nobody = founding, the early-supporter reward dies. Resolution: founding = everyone who joins BEFORE launch (a fact, not an invented number); 1.25x stays permanent for them; launch merge closes the window.
+- Deployed: growth-lab-v1 28c637d, live on fortrex-lab.
+- New vision recorded same session (master spec §1): single trader platform (journal + education + community + competitions + REX economy + live-only + instant verification ambition + 5M scale). Roadmap gaps named: journal engine, education hub, Discord integration, automated partner verification.

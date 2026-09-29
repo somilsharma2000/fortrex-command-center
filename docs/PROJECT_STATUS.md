@@ -5,7 +5,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Sep 30, 2026, 01:15 IST
+**Last updated:** Sep 30, 2026, 01:45 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
 
 ## Done and verified (with proof)
@@ -26,6 +26,14 @@ Daily heartbeat 08:00 IST, weekly report Mon 09:00 IST, T-7 audit Oct 31, launch
 ## Founder-authority (escalate ONLY these; do not re-ask until he does his 7-step test)
 
 XM partner portal + written approval for public mentions; MetaApi token; custom domain; lawyer (counsel review of commissions, REX Path B, entity); Pvt Ltd registration; founder 7-step test; GO for hype/stealth lift; GO for production merge.
+
+## New roadmap (founder vision Sep 30, priority order)
+
+1. Trading journal engine: MT5 auto-import via MetaApi, trade-by-trade analysis, metrics like the top journal tools (research first: TradeZella, TraderSync, Tradervue, Edgewonk teardowns exist in research/universe)
+2. Education hub: trading guides, notes, topics, definitions — structured course library
+3. Discord community integration: activity → REX rewards
+4. Automated partner verification: XM partner portal report → instant account verification (needs XM portal access to evaluate)
+5. REX on competition prizes (alongside real prize money) — legal check: REX rewards for activity are fine, no cash-out
 
 ## Agent-owned queue (autonomous, low-risk, reversible)
 
