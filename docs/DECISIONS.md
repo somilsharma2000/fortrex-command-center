@@ -33,3 +33,8 @@
 - Challenge recorded (per charter §11): if everyone forever = founding, founding means nothing; if nobody = founding, the early-supporter reward dies. Resolution: founding = everyone who joins BEFORE launch (a fact, not an invented number); 1.25x stays permanent for them; launch merge closes the window.
 - Deployed: growth-lab-v1 28c637d, live on fortrex-lab.
 - New vision recorded same session (master spec §1): single trader platform (journal + education + community + competitions + REX economy + live-only + instant verification ambition + 5M scale). Roadmap gaps named: journal engine, education hub, Discord integration, automated partner verification.
+## Sep 30: Feature-parity strategy vs TradeFXBook (founder order, with legal correction)
+- Founder: match TradeFXBook's full feature set with improvements; the differentiator is the bundle — traders open accounts via OUR link because we give competitions + free tools + resources + community + REX rewards together.
+- Legal correction recorded (charter law: no theft): features and functionality are not copyrightable — we BUILD the same feature set (clean-room, our own code, our own copy in our voice, our locked design canon). We do NOT copy their code, text, images, or visual design. The "Traders Lounge" mentorship + signals model stays excluded (legal shield).
+- Feature-parity targets added to journal roadmap phases: share cards, economic calendar, backtesting replay (phase 3), pre-trade checklists, multiple accounts, AI reports.
+- Positioning locked: free full journal (their sync is paywalled) + competitions with real prizes + REX + education + entry-law moat = the flywheel.
