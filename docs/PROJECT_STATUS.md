@@ -5,7 +5,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Sep 30, 2026, 10:55 IST
+**Last updated:** Sep 30, 2026, 12:25 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
 
 ## Done and verified (with proof)
@@ -22,6 +22,13 @@ summary: The living NOW file — what is done, what is running, what is pending,
 | Journal phase 2 DONE — psychology layer (daily reflections, per-trade notes/tags/emotion, journaling streak + journal_activity REX, session/weekday rhythm, trade detail page) | Commit 1c2da79 (growth-lab-v1), migration 0013 applied to lab DB (trade_notes 9 cols, daily_reflections, ledger_reason value verified, founder user intact); 225 test assertions green; live: /journal/psychology auth-gated 307, both new APIs 401 unauthed, health 200 |
 | HOTFIX: landing page crash fixed (founder-reported, 09:15 IST) | Commit 5627d50 — root cause was stats.remaining.toLocaleString() on undefined (no-cap decision removed the field from the API, page still read it); removed the seats-remaining counter, live page confirmed rendering full content, health 200 |
 | Full live verification sweep (founder-requested, 10:30 IST) | All public pages 200 (landing post-hotfix, legal, learn, leaderboard, hall-of-fame); member pages 307-gated; APIs 401/403 unauthed, draft tournaments hidden; DB: 20 tables, founder owner+genesis seat intact, REX ledger 0=0 match, Season Zero draft present, all 10 ledger reasons incl. journal_activity; 225/225 tests green; stealth robots-disallow+noindex on lab AND main; founder-review site 401 = password gate working |
+| CRITICAL LIVE BUG FIXED (10:00-11:30 IST): signup was 500 on the lab since auto-verification shipped — lab branch DB was missing columns from migrations 0003 (markets) and 0009 (partner_tag, partner_link_issued_at, partner_report_rows). Applied to lab DB live; signup verified working. Root cause: earlier sessions applied table-creating migrations but skipped these ALTER migrations on the lab branch | Lab DB now matches all 14 migrations |
+| Live trader journey verified end to end (probe, cleaned up after) | signup → dashboard → mock connect → sync 107 trades → journal → trade notes → reflection paid 31 REX (25 × 1.25 founding multiplier — correct) → daily check-in, second call correctly refused → public profile on → /t/FX5R6YDE renders 200 |
+| Live owner journey verified (probe admin, cleaned up after) | Claim queue role-gated GET; decisions TOTP-gated: no code 403, wrong code 403, valid code approves, re-decide 409; approve stamped claim + audited |
+| Real product gap found and fixed (commit 51dbde4, deployed to lab, VERIFIED LIVE) | Sync catch-up: a member who connected, got approved, then synced for the first time never received the partner stamp (approval only stamps verified connections) → never auto-entered live arenas. First verified sync after approval now stamps partnerLinked + runs auto-entry. Probe with approved claim + unsynced connection synced → partner_linked=true verified in DB |
+| Region gate verified honest | sandbox egress country is outside the XM partner regions → link unavailable + claims auto-rejected region_not_supported. Fails closed exactly as designed |
+| Vercel cleanup | 4 stray projects deleted (fortnex-platform leftover, fortrex-preview, fortnex-routing-test, deploy-src); remaining: fortrex-lab, fortrex-platform (both its URLs healthy 200), fortrex-founder-review, gym-os-v3, gym-os-app |
+| Lab DB pristine after test | 1 user (founder, owner, seat 1, ledger 0=0), 0 claims/connections/trades/notes/reflections; probe users cascade-deleted |
 
 ## Running / in place
 
