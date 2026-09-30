@@ -180,3 +180,13 @@ Shipped (platform commit ba49c0b, deployed, verified live in code AND live): all
 Boundary accepted and recorded: the /admin PAGE server-renders member lists behind admin/role session without a TOTP prompt (page-level MFA would need a code gate before render). API surface fully gated; page-level gate is a pre-Nov-7 consideration after the founder 7-step pass.
 
 Founder action pending: enroll ADMIN_TOTP_SECRET in his authenticator (or ask the agent for a code when needed). All 6 launch workflows confirmed active and scheduled.
+
+## D-2026-10-01-09: Competitive-core cycle 1 under the founder master directive
+
+Founder issued the 71-section PEAK PRODUCT directive (inspect→research→design→implement→test→self-critique→improve). Freeze check: founder 7-step pass NOT started; directive explicitly authorizes implementation. X-ray of the remaining weak surfaces found three real gaps, all shipped (commits 5aeaced + dcd54a9, verified live in a real browser as the founder + mobile 390px):
+
+1. YOU anchoring — leaderboards had movement/prize-zone/verified but a signed-in member could not find themselves. Now: gold row highlight + YOU tag on every board (global + arena), plus an anchored "··· you" row when the member sits beyond the shown rows (rank computed honestly by counting higher scores).
+2. Arena lifecycle visibility — tournament detail pages showed static date strings. Now: live ArenaClock (opens/closes/settling/finished), entered-traders count, and a personal percentile line ("You are #x of n — top y%"). Self-critique caught an honesty violation before it shipped: the first version counted down to DRAFT arenas as if the schedule were confirmed; fixed to "SCHEDULE LOCKED · TARGET OPENING {date}" matching the desk's draft law.
+3. Member REX ledger — the append-only ledger existed but was admin-only; members could not see what earned their REX (directive §14). Now the desk account panel carries a full-width REX ledger strip: last 8 entries, plain-word reasons for all 10 typed reasons, founding 1.25x note, honest empty state ("Earned, never bought").
+
+Rejected as not earning their place this cycle (directive §63): percentile sparkline on leaderboard (noise vs. 50 rows), admin IA restructure (admin just passed founder review; revisit pre-launch), bottom mobile nav (current horizontal strip works at 390px, zero overflow). REX cash-adjacent ideas remain BLOCKED per REX-ECONOMY law.
