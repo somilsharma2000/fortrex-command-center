@@ -59,3 +59,10 @@ D-04 said fortrex-lab connects to a "preview-branch endpoint (ep-young-flower)".
 1. All lab deployments have been running against the founder's live production DB. Pre-launch (1 user) this is survivable but must change before real members: point fortrex-lab at a true preview branch, keep fortrex-platform (main) on production.
 2. 0011 (prev_rank) recorded as "applied to lab DB" in D-04 era was actually applied to the other endpoint (ep-billowing-voice, ops2 role = real preview branch) — that's why the live lab board would have 500ed. Caught tonight by live verification; 0011 + 0012 both applied to the production branch tonight (additive only, founder user intact, main site verified 200 after).
 3. Evidence: `vercel pull --project=fortrex-lab` env → neondb_owner@ep-young-flower; query showed discord_link_code present, prev_rank/public_profile absent before fix; users=1 (founder); Season Zero draft present.
+
+### D-2026-09-30-08 — Journal phase 2: psychology layer
+1. Separation law: member-added data (notes, reflections) lives in separate tables (trade_notes, daily_reflections); the trades table stays immutable verified imports — provenance and journaling never mix.
+2. Anti-farm: one reflection per member per day (unique index); first-of-day pays a journal_activity REX reward (rate card setting journal_reward_daily, default 25; genesis 1.25x applies); edits never re-pay; only today or last 3 days writable (no backfill streaks).
+3. Emotion vocabulary is a closed 8-value set (calm, confident, disciplined, fomo, revenge, anxious, bored, hesitant) — no free-text abuse surface.
+4. Streak math: consecutive IST days, counts back from today or yesterday (an active streak doesn't break the morning after).
+5. Per-trade notes are private by law: they never appear on public profiles or Hall of Fame.

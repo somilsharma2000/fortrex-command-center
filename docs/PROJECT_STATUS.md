@@ -5,7 +5,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Sep 30, 2026, 09:35 IST
+**Last updated:** Sep 30, 2026, 10:40 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
 
 ## Done and verified (with proof)
@@ -19,6 +19,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 | Stealth intact (robots disallow all, noindex) | Verified on both live URLs tonight |
 | Governance: charter (13 laws), master spec, status, decisions, gap analysis, AGENTS.md × 2, OSS_LICENSES.md | Command center + platform repos, this commit |
 | Roadmap #8 phase 3 DONE: public trader profiles + Hall of Fame + auto-entry | Commit cfda36e (growth-lab-v1), live on fortrex-lab: /hall-of-fame 200, /t/[code] 200 (private-by-default state), /leaderboard 200 with handle links, health 200; 200 test assertions green; migrations 0011+0012 applied to the lab DB (verified: prev_rank + public_profile columns present, founder user intact) |
+| Journal phase 2 DONE — psychology layer (daily reflections, per-trade notes/tags/emotion, journaling streak + journal_activity REX, session/weekday rhythm, trade detail page) | Commit 1c2da79 (growth-lab-v1), migration 0013 applied to lab DB (trade_notes 9 cols, daily_reflections, ledger_reason value verified, founder user intact); 225 test assertions green; live: /journal/psychology auth-gated 307, both new APIs 401 unauthed, health 200 |
 
 ## Running / in place
 
@@ -30,7 +31,7 @@ XM partner portal + written approval for public mentions; MetaApi token; custom 
 
 ## New roadmap (founder vision Sep 30, priority order)
 
-1. Trading journal engine — SPECS DONE (JOURNAL-ENGINE-SPEC.md): verified MetaApi import, full analytics catalog, behavioral detectors, admin full control, REX tie-in. Build phase 1 next (needs MetaApi token from founder). Wedge sharpened: TradeFXBook (closest rival) has Trustpilot 1/5 + profit-promise guru marketing; our brand is the exact opposite — verified, honest, no hype. Improvement matrix: docs/TRADEFXBOOK-IMPROVEMENT-MATRIX.md
+1. Trading journal engine — PHASE 1 DONE (live on lab) + PHASE 2 DONE (psychology layer, commit 1c2da79). Remaining phase 3 is post-launch (AI insights, MFE/MAE, education cross-links). MetaApi token still a founder paste-when-ready item (Admin → Integrations). Wedge sharpened: TradeFXBook (closest rival) has Trustpilot 1/5 + profit-promise guru marketing; our brand is the exact opposite — verified, honest, no hype. Improvement matrix: docs/TRADEFXBOOK-IMPROVEMENT-MATRIX.md
 2. Education hub: trading guides, notes, topics, definitions — structured course library
 3. Discord — SPEC DONE (DISCORD-INTEGRATION-SPEC.md): one-line admin connect (bot token paste), member linking, activity → REX with anti-farm. Build phase 1 after journal
 4. Automated partner verification: XM partner portal report → instant account verification (needs XM portal access to evaluate)
