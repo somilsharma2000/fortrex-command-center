@@ -5,7 +5,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Sep 30, 2026, 17:25 IST
+**Last updated:** Sep 30, 2026, 19:40 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
 | QA-HUNT-001 + LOGIC-VERIFICATION-001 COMPLETE (11:30-17:00 IST) | Adversarial mobile sweep: 2 overflow bugs + tap targets fixed (0 overflow live at 375px); waitlist markup-name injection → 400 verified live; prod waitlist/DB test junk cascade-cleaned (users = founder + deekshant only); REX ledger invariants ALL PASS (0 broken chains, 0 double-pays, 0 negatives); Season Zero auto-open gap CLOSED — due-transitions cron built + verified end-to-end live with probe (open→live→settling + audit entries + idempotent); reports in docs/QA-HUNT-001.md + docs/LOGIC-VERIFICATION-001.md |
 
@@ -79,3 +79,4 @@ Discord community integration built and deployed (commit d3727b7 on growth-lab-v
 ## Session log — Sep 30, 03:30-04:00 IST (roadmap #4 + #6 live on lab, commit 7896fcc)
 
 Leaderboard polish (#4): live-tournament section with LIVE badge + 30s auto-refresh, rank movement arrows (new prev_rank column, migration 0011 applied to lab DB as owner via Vercel env pull, atomic stash `set prev_rank = rank, rank = N`), prize-zone highlight (top 3 gold hairline) on live and completed boards. Share cards (#6): WhatsApp share button + copyable rank line ("I'm #N of M traders on FORTREX by REX") on the dashboard referral card. Anti-spam: Discord link code generation rate-limited 5/10min (the one security gap found in the new-code audit; admin TOTP coverage re-verified on all 9 mutation routes, read-only analytics/metrics correctly exempt, XSS scan clean — only escaped JSON-LD sink). All batteries: 87+63+27 assertions pass, build clean, deployed to fortrex-lab, live endpoints verified (health 200/db up, /leaderboard 200 rendering new board, /dashboard 307 auth-gated, landing 200). Roadmap #3 (affiliate onboarding deep-build) and #8 (public profiles/Hall of Fame, phase 3) remain in the queue.
+| All 12 legal copy flags APPLIED + verified live; Season Zero multi-day window adopted | Commit 3d46a8c-ish (platform growth-lab-v1): hero "WHERE / SKILL IS MEASURED.", invite ladder softened, ToS honest rewrites, site title "Trading Performance Analytics"; served HTML verified clean of all flagged strings; Season Zero = Nov 7 09:00 → Nov 10 21:00 IST (84h) in prod DB (draft, verified); honesty overrides recorded in D-2026-09-30-11 |

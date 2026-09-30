@@ -333,3 +333,21 @@ Five key launch assets require founder action. The platform is designed with exp
 #### Conflict 3: Search Console Submission vs. Custom Domain Setup
 - **Constraint:** Google Search Console domain property registration and sitemap submission (`/sitemap.xml`) require the custom domain to be fully pointed and returning 200 OK.
 - **Impact:** If the founder has not purchased or pointed the domain prior to launch, Search Console registration MUST be deferred. Submitting the `fortrex-platform.vercel.app` domain is prohibited if the intent is to migrate to a custom domain short-term (prevents indexing duplicate content).
+
+---
+
+## ADDENDUM 2026-09-30 (post QA-HUNT-001 + LOGIC-VERIFICATION-001)
+
+**1. Season Zero window is now multi-day (adopted working default, founder may override):**
+- Window: **Nov 7, 09:00 IST → Nov 10, 21:00 IST** (84 hours), already updated in the production DB (season-zero, draft).
+- Rationale: legal flag #11 (12-hour intraday window reads as gamified speculation; a multi-day window measures sustained risk management) + fairness for global time zones.
+- Launch-day sequence through "open" is UNCHANGED (S-08 dispatch 08:15, S-09 draft→upcoming 08:30, S-12 upcoming→open 09:00).
+- Settlement moves OFF launch day: **Nov 10, 21:00 IST** — `live → settling` happens AUTOMATICALLY (see next point). Admin runs final scoring, reviews, then `settling → completed`.
+
+**2. Clock-driven transitions are now automated** (`/api/cron/due-transitions`, daily 09:15 IST + score-only refresh):
+- `open → live` fires at `startsAt` automatically; `live → settling` at `endsAt`. Race-safe, idempotent, audit-logged (actor `system:due-transitions`). Verified end-to-end live with a probe on Sep 30.
+- The manual S-12 step is now a publishing decision, not a timing dependency — the clock guarantees scoring starts on time.
+
+**3. All 12 legal copy flags (LEGAL-REVIEW-002 §1) applied and verified live** (landing, legal, learn pages; site title now "FORTREX — Trading Performance Analytics"). Honesty overrides used where drafted rewrites would have misstated the revenue model: commission disclosure STAYS honest (with added fraud-traffic shield wording), entry requirement stays stated in ToS §3 with softened framing, reward pools described as platform-funded (true), not "enterprise sponsorships" (not true today).
+
+**4. Waitlist import step (S-08)** — no import tool needed: waitlist members self-register via invite dispatch; genesis seat + 1.25x mint at signup. Invite email must tell members to use their inviter's platform link to preserve the referral bonus (waitlist codes do not carry into platform signup).
