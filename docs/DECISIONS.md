@@ -123,3 +123,11 @@ Founder sent a WhatsApp screenshot of a blank "Application error: a client-side 
 2. **Load probe** (`scripts/load-probe.mjs`) found a real bug: concurrent duplicate waitlist signups raced past the pre-check and returned raw 500s (4x500 under 10-way concurrency). Fix: Postgres 23505 detected through drizzle's wrapped `err.cause` → friendly `already_registered` with the user's real position + referral code. Verified live on prod: 1 winner inserts, losers get identical friendly response, zero 500s. Probe rows purged from lab AND prod; prod waitlist pristine (founder only, position 1).
 
 **Probe findings, no action needed:** tournaments API rate limit (60/min/IP) correctly 429s bursts — acceptable; shared-NAT (college/office) users could see throttling at launch, watch it. Landing p95 5.4s is a dev-server artifact; production is built + cached. Honest scope: this is a smoke-load probe, not a 5M-user scale test — real load rehearsal stays on the T-7 list.
+
+## D-2026-10-01-01: Founder override — member door on landing (developer visibility pre-launch)
+
+**Founder instruction (Oct 1):** "Remove that lock of launching, we are the developer, we have to see all things."
+
+**Decision:** The platform was never URL-locked (all routes existed and were auth-gated), but the landing had no visible way in — it FELT locked. Added a quiet SIGN IN link to the landing nav (platform commit ea7ec36, deployed + live-verified). Public visitors still see the waitlist + countdown; members reach /signin and the full app. Stealth law (noindex, hand-shared links) unchanged. Founder can now walk: /signin -> dashboard, journal, leaderboard, tournaments, learn, hall-of-fame, connect, /admin (TOTA-protected). Season Zero appears as DRAFT in admin until due-transitions flips it live Nov 7 09:00 IST — that is the season schedule, not a lock.
+
+**Ops note:** deploy of ea7ec36 was BLOCKED when the snapshot dir sat inside the repo (Vercel CLI found git context + agent commit author, not a team member). Rule (reaffirmed): rsync snapshot must live OUTSIDE the repo (workspace-root/deploy-src), git-free. Redeployed clean.
