@@ -152,4 +152,8 @@ Platform commit 43d8109, deployed t6ldxlwz8, health green. Dashboard now also ca
 
 ## D-2026-10-01-05: Learn hub v2 (founder 'more for improvement')
 
-Platform commit (learn v2), deployed 7am4tydll, verified live: /learn now renders a searchable explorer — live text filter across guides AND a new 21-term plain-word glossary (Basics/Risk/FORTREX categories), section TOC chips, two new sections: 'The REX economy' (what REX is / is not — honesty law restated) and 'Your tools' (MT5 connect, journal, streaks). Zero profit-promise language, investor-password law stated. Glossary is structured data in learn-content.ts — single source of truth, UI-independent. 
+Platform commit (learn v2), deployed 7am4tydll, verified live: /learn now renders a searchable explorer — live text filter across guides AND a new 21-term plain-word glossary (Basics/Risk/FORTREX categories), section TOC chips, two new sections: 'The REX economy' (what REX is / is not — honesty law restated) and 'Your tools' (MT5 connect, journal, streaks). Zero profit-promise language, investor-password law stated. Glossary is structured data in learn-content.ts — single source of truth, UI-independent.
+
+## D-2026-10-01-06: Journal filter suite + CSV export
+
+Founder 'go on'. Journal table now filters by symbol, long/short, win/loss outcome, and date range (from/to), with a Clear button; live per-currency net totals for the filtered view (currencies never mixed, stated in caption); client-side CSV export of the filtered rows (proper escaping, injection-safe: formula chars neutral via quoting). Row cap 500 shown; import cap unchanged. Deployed 980av132n, health green. Research basis: TraderSync/Edgewonk filter+export pattern.
