@@ -33,6 +33,8 @@ summary: The living NOW file — what is done, what is running, what is pending,
 | Second real bug fixed same sweep | ReferralCard computed origin from window.location (hydration mismatch React #418 on every signed-in dashboard) with hardcoded fallback https://fortrex.io (unowned domain). Now a server prop from NEXT_PUBLIC_SITE_URL. 225/225 test assertions still green |
 | NEW TEST CLASS: tests/browser-sweep.mjs (`npm run test:browser`) | Real headless-Chromium sweep of every page, signed-out AND signed-in, catching thrown JS errors — the class curl suites structurally cannot. Post-deploy live run: 13/13 routes PASS, 0 crashes. Playwright+Chromium installed in sandbox (required fixing apt sources to HTTPS, port 80 blocked) |
 | Real signup found on lab DB, left untouched | deekshantsharma2004@gmail.com, genesis seat #2 — genuine (not a probe). Lab meant to be hand-shared only; founder asked to confirm who this is |
+| Competitor presentation study done (live reads of TradeZella, TradeFXBook, Tradervue, FX Blue) | docs/COMPETITOR-WEB-PRESENTATION.md (commit df4afb1) — 8 patterns every world-level competitor uses; FORTREX already beats them on verified competitions, public profiles, REX; launch-day presentation gaps identified |
+| Landing presentation gaps CLOSED (commit 29d830a, deployed, VERIFIED LIVE) | Product grid "Six parts. One arena." (journal / verified competitions / leaderboards / education / REX / community) + trader-type segmentation (disciplined / improving / ambitious) added to landing. Verified live via real browser: all sections render, 0 bait-vocab hits, 87+63 tests green, 13/13 browser sweep PASS, probe account cleaned |
 
 ## Running / in place
 
