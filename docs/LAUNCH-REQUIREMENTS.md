@@ -5,7 +5,7 @@
 
 | Feature | Status | Notes |
 |---|---|---|
-| Waitlist + genesis seats (10k cap) | ✅ LIVE | Cap enforced at signup, unique index |
+| Waitlist + genesis seats (NO cap — removed Sep 30) | ✅ LIVE | Founding = joins before Nov 7; 1.25x permanent |
 | Auth (email+password, owner-first) | ✅ LIVE | Better-auth; user MFA is SHOULD |
 | Referral engine (+50 REX both sides) | ✅ LIVE | Chain auto-pays, verified |
 | Broker connect (MT4/MT5 via MetaApi, mock) | ✅ ADAPTER | MetaApi live-build in Oct; mock is launch-day connection |
@@ -64,7 +64,7 @@
 **Connections inventory:**
 | Connection | Status | Purpose |
 |---|---|---|
-| Neon Postgres | ✅ LIVE | Production DB (16 tables, production branch) |
+| Neon Postgres | ✅ LIVE | Production DB (21 tables, REAL production branch ep-billowing-voice — all migrations synced Sep 30, see D-2026-09-30-13) |
 | Vercel | ✅ LIVE | Hosting + CI + cron |
 | GitHub | ✅ LIVE | Code + CI (typecheck+build on push) |
 | MetaApi.cloud | October | MT4/MT5 trade verification |
