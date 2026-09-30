@@ -145,3 +145,7 @@ Founder sent a WhatsApp screenshot of a blank "Application error: a client-side 
 ## D-2026-10-01-03: Admin system board shipped
 
 Per founder GO (Oct 1). Platform commit a0ebf27, deployed o8qmwhr1, verified live (health green, admin auth-gate intact). /admin now opens with: Connections panel (MetaApi/Discord/Resend/AI/XM partner/PostHog presence, source env|console|missing), Runtime panel (DB, broker mode, Admin MFA honestly shown 'off (pre-launch)', stealth, cron secret, site URL), 14-day signup chart. Tournaments page + detail page confirmed already showing draft Season Zero (no draft block existed at page level; only the public API filters drafts). Queue empty; founder walkthrough is the next gate.
+
+## D-2026-10-01-04: Dashboard hype layer (founder 'go on' #3)
+
+Platform commit 43d8109, deployed t6ldxlwz8, health green. Dashboard now also carries: Next-arena live countdown card (Season Zero, honest DRAFT badge, auto-flips at window open, ENTERED badge when joined) + 28-day streak calendar (contribution-grid visual, honest reset). Rationale: platform should feel alive pre-data and at launch; psychology-driven per canon. Verified: build clean, tsc clean, live health ok, auth-gate 307 intact.
