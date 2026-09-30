@@ -170,3 +170,13 @@ Shipped (platform commits 8ec9615, 39a3599; deployed; verified live in code AND 
 5. Empty Performance state converted into a 3-step "record assembly" panel (Connect → Sync → Verified metrics) — dead space became a conversion moment.
 
 Sandbox lesson recorded: the Base44 browser extension mis-reports UI clicks (form posts silently not firing) and gave a false "login broken" signal; a real headless Chrome in-sandbox is now the standard UI verification path (already proven by the browser-sweep test class). Lab probe user (desk-preview@probe.test) used for empty-state shots remains in the LAB DB only (direct 5432 egress blocked from sandbox; harmless in test env).
+
+## D-2026-10-01-08: Admin MFA re-armed on all admin API reads
+
+Founder approved the walkthrough work ("everything looks great") → the temporary developer-access barrier is closed the same day, per the re-arm-before-launch plan. Audit found the real gap: admin WRITE routes carried the TOTP gate, but GET on analytics, claims, discord, flag, integrations, metrics and settings did not — an admin session could read member emails (claims queue), integration statuses and settings without a console code.
+
+Shipped (platform commit ba49c0b, deployed, verified live in code AND live): all 7 admin GETs now require x-admin-totp; console banner updated; read fetches carry the code; entering the code auto-refreshes gated tabs (verified in a real browser: no code → 403 honest message, code typed → analytics 200 → funnel renders).
+
+Boundary accepted and recorded: the /admin PAGE server-renders member lists behind admin/role session without a TOTP prompt (page-level MFA would need a code gate before render). API surface fully gated; page-level gate is a pre-Nov-7 consideration after the founder 7-step pass.
+
+Founder action pending: enroll ADMIN_TOTP_SECRET in his authenticator (or ask the agent for a code when needed). All 6 launch workflows confirmed active and scheduled.

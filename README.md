@@ -1,5 +1,10 @@
 # FORTREX COMMAND CENTER
 
+## New agent? Start here
+
+Read **docs/NEW-AGENT-HANDBOOK.md** first — the complete onboarding brief (product, features, infrastructure, operations, laws, current state, launch plan).
+
+
 > **Start here:** read [FORTREX-MASTER-SPEC.md](FORTREX-MASTER-SPEC.md) — the single source of truth for brand, funnel, and design language.
 
 **WHERE TRADERS RISE.**
