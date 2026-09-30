@@ -5,8 +5,10 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Sep 30, 2026, 13:15 IST
+**Last updated:** Sep 30, 2026, 17:25 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
+| QA-HUNT-001 + LOGIC-VERIFICATION-001 COMPLETE (11:30-17:00 IST) | Adversarial mobile sweep: 2 overflow bugs + tap targets fixed (0 overflow live at 375px); waitlist markup-name injection → 400 verified live; prod waitlist/DB test junk cascade-cleaned (users = founder + deekshant only); REX ledger invariants ALL PASS (0 broken chains, 0 double-pays, 0 negatives); Season Zero auto-open gap CLOSED — due-transitions cron built + verified end-to-end live with probe (open→live→settling + audit entries + idempotent); reports in docs/QA-HUNT-001.md + docs/LOGIC-VERIFICATION-001.md |
+
 
 ## Done and verified (with proof)
 
