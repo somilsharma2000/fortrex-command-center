@@ -157,3 +157,16 @@ Platform commit (learn v2), deployed 7am4tydll, verified live: /learn now render
 ## D-2026-10-01-06: Journal filter suite + CSV export
 
 Founder 'go on'. Journal table now filters by symbol, long/short, win/loss outcome, and date range (from/to), with a Clear button; live per-currency net totals for the filtered view (currencies never mixed, stated in caption); client-side CSV export of the filtered rows (proper escaping, injection-safe: formula chars neutral via quoting). Row cap 500 shown; import cap unchanged. Deployed 980av132n, health green. Research basis: TraderSync/Edgewonk filter+export pattern.
+
+## D-2026-10-01-07: Desk transformation + auth recovery UX (founder walkthrough feedback)
+
+Founder walked the member area live and ruled: layout too simple, terminology misaligned, element placement wrong. Council verdict on the old dashboard: generic centered card stack (max-w-6xl), no focal hierarchy, 4 equal stat cards, 6-card zoo for settings-level actions, zero motion, cute wording ("Your path"). That is the exact "generic AI product" pattern the operating canon rejects.
+
+Shipped (platform commits 8ec9615, 39a3599; deployed; verified live in code AND live):
+1. Desk composition: full-width status band (REX, REX rank, streak, broker state, arenas — one hairline strip, mono values), Performance as the 8/12 focal point, Next-arena + Activation right rail, record band, ONE Account & Connections panel (broker verification / invite / Discord / visibility as hairline-grid sections).
+2. Crown Motion: staggered desk-reveal entrances (0.5s, 60ms stagger, prefers-reduced-motion respected) — quiet assembly, not the rejected "all-in" theatrics.
+3. Wording: "Your path" → "Activation"; "MEMBER DESK" header; institutional terminology.
+4. P0 auth UX (the founder's own reported trap): signup on already-registered email now explains the account exists with Sign in / Forgot password recovery; signin 401 shows inline recovery links. Anti-enumeration preserved (same generic 401 message). Root-cause verified: prod login flow works end-to-end (headless Chrome: POST 200 → dashboard renders); the reported failure was the duplicate-email dead end.
+5. Empty Performance state converted into a 3-step "record assembly" panel (Connect → Sync → Verified metrics) — dead space became a conversion moment.
+
+Sandbox lesson recorded: the Base44 browser extension mis-reports UI clicks (form posts silently not firing) and gave a false "login broken" signal; a real headless Chrome in-sandbox is now the standard UI verification path (already proven by the browser-sweep test class). Lab probe user (desk-preview@probe.test) used for empty-state shots remains in the LAB DB only (direct 5432 egress blocked from sandbox; harmless in test env).

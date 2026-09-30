@@ -5,10 +5,11 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Oct 1, 2026, 00:10 IST
+**Last updated:** Oct 1, 2026, 03:20 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
 | QA-HUNT-001 + LOGIC-VERIFICATION-001 COMPLETE (11:30-17:00 IST) | Adversarial mobile sweep: 2 overflow bugs + tap targets fixed (0 overflow live at 375px); waitlist markup-name injection → 400 verified live; prod waitlist/DB test junk cascade-cleaned (users = founder + deekshant only); REX ledger invariants ALL PASS (0 broken chains, 0 double-pays, 0 negatives); Season Zero auto-open gap CLOSED — due-transitions cron built + verified end-to-end live with probe (open→live→settling + audit entries + idempotent); reports in docs/QA-HUNT-001.md + docs/LOGIC-VERIFICATION-001.md |
 
+| DESK TRANSFORMATION SHIPPED (founder feedback: layout "too simple", wording misaligned, 03:00 IST) | Dashboard rebuilt as a full-width trading desk: identity + live status band (REX, REX rank, streak, broker, arenas — replaces 4 stat cards), Performance as 8/12 focal point, arena + Activation right rail, record band (streak / arena record / signals), one Account & Connections panel (4 hairline sections, card zoo killed). Crown Motion: staggered desk-reveal entrances (reduced-motion respected). "Your path" → "Activation". Empty Performance state → 3-step record-assembly panel. Platform commits 8ec9615 + 39a3599, deployed, VERIFIED LIVE (real headless Chrome as founder: memberDesk/reveal/panel present, 10/10 member pages 200, 0 page errors, mobile 0px overflow) |
 
 ## Done and verified (with proof)
 
