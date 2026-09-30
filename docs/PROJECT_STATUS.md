@@ -5,7 +5,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Sep 30, 2026, 10:45 IST
+**Last updated:** Sep 30, 2026, 13:15 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
 
 ## Done and verified (with proof)
@@ -35,6 +35,8 @@ summary: The living NOW file — what is done, what is running, what is pending,
 | Real signup found on lab DB, left untouched | deekshantsharma2004@gmail.com, genesis seat #2 — genuine (not a probe). Lab meant to be hand-shared only; founder asked to confirm who this is |
 | Competitor presentation study done (live reads of TradeZella, TradeFXBook, Tradervue, FX Blue) | docs/COMPETITOR-WEB-PRESENTATION.md (commit df4afb1) — 8 patterns every world-level competitor uses; FORTREX already beats them on verified competitions, public profiles, REX; launch-day presentation gaps identified |
 | Landing presentation gaps CLOSED (commit 29d830a, deployed, VERIFIED LIVE) | Product grid "Six parts. One arena." (journal / verified competitions / leaderboards / education / REX / community) + trader-type segmentation (disciplined / improving / ambitious) added to landing. Verified live via real browser: all sections render, 0 bait-vocab hits, 87+63 tests green, 13/13 browser sweep PASS, probe account cleaned |
+| 6-department parallel audit delivered (founder-ordered) | QA-HUNT-001 (partial, relaunched), COMPETITIVE-WATCH-001 (verdict: free-for-members + import reliability + anti-guru trust = our wins; onboarding first-10-seconds = highest-leverage gap), LEGAL-REVIEW-002 (12 copy flags + trademark plan Oct 24 + counsel brief), LAUNCH-DAY-RUNBOOK (06:00-09:00 IST sequence, waitlist import BEFORE Season Zero open, draft→upcoming→open two-step), SELL-READINESS (one-pager, 3 onboarding emails, 5 support templates, 22 hype drafts, 3 pricing options) |
+| Legal copy hardening applied + verified live (commit c7f58c1) | 9 of 12 flags fixed: 'currency'→'benchmark', multiplier→'reputation weight' wording, non-custodial softened to read-only analytics, 'entry fee' scrubbed from ToS (28% GST audit trigger), tournaments tagline→'verified performance benchmarking'. Verified live on lab: all new phrasing present, old phrases gone, honest partner commission disclosure retained. REJECTED as dishonest: flag 10 (deny XM commission — XM agreement + consumer law require the disclosure) and flag 7 (drop partner-track entry rule). ESCALATED to founder: flag 2 (brand headline 'WHERE TRADERS RISE.'), flag 11 (Season Zero 12h intraday window → recommend multi-day 72h+) |
 
 ## Running / in place
 
