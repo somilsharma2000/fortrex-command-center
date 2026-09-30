@@ -5,7 +5,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Sep 30, 2026, 02:20 IST
+**Last updated:** Sep 30, 2026, 09:35 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
 
 ## Done and verified (with proof)
@@ -18,6 +18,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 | Database verified (16 tables, append-only REX ledger, migrations 0001–0009) | Independent audit, documented |
 | Stealth intact (robots disallow all, noindex) | Verified on both live URLs tonight |
 | Governance: charter (13 laws), master spec, status, decisions, gap analysis, AGENTS.md × 2, OSS_LICENSES.md | Command center + platform repos, this commit |
+| Roadmap #8 phase 3 DONE: public trader profiles + Hall of Fame + auto-entry | Commit cfda36e (growth-lab-v1), live on fortrex-lab: /hall-of-fame 200, /t/[code] 200 (private-by-default state), /leaderboard 200 with handle links, health 200; 200 test assertions green; migrations 0011+0012 applied to the lab DB (verified: prev_rank + public_profile columns present, founder user intact) |
 
 ## Running / in place
 

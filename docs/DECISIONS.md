@@ -47,3 +47,15 @@
 
 ### D-2026-09-30-05 — Leaderboard arrows design
 prev_rank is stashed inside the same UPDATE that writes the new rank (`set prev_rank = rank, rank = N`) — Postgres reads the old column value on the right side, so the pair is atomic and no second statement or race window exists. First-ever ranking keeps prev_rank NULL (renders "—"). Arrows show only when the standing actually moved between scoring runs.
+
+### D-2026-09-30-06 — Public trader profiles + Hall of Fame (roadmap #8 phase 3)
+1. Privacy law: `users.public_profile` defaults OFF (migration 0012). A public page shows handle, genesis seat, arena stats/podiums, win rate, best rank — never email, country, phone, or broker logins. Private and nonexistent handles render the same neutral "This profile is private" state (indistinguishable = no handle enumeration).
+2. Hall of Fame = verified traders who chose public, ranked by score; crown grammar per CROWN-SYSTEM (gold hairline top 3). Leaderboard links a member's name only when their profile is public (SQL CASE, no second query).
+3. Auto-entry: on partner verification, members are auto-joined to FREE live_partner and genesis arenas (paid arenas only nudge — never surprise debits; demo accounts enter demo-capable arenas; blocked regions, flagged members, ended/draft tournaments fail closed). Verified live: badge + verification flow unchanged.
+4. Tests: tests/auto-enter-profile.ts, 25 assertions; suite total 200 (87 regression + 63 verification + 27 partner-link + 25 new). Build clean; deployed fortrex-lab (commit cfda36e).
+
+### D-2026-09-30-07 — CORRECTION to D-04: lab DB identity (empirical)
+D-04 said fortrex-lab connects to a "preview-branch endpoint (ep-young-flower)". WRONG — tonight's empirical check: ep-young-flower holds the founder's user + Season Zero draft = the PRODUCTION Neon branch. So fortrex-lab's production env DATABASE_URL points at the same DB as the main site. Consequences:
+1. All lab deployments have been running against the founder's live production DB. Pre-launch (1 user) this is survivable but must change before real members: point fortrex-lab at a true preview branch, keep fortrex-platform (main) on production.
+2. 0011 (prev_rank) recorded as "applied to lab DB" in D-04 era was actually applied to the other endpoint (ep-billowing-voice, ops2 role = real preview branch) — that's why the live lab board would have 500ed. Caught tonight by live verification; 0011 + 0012 both applied to the production branch tonight (additive only, founder user intact, main site verified 200 after).
+3. Evidence: `vercel pull --project=fortrex-lab` env → neondb_owner@ep-young-flower; query showed discord_link_code present, prev_rank/public_profile absent before fix; users=1 (founder); Season Zero draft present.
