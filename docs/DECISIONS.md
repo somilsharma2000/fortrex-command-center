@@ -131,3 +131,13 @@ Founder sent a WhatsApp screenshot of a blank "Application error: a client-side 
 **Decision:** The platform was never URL-locked (all routes existed and were auth-gated), but the landing had no visible way in — it FELT locked. Added a quiet SIGN IN link to the landing nav (platform commit ea7ec36, deployed + live-verified). Public visitors still see the waitlist + countdown; members reach /signin and the full app. Stealth law (noindex, hand-shared links) unchanged. Founder can now walk: /signin -> dashboard, journal, leaderboard, tournaments, learn, hall-of-fame, connect, /admin (TOTA-protected). Season Zero appears as DRAFT in admin until due-transitions flips it live Nov 7 09:00 IST — that is the season schedule, not a lock.
 
 **Ops note:** deploy of ea7ec36 was BLOCKED when the snapshot dir sat inside the repo (Vercel CLI found git context + agent commit author, not a team member). Rule (reaffirmed): rsync snapshot must live OUTSIDE the repo (workspace-root/deploy-src), git-free. Redeployed clean.
+
+## D-2026-10-01-02: Founder override — admin MFA off pre-launch; Dashboard v2 (performance)
+
+**Founder instruction (Oct 1):** "Remove all restrictions... I want to see it normally... admin panel and dashboard too simple, no features, powers, connections."
+
+**Decision:**
+1. **ADMIN_TOTP_SECRET deleted from Vercel prod env** (deploy ow6ieytt8 picked it up). /admin now opens for the signed-in owner with NO code. Pre-launch only: owner is the sole admin, site is noindex + hand-shared. T-7 checklist MUST re-add ADMIN_TOTP_SECRET (secret saved in Vercel docs; founder re-enrolls authenticator).
+2. **Dashboard v2** (platform commit 915ae20, deployed + live): full Performance card computed live from verified synced trades — equity curve (zero-dep SVG, canon gold), win rate, profit factor, expectancy, avg/largest win/loss, avg hold, long/short split, recent trades table, honest empty state driving MT5 connect. Deposits/open positions never counted.
+3. Research basis (founder asked): FTMO/Myfxbook/MetaTrader dashboard pattern — equity curve, win/expectancy stats, drawdown tracking, session breakdowns. Journal page already had the metrics; the dashboard was the gap.
+**Next queue:** admin console enrichment (system health board: DB/broker mode/email/Discord/cron states; signups chart), tournaments draft visibility for admin.
