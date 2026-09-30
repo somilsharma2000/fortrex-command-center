@@ -141,3 +141,7 @@ Founder sent a WhatsApp screenshot of a blank "Application error: a client-side 
 2. **Dashboard v2** (platform commit 915ae20, deployed + live): full Performance card computed live from verified synced trades — equity curve (zero-dep SVG, canon gold), win rate, profit factor, expectancy, avg/largest win/loss, avg hold, long/short split, recent trades table, honest empty state driving MT5 connect. Deposits/open positions never counted.
 3. Research basis (founder asked): FTMO/Myfxbook/MetaTrader dashboard pattern — equity curve, win/expectancy stats, drawdown tracking, session breakdowns. Journal page already had the metrics; the dashboard was the gap.
 **Next queue:** admin console enrichment (system health board: DB/broker mode/email/Discord/cron states; signups chart), tournaments draft visibility for admin.
+
+## D-2026-10-01-03: Admin system board shipped
+
+Per founder GO (Oct 1). Platform commit a0ebf27, deployed o8qmwhr1, verified live (health green, admin auth-gate intact). /admin now opens with: Connections panel (MetaApi/Discord/Resend/AI/XM partner/PostHog presence, source env|console|missing), Runtime panel (DB, broker mode, Admin MFA honestly shown 'off (pre-launch)', stealth, cron secret, site URL), 14-day signup chart. Tournaments page + detail page confirmed already showing draft Season Zero (no draft block existed at page level; only the public API filters drafts). Queue empty; founder walkthrough is the next gate.
