@@ -5,7 +5,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Sep 30, 2026, 12:25 IST
+**Last updated:** Sep 30, 2026, 10:45 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
 
 ## Done and verified (with proof)
@@ -29,6 +29,10 @@ summary: The living NOW file — what is done, what is running, what is pending,
 | Region gate verified honest | sandbox egress country is outside the XM partner regions → link unavailable + claims auto-rejected region_not_supported. Fails closed exactly as designed |
 | Vercel cleanup | 4 stray projects deleted (fortnex-platform leftover, fortrex-preview, fortnex-routing-test, deploy-src); remaining: fortrex-lab, fortrex-platform (both its URLs healthy 200), fortrex-founder-review, gym-os-v3, gym-os-app |
 | Lab DB pristine after test | 1 user (founder, owner, seat 1, ledger 0=0), 0 claims/connections/trades/notes/reflections; probe users cascade-deleted |
+| CRITICAL LIVE CRASH FIXED (founder screenshot, tournament "Arena" page, commit 6a5e8fa deployed + verified live) | Root cause: local-time.tsx used Intl.DateTimeFormat with dateStyle+timeStyle+timeZoneName together — invalid per ECMA-402, threw TypeError in EVERY real browser, crashed 100% of tournament detail page visits with blank "Application error". Never caught before because ALL prior verification was curl-based — curl never executes client JS. Fixed with explicit date/time fields |
+| Second real bug fixed same sweep | ReferralCard computed origin from window.location (hydration mismatch React #418 on every signed-in dashboard) with hardcoded fallback https://fortrex.io (unowned domain). Now a server prop from NEXT_PUBLIC_SITE_URL. 225/225 test assertions still green |
+| NEW TEST CLASS: tests/browser-sweep.mjs (`npm run test:browser`) | Real headless-Chromium sweep of every page, signed-out AND signed-in, catching thrown JS errors — the class curl suites structurally cannot. Post-deploy live run: 13/13 routes PASS, 0 crashes. Playwright+Chromium installed in sandbox (required fixing apt sources to HTTPS, port 80 blocked) |
+| Real signup found on lab DB, left untouched | deekshantsharma2004@gmail.com, genesis seat #2 — genuine (not a probe). Lab meant to be hand-shared only; founder asked to confirm who this is |
 
 ## Running / in place
 
