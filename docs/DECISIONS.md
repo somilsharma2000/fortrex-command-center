@@ -149,3 +149,7 @@ Per founder GO (Oct 1). Platform commit a0ebf27, deployed o8qmwhr1, verified liv
 ## D-2026-10-01-04: Dashboard hype layer (founder 'go on' #3)
 
 Platform commit 43d8109, deployed t6ldxlwz8, health green. Dashboard now also carries: Next-arena live countdown card (Season Zero, honest DRAFT badge, auto-flips at window open, ENTERED badge when joined) + 28-day streak calendar (contribution-grid visual, honest reset). Rationale: platform should feel alive pre-data and at launch; psychology-driven per canon. Verified: build clean, tsc clean, live health ok, auth-gate 307 intact.
+
+## D-2026-10-01-05: Learn hub v2 (founder 'more for improvement')
+
+Platform commit (learn v2), deployed 7am4tydll, verified live: /learn now renders a searchable explorer — live text filter across guides AND a new 21-term plain-word glossary (Basics/Risk/FORTREX categories), section TOC chips, two new sections: 'The REX economy' (what REX is / is not — honesty law restated) and 'Your tools' (MT5 connect, journal, streaks). Zero profit-promise language, investor-password law stated. Glossary is structured data in learn-content.ts — single source of truth, UI-independent. 
