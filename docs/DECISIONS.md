@@ -114,3 +114,12 @@ Founder sent a WhatsApp screenshot of a blank "Application error: a client-side 
 **Evidence:** E2E verified on lab DB (fresh user: request → token in verifications → callback 302 with real token → new password set → new password signs in 200, old password 401). Deployed to prod (commit d172dc9, fortrex-platform.vercel.app): /forgot-password + /reset-password 200, anti-enum identical live, stealth intact (robots Disallow + noindex). Stray Vercel project "dsrc-recovery" created by unlink trap — deleted (204), redeployed via .vercel/project.json link.
 
 **Founder task (5 min, before Nov 7):** create Resend account, set `RESEND_API_KEY` + `EMAIL_FROM` (FORTREX <noreply@fortrex domain>) in Vercel env. Until then, recovery links are NOT delivered (tokens expire unused) — no user impact while links are hand-shared.
+
+## D-2026-09-30-13: Broker harness + load probe; waitlist race fixed
+
+**Decision:** Two launch-critical hardening items shipped (platform commit 0bcd6b2, deployed + verified live):
+
+1. **Broker test harness** (`scripts/broker-harness.ts`, 3 modes). Fixtures (offline): 19 assertions over realistic MT5 deal fixtures — pairing, partial closes, deposits/credit excluded (never scored as profit), open positions excluded, lone-INOUT (partial history) excluded BY DESIGN, honest loss preservation, account-info verification. Pipeline (lab): real `syncConnection` x3 — 124 inserted, then 0/0 (idempotence proven), scratch cleaned. Live mode: ready for founder's MetaApi token + demo account — the pre-launch GO/NO-GO for real broker sync.
+2. **Load probe** (`scripts/load-probe.mjs`) found a real bug: concurrent duplicate waitlist signups raced past the pre-check and returned raw 500s (4x500 under 10-way concurrency). Fix: Postgres 23505 detected through drizzle's wrapped `err.cause` → friendly `already_registered` with the user's real position + referral code. Verified live on prod: 1 winner inserts, losers get identical friendly response, zero 500s. Probe rows purged from lab AND prod; prod waitlist pristine (founder only, position 1).
+
+**Probe findings, no action needed:** tournaments API rate limit (60/min/IP) correctly 429s bursts — acceptable; shared-NAT (college/office) users could see throttling at launch, watch it. Landing p95 5.4s is a dev-server artifact; production is built + cached. Honest scope: this is a smoke-load probe, not a 5M-user scale test — real load rehearsal stays on the T-7 list.
