@@ -5,7 +5,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 
 # PROJECT STATUS — FORTREX
 
-**Last updated:** Sep 30, 2026, 10:50 IST
+**Last updated:** Sep 30, 2026, 10:55 IST
 **Rule:** This file is refreshed at the end of every work session. If a status is not here with evidence, it is not claimed.
 
 ## Done and verified (with proof)
@@ -21,6 +21,7 @@ summary: The living NOW file — what is done, what is running, what is pending,
 | Roadmap #8 phase 3 DONE: public trader profiles + Hall of Fame + auto-entry | Commit cfda36e (growth-lab-v1), live on fortrex-lab: /hall-of-fame 200, /t/[code] 200 (private-by-default state), /leaderboard 200 with handle links, health 200; 200 test assertions green; migrations 0011+0012 applied to the lab DB (verified: prev_rank + public_profile columns present, founder user intact) |
 | Journal phase 2 DONE — psychology layer (daily reflections, per-trade notes/tags/emotion, journaling streak + journal_activity REX, session/weekday rhythm, trade detail page) | Commit 1c2da79 (growth-lab-v1), migration 0013 applied to lab DB (trade_notes 9 cols, daily_reflections, ledger_reason value verified, founder user intact); 225 test assertions green; live: /journal/psychology auth-gated 307, both new APIs 401 unauthed, health 200 |
 | HOTFIX: landing page crash fixed (founder-reported, 09:15 IST) | Commit 5627d50 — root cause was stats.remaining.toLocaleString() on undefined (no-cap decision removed the field from the API, page still read it); removed the seats-remaining counter, live page confirmed rendering full content, health 200 |
+| Full live verification sweep (founder-requested, 10:30 IST) | All public pages 200 (landing post-hotfix, legal, learn, leaderboard, hall-of-fame); member pages 307-gated; APIs 401/403 unauthed, draft tournaments hidden; DB: 20 tables, founder owner+genesis seat intact, REX ledger 0=0 match, Season Zero draft present, all 10 ledger reasons incl. journal_activity; 225/225 tests green; stealth robots-disallow+noindex on lab AND main; founder-review site 401 = password gate working |
 
 ## Running / in place
 
