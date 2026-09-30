@@ -58,7 +58,7 @@ XM partner portal + written approval for public mentions; MetaApi token; custom 
 
 ## Agent-owned queue (autonomous, low-risk, reversible)
 
-Competition-type research finalization (vision-competitions.md); OG card at credit reset; Discord community spec ready-to-build (post-launch per stealth law); user MFA + email recovery (deferred, documented); PostHog wiring at launch; content calendar drafts (private until stealth lift).
+Competition-type research finalization (vision-competitions.md); OG card at credit reset; Discord community spec ready-to-build (post-launch per stealth law); user MFA (deferred, documented); email recovery BUILT + deployed 2026-09-30 (D-2026-09-30-12), live the moment founder adds RESEND_API_KEY; PostHog wiring at launch; content calendar drafts (private until stealth lift).
 
 ## Next milestones
 

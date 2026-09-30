@@ -106,3 +106,11 @@ Founder sent a WhatsApp screenshot of a blank "Application error: a client-side 
 1. All 6 scheduled workflows now reflect CURRENT architecture (stale references purged): Launch Day (v1.3, merge step removed — main == growth-lab-v1 == deployed), Season Zero Settlement (NEW — Nov 10 20:55 IST, closes the 12h-late cron gap), Weekly Funnel Report (v1.2), T-7 Audit (v1.1 — production DB law, cron checks, founder gates).
 2. FUNNEL SOURCE OF TRUTH: the live funnel is the platform's own waitlist_entries table on the REAL production branch (ep-billowing-voice). Current count: 1 (founder's own entry) — expected under stealth (hand-shared links only). The Base44 FortrexWaitlist/FortrexWaitlistCounter entities are EMPTY legacy mirrors — kept as secondary drift checks only. Launch-day "waitlist import" = members sign up through the tested normal signup path (genesis seat + 1.25x + referral chain + REX all automatic), dispatched in referrer-first order via invite links.
 3. Verified tonight: signup flow code confirms assignGenesisSeat + referral auto-pay + waitlist attribution are all live in databaseHooks; no direct row-creation import needed at launch.
+
+## D-2026-09-30-12: Password recovery live (email-gated)
+
+**Decision:** Built and shipped account recovery before launch: 1-hour single-use reset tokens (Better Auth `requestPasswordReset`), anti-enumeration (identical response for known/unknown emails), Resend mailer via plain fetch, env-gated and fail-closed — without `RESEND_API_KEY` the endpoint still returns honest success (no enumeration signal) and the token expires unused; no crash, no silent hole.
+
+**Evidence:** E2E verified on lab DB (fresh user: request → token in verifications → callback 302 with real token → new password set → new password signs in 200, old password 401). Deployed to prod (commit d172dc9, fortrex-platform.vercel.app): /forgot-password + /reset-password 200, anti-enum identical live, stealth intact (robots Disallow + noindex). Stray Vercel project "dsrc-recovery" created by unlink trap — deleted (204), redeployed via .vercel/project.json link.
+
+**Founder task (5 min, before Nov 7):** create Resend account, set `RESEND_API_KEY` + `EMAIL_FROM` (FORTREX <noreply@fortrex domain>) in Vercel env. Until then, recovery links are NOT delivered (tokens expire unused) — no user impact while links are hand-shared.
