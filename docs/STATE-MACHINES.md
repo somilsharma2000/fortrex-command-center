@@ -41,7 +41,7 @@ verified ──[M]──> stale          (lastSyncAt too old) ──[U]──> s
 any ──[U/E]──> revoked           (disconnect; re-connect = new pending flow)
 ```
 - Invariants: mock provider never in production; `accountFingerprint = sha256(provider:externalId)` blocks multi-accounting; sync is idempotent on (connectionId, brokerTradeId) ✅.
-- ⚠️ stale transition exists in code but no cron marks it yet — L4 gap (low: pickScoringConnection prefers fresh data).
+- ✅ stale transition now automated: /api/cron/mark-stale-connections (daily 04:15 UTC, CRON_SECRET-gated) flips connected|verified rows whose effective last sync (lastSyncAt, else createdAt) is older than 7 days to `stale`. Live-verified Oct 1: probe flip on lab, idempotent second run, fresh rows untouched, audit-logged; prod 200 marked:0 (no active connections yet). Stale still scores (rank 1, below fresh verified) — truthful UI, no revocation.
 
 ## 4. TOURNAMENT ENTRY (participant) — implicit: joined → scored → (ranked) → [prized]
 ```
@@ -95,7 +95,7 @@ request ──[E: TOTP + role]──> applied + audit row
 | Gap | Layer | Priority |
 |---|---|---|
 | Ledger DB-level immutability trigger (append-only enforced in DB, not just code) | L3/L5 | P2 |
-| `stale` connection marking cron | L4 | P2 |
+| ~~`stale` connection marking cron~~ CLOSED Oct 1 (cron live, scripts/verify-stale-cron.mts is the standing verification) | L4 | closed |
 | Member suspension/reinstatement admin UI | L5/L6 | P1 pre-launch-lite |
 | Referral loop-abuse automation (fingerprint guard exists, no sweep job) | L3 | P2 |
 | Deletion / export-my-data paths | L5 | P1 (export) / P2 (deletion) |
