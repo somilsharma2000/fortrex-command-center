@@ -41,7 +41,7 @@ verified ──[M]──> stale          (lastSyncAt too old) ──[U]──> s
 any ──[U/E]──> revoked           (disconnect; re-connect = new pending flow)
 ```
 - Invariants: mock provider never in production; `accountFingerprint = sha256(provider:externalId)` blocks multi-accounting; sync is idempotent on (connectionId, brokerTradeId) ✅.
-- ✅ stale transition now automated: /api/cron/mark-stale-connections (daily 04:15 UTC, CRON_SECRET-gated) flips connected|verified rows whose effective last sync (lastSyncAt, else createdAt) is older than 7 days to `stale`. Live-verified Oct 1: probe flip on lab, idempotent second run, fresh rows untouched, audit-logged; prod 200 marked:0 (no active connections yet). Stale still scores (rank 1, below fresh verified) — truthful UI, no revocation.
+- ✅ stale transition now automated: rides with /api/cron/due-transitions (daily 03:45 UTC, CRON_SECRET-gated; dedicated route kept as manual ops trigger) flips connected|verified rows whose effective last sync (lastSyncAt, else createdAt) is older than 7 days to `stale`. Live-verified Oct 1: probe flip on lab, idempotent second run, fresh rows untouched, audit-logged; prod 200 marked:0 (no active connections yet). Stale still scores (rank 1, below fresh verified) — truthful UI, no revocation.
 
 ## 4. TOURNAMENT ENTRY (participant) — implicit: joined → scored → (ranked) → [prized]
 ```
