@@ -218,3 +218,8 @@ Stack-closure law honored: no direct dependency versions changed; only transitiv
 **Why:** founder removed all scarcity caps (seats etc.) — those gate REAL members. These caps gate a farming attack that would otherwise mint unlimited REX. REX has no cash value today, but REX is the permanent reputation record; inflating it cheapens the whole economy.
 **Rejected:** clawback of already-paid bonuses (punishes possible legitimate referrers, review-first is the platform law), IP/device fingerprinting pre-launch (no infra, weak signals, privacy cost).
 **Review trigger:** any referrer flagged by the lifetime cap appears in admin Traders + referralHealth analytics.
+
+## D-2026-10-01-04 — Deletion = anonymize, never hard-delete rows
+**Decision:** self-service account deletion ends in anonymization, not row deletion. PII (email, name, display name, referral code, discord identity, partner tag, image) is scrubbed and credentials destroyed; rex_ledger, trades, and tournament participation rows are kept pseudonymized.
+**Why:** the REX ledger is append-only by law (D-2026-09-26 REX fork) — deleting rows would break balance-after chains and tournament history integrity. DPDP/GDPR erasure obligations concern personal data; once the account is pseudonymized and login-destroyed, the remaining rows are our financial records. Ledger entries reference the anonymized id, never the identity.
+**Grace:** 7 days, sessions revoked at request, cancel available until the cron run past the window. Founder or members can't shorten it without a code change (deliberate).
