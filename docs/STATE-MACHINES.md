@@ -17,7 +17,8 @@ suspended ──[E]──> active        (reinstatement)
 any ──[E]──> banned             (terminal; human-only, audit-logged)
 ```
 - Invariant: founding members keep `genesis_multiplier = 1.25` forever, even after launch merge.
-- ✅ RBAC battery (403s), genesis seat assignment; ⛔ suspension UI + self-serve lifecycle (deactivate/delete/export) — L5 gap.
+- Enforcement (live, Oct 1): entry gate blocks suspended/banned joins; scoring EXCLUDES them (rank never assigned, `scoring.excluded` audit row); check-in blocked (no streak/REX). Ban outranks flagged; operators immutable; no self-suspend; concurrent-change 409.
+- ✅ Verified: 97-assertion regression + live lab E2E (suspended probe in live tournament → cron scored, no rank, audit row).
 
 ## 2. TOURNAMENT — `tournament_status`: draft | upcoming | open | live | settling | completed | cancelled
 ```
@@ -92,10 +93,40 @@ request ──[E: TOTP + role]──> applied + audit row
 3. **DR drill** (`platform/scripts/dr-drill.mts`): production branch restored into a fresh Neon branch — identical on tables(21), users(1), REX ledger rows(1)+total(12), minted total(12), participants, trades, audit_log(2). REX invariant holds on the restored copy. Drill branch deleted after verification. Answer to "what happens if FORTREX disappears tonight": a full copy is one API call + ~90s away, verified today, not assumed.
 
 ## §GAPS (from this audit — prioritized)
-| Gap | Layer | Priority |
+| Gap | Layer | Status |
 |---|---|---|
-| Ledger DB-level immutability trigger (append-only enforced in DB, not just code) | L3/L5 | P2 |
-| ~~`stale` connection marking cron~~ CLOSED Oct 1 (cron live, scripts/verify-stale-cron.mts is the standing verification) | L4 | closed |
-| Member suspension/reinstatement admin UI | L5/L6 | P1 pre-launch-lite |
-| Referral loop-abuse automation (fingerprint guard exists, no sweep job) | L3 | P2 |
-| Deletion / export-my-data paths | L5 | P1 (export) / P2 (deletion) |
+| Ledger DB-level immutability trigger | L3/L5 | ✅ CLOSED Oct 1 (migration 0014, triggers live on prod, tamper-tested) |
+| `stale` connection marking cron | L4 | ✅ CLOSED Oct 1 (rides due-transitions cron, verify-stale-cron.mts) |
+| Member suspension/reinstatement admin UI | L5/L6 | ✅ CLOSED Oct 1 (admin API + Traders drawer, live E2E verified) |
+| Referral loop-abuse automation | L3 | ✅ CLOSED Oct 1 (velocity+lifetime caps + farm-signal analytics, §13) |
+| Deletion / export-my-data paths | L5 | ✅ CLOSED Oct 1 (export API + deletion lifecycle, §11, live E2E verified) |
+
+**ALL §GAPS CLOSED (Oct 1).** Remaining pre-launch items are founder-gated (email key, domain, lawyer, broker approvals, 7-step pass) and the Oct 15 campaign decision. Standing re-verification: prove-the-rank + tamper + DR drill scripts in platform repo scripts/ (all re-run and PASS after the Oct 1 admin rebuild: audit clean, tamper detected, drill-branch restore identical, REX invariant holds).
+
+## 11. ACCOUNT DELETION — `deletion_state`: none | requested(grace 7d) | anonymized (terminal)
+```
+none ──[U: type "DELETE"]──> requested   (all sessions revoked instantly; login still works)
+requested ──[U: sign back in]──> cancelled → none   (grace window only)
+requested ──[M: due-transitions cron, >7d]──> anonymized  (terminal)
+```
+- Anonymization: email → `deleted+<id>@fortrex.invalid`, names → "Deleted member", referral code destroyed, status → banned, accounts/sessions/verifications rows deleted. rex_ledger, trades, tournament history stay pseudonymized (append-only ledger law, D-2026-10-01-04).
+- ✅ Verified live on lab E2E: overdue request fully anonymized + locked out by the real cron; inside-grace member untouched by the same run. Race-safe conditional claim (cancel between select and update is honored).
+
+## 12. BROKER CONNECTION FRESHNESS — `freshness`: fresh | stale
+```
+fresh ──[M: daily sweep, no successful sync >7d]──> stale
+stale ──[M: successful sync]──> fresh
+```
+- Rides the due-transitions cron (Hobby 2-cron cap). Honest state machine: stale is displayed truthfully to the member; failure of the sweep never breaks tournament transitions.
+- ✅ 92 tests + race-safe claim; failure-isolated in cron summary.
+
+## 13. REFERRAL PAYMENT — `payment_state`: pay | skip(reason) at signup hook
+```
+unknown_code ──> skip (no pay, no flag)
+self_referral ──> skip (no pay, no flag)
+velocity: >=10 paid/24h ──> skip (event recorded converted=false, audit row, no flag)
+lifetime: >=200 paid ──> skip (event recorded, audit row, referrer FLAGGED for human review)
+otherwise ──> pay (+50 REX referrer, +25 welcome grant invitee)
+```
+- Philosophy: caps are quiet, punishment is human (no auto-ban, no clawback — append-only ledger). Admin analytics exposes `referralHealth.farmSignals` (paid vs broker-connected invitees).
+- ✅ 99-assertion regression (pure decision function, boundary-exact); live-deployed prod+lab.

@@ -127,7 +127,7 @@ Status legend: **LIVE** (built + verified) · **PARTIAL** (exists, needs the nam
 | 4 | Trust & safety | L5 | PARTIAL — add report path + admin queue (smallest honest version) |
 | 5 | Account lifecycle | L5 | PARTIAL — deletion/export/suspension paths; OPEN at launch (password recovery) |
 | 6 | Security operations | L5 | PARTIAL — rotation + access-review + incident procedure docs |
-| 7 | Disaster recovery | L6 | PARTIAL — restore verified once; schedule scripted restore drills |
+| 7 | Disaster recovery | L6 | LIVE — scripted DR drill (restore to fresh branch, count-compare, REX invariant, auto-drop) re-run PASS Oct 1 post-rebuild |
 | 8 | Deployment/release | L6 | LIVE — extend with canary/feature-flag design (no pre-launch build) |
 | 9 | Domain/web infra | L9 | PARTIAL — custom domain + DNS = founder; headers/HSTS live |
 | 10 | Email infrastructure | L9 | **GATED/OPEN P0** — Resend key + SPF/DKIM/DMARC + reset-flow E2E |
@@ -159,7 +159,7 @@ Status legend: **LIVE** (built + verified) · **PARTIAL** (exists, needs the nam
 | 36 | Product intelligence | L7 | PARTIAL — journal analytics live; arena recap post-launch |
 | 37 | Design-system governance | L9 | PARTIAL — canon + shared components; automated checks later |
 | 38 | Visual QA automation | L9 | PLANNED — screenshot diffs post-launch |
-| 39 | Supply-chain security | L4 | **OPEN P0** — dependabot/2FA/secret-scanning enable |
+| 39 | Supply-chain security | L4 | PARTIAL — npm audit 0, dependabot LIVE; secret-scanning/push-protection founder-gated (GitHub Free plan); 2FA on founder's account his side |
 | 40 | Cost architecture | L9 | PARTIAL — scale-cost model before each growth step |
 | 41 | Operational documentation | L6 | LIVE — three living files + runbooks + specs |
 | 42 | Incident + postmortem | L6 | PARTIAL — template + first drill pre-launch |
@@ -169,7 +169,7 @@ Status legend: **LIVE** (built + verified) · **PARTIAL** (exists, needs the nam
 
 ## §5 PRE-LAUNCH ORDERING (today → Nov 7)
 
-1. **OPEN P0s:** email infrastructure (founder-gated: Resend key, domain DNS), supply-chain basics (#39), password-reset E2E once email is live.
+1. **OPEN P0s (all founder-gated now):** email infrastructure (Resend key, domain DNS), password-reset E2E once email is live. Every agent-doable P0/P1/P2 closed Oct 1: supply-chain (#39 partial), state-machine refresh (#1), prove-the-rank re-run (#2), restore drill replay (#7), suspension, referral abuse, deletion/export.
 2. **Integrity hardening:** state-machine maps (#1) + prove-the-rank audit script (#2) + restore drill (#7).
 3. **Trust floor:** smallest honest trust & safety (#4) + account lifecycle gaps (#5) + a11y audit (#22) + psychology audit (#32).
 4. **Experience depth:** founder taste passes; founding-member arc for Oct 1 → Nov 7.
