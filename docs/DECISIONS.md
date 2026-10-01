@@ -212,3 +212,9 @@ Migration 0014 required the app role (neondb_owner) to CREATE in the fortrex_ops
 ## D-2026-10-01-14: Supply-chain overrides + Dependabot policy
 
 Stack-closure law honored: no direct dependency versions changed; only transitive build-time deps (postcss, esbuild) were overridden to clear all 6 npm audit findings (all build-time-only, zero runtime exposure — Next's own pinned postcss and drizzle-kit/tsx tooling never ship in serverless bundles). Policy: Dependabot opens PRs only, never auto-merged; major version bumps need a founder-approved reason before Nov 7 (stack is closed). Secret scanning deferred as founder-gated (GitHub Free private-repo limitation). Verification: 0 npm vulns, 225 assertions, clean build, health green on prod+lab post-deploy.
+
+## D-2026-10-01-03 — Referral caps are anti-abuse, not scarcity
+**Decision:** +50 REX referral bonus capped at 10 paid referrals/referrer/day and 200 lifetime. Over-cap invites still get recorded (converted=false) but earn nothing. Lifetime cap flags the referrer for human review; no auto-ban, no clawback (ledger stays append-only; a post-review adjustment can be a new ledger entry).
+**Why:** founder removed all scarcity caps (seats etc.) — those gate REAL members. These caps gate a farming attack that would otherwise mint unlimited REX. REX has no cash value today, but REX is the permanent reputation record; inflating it cheapens the whole economy.
+**Rejected:** clawback of already-paid bonuses (punishes possible legitimate referrers, review-first is the platform law), IP/device fingerprinting pre-launch (no infra, weak signals, privacy cost).
+**Review trigger:** any referrer flagged by the lifetime cap appears in admin Traders + referralHealth analytics.
